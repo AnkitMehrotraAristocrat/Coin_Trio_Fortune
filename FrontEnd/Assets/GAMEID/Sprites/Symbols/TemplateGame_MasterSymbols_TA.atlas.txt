@@ -1,0 +1,132 @@
+
+TemplateGame_MasterSymbols_TA.png
+size: 1123,1123
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ace
+  rotate: true
+  xy: 260, 364
+  size: 103, 105
+  orig: 103, 105
+  offset: 0, 0
+  index: -1
+Bonus
+  rotate: false
+  xy: 2, 865
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+COR_Credit
+  rotate: false
+  xy: 260, 897
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+COR_Grand
+  rotate: false
+  xy: 260, 671
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+COR_Major
+  rotate: false
+  xy: 466, 445
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+COR_Maxi
+  rotate: false
+  xy: 486, 897
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+COR_Mini
+  rotate: false
+  xy: 486, 671
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+COR_Minor
+  rotate: false
+  xy: 466, 219
+  size: 224, 224
+  orig: 224, 224
+  offset: 0, 0
+  index: -1
+Jack
+  rotate: false
+  xy: 367, 361
+  size: 67, 106
+  orig: 67, 106
+  offset: 0, 0
+  index: -1
+King
+  rotate: false
+  xy: 104, 11
+  size: 100, 104
+  orig: 100, 104
+  offset: 0, 0
+  index: -1
+Nine
+  rotate: false
+  xy: 206, 14
+  size: 67, 101
+  orig: 67, 101
+  offset: 0, 0
+  index: -1
+Pic1
+  rotate: false
+  xy: 2, 349
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+Pic2
+  rotate: false
+  xy: 234, 117
+  size: 230, 230
+  orig: 230, 230
+  offset: 0, 0
+  index: -1
+Pic3
+  rotate: false
+  xy: 2, 117
+  size: 230, 230
+  orig: 230, 230
+  offset: 0, 0
+  index: -1
+Pic4
+  rotate: false
+  xy: 260, 469
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+Queen
+  rotate: false
+  xy: 2, 2
+  size: 100, 113
+  orig: 100, 113
+  offset: 0, 0
+  index: -1
+Ten
+  rotate: false
+  xy: 466, 116
+  size: 112, 101
+  orig: 112, 101
+  offset: 0, 0
+  index: -1
+Wild
+  rotate: false
+  xy: 2, 607
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

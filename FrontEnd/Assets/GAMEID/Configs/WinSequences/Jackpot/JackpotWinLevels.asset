@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be73bc671955438fa96ef74559ffaea7, type: 3}
+  m_Name: JackpotWinLevels
+  m_EditorClassIdentifier: 
+  levels:
+    array:
+    - winLevelIdent: 159B8E
+      multiplier: 0
+      duration: 16.428
+      title: Mini
+      skipDelay: 1.33
+    - winLevelIdent: 1C3566
+      multiplier: 1
+      duration: 16.428
+      title: Minor
+      skipDelay: 5
+    - winLevelIdent: 2D2526
+      multiplier: 2
+      duration: 17.216
+      title: Mega
+      skipDelay: 5
+    - winLevelIdent: 8301CD
+      multiplier: 3
+      duration: 16.483
+      title: Maxi
+      skipDelay: 5
+    - winLevelIdent: C36ADD
+      multiplier: 4
+      duration: 17.326
+      title: Major
+      skipDelay: 5
+    - winLevelIdent: 5413B9
+      multiplier: 5
+      duration: 17.053
+      title: Grand
+      skipDelay: 5

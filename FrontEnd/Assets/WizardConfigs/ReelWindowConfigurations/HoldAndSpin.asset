@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66480d22ad0a0a64eaa8eb2d2e111bcb, type: 3}
+  m_Name: HoldAndSpin
+  m_EditorClassIdentifier: 
+  _name: HoldAndSpin
+  _prefab: {fileID: 3020648576389691600, guid: 63e5e1640df2f1a498b3ebc645dc8813, type: 3}
+  _reelViewPrefab: {fileID: 7385246411888823187, guid: 2f2cc83565f255e4393391db08a0899d,
+    type: 3}
+  _symbolsPrefab: {fileID: 3955628616484024369, guid: 065e3e5d7c5e3474ebf51a2878b28265,
+    type: 3}
+  _symbolPrefab: {fileID: 303523443021066559, guid: fe56316a8c0f1ef42881b8a323f02957,
+    type: 3}
+  _winLinesPrefab: {fileID: 0}
+  _winLineSymbolPrefab: {fileID: 0}
+  _reelMaskMaterial: {fileID: 2100000, guid: f4a81520cdc8dee4b9a8e50fd990d3c3, type: 2}

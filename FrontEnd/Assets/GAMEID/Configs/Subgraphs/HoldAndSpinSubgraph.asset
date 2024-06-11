@@ -1,0 +1,2298 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8130661497079823345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd7f58ba447edd4f8b52e3ec70d1690, type: 3}
+  m_Name: Enter
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: -328}
+  ports:
+    keys:
+    - SubEnter
+    values:
+    - _fieldName: SubEnter
+      _node: {fileID: -8130661497079823345}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 8182862667542646113}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  SubEnter: 0
+--- !u!114 &-7368474039744982243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinRackPrizeState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 440}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    - HoldAndSpinJackpotPrizeTrigger
+    - HoldAndSpinMultiplierPrizeTrigger
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -7368474039744982243}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: 7855359418145490153}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: -6318770666136017281}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -7368474039744982243}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -5919558501878306732}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: HoldAndSpinJackpotPrizeTrigger
+      _node: {fileID: -7368474039744982243}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -5733791887776812564}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: HoldAndSpinMultiplierPrizeTrigger
+      _node: {fileID: -7368474039744982243}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -6318770666136017281}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: HoldAndSpinJackpotPrizeTrigger
+    NextStateNode: {fileID: -5733791887776812564}
+    NextState: 
+  - ExitTrigger: HoldAndSpinMultiplierPrizeTrigger
+    NextStateNode: {fileID: -6318770666136017281}
+    NextState: 
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -5919558501878306732}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinRackPrizeState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 64df38a71327800479fd9351f7fd36cf, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinJackpotWinClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: acde6bc80a0e3514c99fbab1672a6602, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinSetNextPrizePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array:
+    - {fileID: 11400000, guid: 54c6852ef4caf9946a7ca535f04aac35, type: 2}
+    - {fileID: 11400000, guid: 02c6cb28ea949df4e8ff58c2f805db18, type: 2}
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-6318770666136017281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinCreditCorAwardState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 680}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -6318770666136017281}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: HoldAndSpinMultiplierPrizeTrigger
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: -5733791887776812564}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -6318770666136017281}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -7368474039744982243}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinCreditCorAwardState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: d10396c897cbe04479522920384aedfb, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinPrizePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-6050255211196539443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinBlackoutJackpotState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: 456}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -6050255211196539443}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: BlackoutJackpotPrizeTrigger
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -6050255211196539443}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 1352679996158589400}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 1352679996158589400}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinBlackoutJackpotState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 3af58017ef755ae4196fcf0044d28a91, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutJackpotWinClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-5919558501878306732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinShowResultsState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 776}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -5919558501878306732}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -5919558501878306732}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 4618287003500152808}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 4618287003500152808}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinShowResultsState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 604cb6cdcee89ae48997dc97aa54f77d, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GenericOutroPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpinResult
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HnS_SpinCounter_CongratsOutro
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HSMusicStop
+    - script: {fileID: 11500000, guid: 22bdc0454e5ced24ba781fd83f480711, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Audio.TriggerPlayAudioEventPresenter,
+        Assembly_MilanCore_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HSMusicTerm
+    - script: {fileID: 11500000, guid: 443c44aa7ec451244ab192515199164f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.WinMeterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HideHSWinMeter
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-5733791887776812564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinJackpotCorAwardState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 584}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -5733791887776812564}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: HoldAndSpinJackpotPrizeTrigger
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -5733791887776812564}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -6318770666136017281}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -6318770666136017281}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinJackpotCorAwardState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: d010d90030ad94f28aecb16d3dd7b0d0, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.WinCore.WinSequences.V2.WinStartSequencer,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Jackpots
+    - script: {fileID: 11500000, guid: 2f283d04ee566db47a19368a4390569a, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.Jackpots.JackpotValuesClientModelStatePresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: a4f90cc86ebe8f04abb884dfac46bb63, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.Jackpots.JackpotResetPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - PostProcessing_Enter
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - PostProcessing_Exit
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-4119991764882077548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinTransitionState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -248}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -4119991764882077548}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -774047798076533716}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -4119991764882077548}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3842974733001592547}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 3842974733001592547}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinTransitionState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - DisableBaseReels
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - EnableHSReels
+    - script: {fileID: 11500000, guid: bb997bc277ff15340b828f95dcc7fc3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameState.ActiveGameStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 9710ba23d0aa31b4bbdc809fc8995136, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinInitializeReelWindowPresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 57d8f78c5c6e4c9fa9c535fb7c1d5be8, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.BonusGame.BonusGameActivatingStatePresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: d643c658944b93a4ba4ad1cf35af6d66, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinSpinCountClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 18e14fc4149444b59936b2950dd4a24e, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.WinCore.WinStopSequencer, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 4845e0e4bd9268d4ebb7d4e71434a7f2, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimateAllSymbolsPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Standard
+    - script: {fileID: 11500000, guid: bb997bc277ff15340b828f95dcc7fc3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameState.ActiveGameStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: d5bb773eeb67b4767a2a6b72341b11ec, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.FlushSpinButtonsPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: c1c3223d69b94ee4087ad357bf92c9f5, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.ClearTextPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpinWinMeter
+    - script: {fileID: 11500000, guid: 3e270862210d50b4fb490a184b1a3819, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BaseSpin
+    - script: {fileID: 11500000, guid: 275a3ebeaeac1c54ab3ce229ee160aff, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsUpdateLockedStateStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 3aa849898c893d04396bef6b59b8d85f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.RestoreReelWindowPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Standard
+    - script: {fileID: 11500000, guid: 8d2ac3354a28644a5a059d032a523a1b, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.UI.SpinButtonVisualsPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-3897768286624598067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpin
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -632}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -3897768286624598067}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -3897768286624598067}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 2329196835996318371}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 2329196835996318371}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpin
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 07849cb8d132a2f4aa3667b7613566b8, type: 3}
+      value: Milan.FrontEnd.Core.v5_1_1.SlotLoadCompletePresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-3280832498774029496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinRecovery2
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -440}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -3280832498774029496}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 2329196835996318371}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -3280832498774029496}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3842974733001592547}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 3842974733001592547}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinRecovery2
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: bbda0439ab08ef5448ce34278526e9c3, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.RestorableBetIndexPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Base
+    - script: {fileID: 11500000, guid: bb997bc277ff15340b828f95dcc7fc3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameState.ActiveGameStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: a45b9312eafb344489088f9ceb80bd3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameContextPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - OnRecovery
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - EnableHSReels
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HSMusicPlay
+    - script: {fileID: 11500000, guid: d643c658944b93a4ba4ad1cf35af6d66, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinSpinCountClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 20c6190f587129c4ebf79e52e139419d, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.CustomReelsOutcomeClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HnS_SnapToFeature
+    - script: {fileID: 11500000, guid: 20f5b80597f3386419ff2b3ec7a20233, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.RecoveryPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: c5a78718be8448bd9e96678534fa1334, type: 3}
+      value: Milan.FrontEnd.Tutorials.v5_1_1.Meta.MetaEventStatePresenter, Assembly_MilanTutorials_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - LoadingScreenPopEvent
+    - script: {fileID: 11500000, guid: c5a78718be8448bd9e96678534fa1334, type: 3}
+      value: Milan.FrontEnd.Tutorials.v5_1_1.Meta.MetaEventStatePresenter, Assembly_MilanTutorials_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HideAppWidget
+    - script: {fileID: 11500000, guid: 3e270862210d50b4fb490a184b1a3819, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 275a3ebeaeac1c54ab3ce229ee160aff, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsUpdateLockedStateStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 8d2ac3354a28644a5a059d032a523a1b, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.UI.SpinButtonVisualsPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &-774047798076533716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinIntroBannerState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -344}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: -774047798076533716}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 8182862667542646113}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: -774047798076533716}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -4119991764882077548}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -4119991764882077548}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinIntroBannerState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: c5a78718be8448bd9e96678534fa1334, type: 3}
+      value: Milan.FrontEnd.Tutorials.v5_1_1.Meta.MetaEventStatePresenter, Assembly_MilanTutorials_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - DisableAutoSpins
+    - script: {fileID: 11500000, guid: bbd59ae41e5f3a247a70d709fc866da4, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GenericBannerPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpinIntro
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HSMusicPlay
+    - script: {fileID: 11500000, guid: c5a78718be8448bd9e96678534fa1334, type: 3}
+      value: Milan.FrontEnd.Tutorials.v5_1_1.Meta.MetaEventStatePresenter, Assembly_MilanTutorials_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HideAppWidget
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HnS_PanCameraUp
+    - script: {fileID: 11500000, guid: 20c6190f587129c4ebf79e52e139419d, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.CustomReelsOutcomeClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4d7f7beeedc1d409c2cb61a3540645, type: 3}
+  m_Name: HoldAndSpinSubgraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -8130661497079823345}
+  - {fileID: 6782121212834525689}
+  - {fileID: 8182862667542646113}
+  - {fileID: -3897768286624598067}
+  - {fileID: 2329196835996318371}
+  - {fileID: -3280832498774029496}
+  - {fileID: -774047798076533716}
+  - {fileID: -4119991764882077548}
+  - {fileID: 3842974733001592547}
+  - {fileID: 8748129155543590052}
+  - {fileID: 5289105671942830248}
+  - {fileID: 6122401679978219657}
+  - {fileID: 7855359418145490153}
+  - {fileID: 6237165915206294056}
+  - {fileID: -6050255211196539443}
+  - {fileID: 1352679996158589400}
+  - {fileID: 4075459940773449124}
+  - {fileID: -7368474039744982243}
+  - {fileID: -5733791887776812564}
+  - {fileID: -6318770666136017281}
+  - {fileID: -5919558501878306732}
+  - {fileID: 4618287003500152808}
+  - {fileID: 8886014702384901584}
+  ParentGraph: {fileID: 11400000, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  AssignedSubgraphNode: {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07,
+    type: 2}
+  EntryNode: {fileID: -8130661497079823345}
+  ExitNode: {fileID: 6782121212834525689}
+--- !u!114 &1352679996158589400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinBlackoutJackpotPresentationState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: 552}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 1352679996158589400}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -6050255211196539443}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 1352679996158589400}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 6237165915206294056}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinBlackoutJackpotPresentationState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: d010d90030ad94f28aecb16d3dd7b0d0, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.WinCore.WinSequences.V2.WinStartSequencer,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Jackpots
+    - script: {fileID: 11500000, guid: 2f283d04ee566db47a19368a4390569a, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.Jackpots.JackpotValuesClientModelStatePresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: a4f90cc86ebe8f04abb884dfac46bb63, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.Jackpots.JackpotResetPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: ee32a1e93ab26564e93380671798a831, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutWinMeterValuePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &2329196835996318371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinRecovery1
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -536}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 2329196835996318371}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -3897768286624598067}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 2329196835996318371}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -3280832498774029496}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -3280832498774029496}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinRecovery1
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 0d19e75eb0783e14bb67243cd4639490, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &3842974733001592547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinIdle
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -152}
+  ports:
+    keys:
+    - Enter
+    - OutOfChips
+    - SpinButtonPressed
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 3842974733001592547}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -3280832498774029496}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: -4119991764882077548}
+        reroutePoints: []
+      - fieldName: HasHoldAndSpinsRemainingTrigger
+        node: {fileID: 6122401679978219657}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: OutOfChips
+      _node: {fileID: 3842974733001592547}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: SpinButtonPressed
+      _node: {fileID: 3842974733001592547}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 8748129155543590052}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: SpinButtonPressed
+    NextStateNode: {fileID: 8748129155543590052}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinIdle
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: a45b9312eafb344489088f9ceb80bd3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameContextPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - OnNormal
+    - script: {fileID: 11500000, guid: 065ff0aa9db8a4fe59d3c17119fc715c, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.SpinCore.SpinStartPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - NoBalanceCheck
+    - script: {fileID: 11500000, guid: d7642b652f1f5b642943e7147ca62a9e, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.SetSpinTypeStatePresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - normal15x1
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: 56a4924682784524ebb59deb4fd96591, type: 3}
+    value: Milan.FrontEnd.Slots.v5_1_1.IdleSupport.IdleState, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Slots.v5_1_1.IdleSupport.IdleState, Assembly_MilanSlots_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &4075459940773449124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinBlackoutCustomPresentationState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504, y: 648}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 4075459940773449124}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: BlackoutMultiplierPrizeTrigger
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 4075459940773449124}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 6237165915206294056}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinBlackoutCustomPresentationState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: bcf4b2ea15cd64045bf0a267d246a016, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutPrizePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &4618287003500152808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinToBaseTransitionOutroState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 872}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 4618287003500152808}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: -5919558501878306732}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 4618287003500152808}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 8886014702384901584}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 8886014702384901584}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinToBaseTransitionOutroState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: bb997bc277ff15340b828f95dcc7fc3b, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.GameState.ActiveGameStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BaseSpin
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HnS_ToBaseGame_PanUp
+    - script: {fileID: 11500000, guid: 20c6190f587129c4ebf79e52e139419d, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.CustomReelsOutcomeClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BaseSpin
+    - script: {fileID: 11500000, guid: c1c3223d69b94ee4087ad357bf92c9f5, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.ClearTextPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpinWinMeter
+    - script: {fileID: 11500000, guid: d5bb773eeb67b4767a2a6b72341b11ec, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.FlushSpinButtonsPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 18e14fc4149444b59936b2950dd4a24e, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.WinCore.WinStopSequencer, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: e4e52beb12616ae41a558b958acdcb19, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.SpinCore.AutospinEventPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - DeactivateOnExit
+    - script: {fileID: 11500000, guid: 660dd11beb80c78428524570315333e3, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.DynamicSymbols.DynamicSymbolClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BaseSpin
+    - script: {fileID: 11500000, guid: 3aa849898c893d04396bef6b59b8d85f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.RestoreReelWindowPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Standard
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &5289105671942830248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinStarCollectState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: 56}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 5289105671942830248}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: HasWinResult
+        node: {fileID: 8748129155543590052}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: 8748129155543590052}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 5289105671942830248}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 6122401679978219657}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 6122401679978219657}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinStarCollectState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 84be6eef10dcc06458eef422354520f5, type: 3}
+      value: Milan.FrontEnd.Core.v5_1_1.MetaStatePresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - StarCollect
+    - script: {fileID: 11500000, guid: 3e270862210d50b4fb490a184b1a3819, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 275a3ebeaeac1c54ab3ce229ee160aff, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.LockingReels.LockingReelsUpdateLockedStateStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &6122401679978219657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: CheckHoldAndSpinCompleteState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: 152}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    - HasHoldAndSpinsRemainingTrigger
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 6122401679978219657}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 5289105671942830248}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 6122401679978219657}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 7855359418145490153}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: HasHoldAndSpinsRemainingTrigger
+      _node: {fileID: 6122401679978219657}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 3842974733001592547}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: HasHoldAndSpinsRemainingTrigger
+    NextStateNode: {fileID: 3842974733001592547}
+    NextState: 
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 7855359418145490153}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: CheckHoldAndSpinCompleteState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: d5bb773eeb67b4767a2a6b72341b11ec, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.FlushSpinButtonsPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+    - script: {fileID: 11500000, guid: 18e14fc4149444b59936b2950dd4a24e, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.WinCore.WinStopSequencer, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array:
+    - {fileID: 11400000, guid: a65f9a29ee83a004b88045ce1cab27eb, type: 2}
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &6237165915206294056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinSetBlackoutPrizeState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 504.77258, y: 326.03595}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    - BlackoutJackpotPrizeTrigger
+    - BlackoutMultiplierPrizeTrigger
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 6237165915206294056}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 1352679996158589400}
+        reroutePoints: []
+      - fieldName: BlackoutSerializedTrigger
+        node: {fileID: 7855359418145490153}
+        reroutePoints: []
+      - fieldName: Entered
+        node: {fileID: 4075459940773449124}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 6237165915206294056}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: BlackoutJackpotPrizeTrigger
+      _node: {fileID: 6237165915206294056}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -6050255211196539443}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: BlackoutMultiplierPrizeTrigger
+      _node: {fileID: 6237165915206294056}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 4075459940773449124}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: BlackoutJackpotPrizeTrigger
+    NextStateNode: {fileID: -6050255211196539443}
+    NextState: 
+  - ExitTrigger: BlackoutMultiplierPrizeTrigger
+    NextStateNode: {fileID: 4075459940773449124}
+    NextState: 
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -7368474039744982243}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinSetBlackoutPrizeState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 2f87051b3e5bad14e828aa8586ecb012, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutSetNextPrizePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags: []
+  triggersData:
+    array:
+    - {fileID: 11400000, guid: 7badb4c1e06ea6a47b6068c712cf81d5, type: 2}
+    - {fileID: 11400000, guid: 0eeb048f501e3264ba5bc5f587d13b6f, type: 2}
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &6782121212834525689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00a679a46197f54b8962c6863a8bad6, type: 3}
+  m_Name: Exit
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 392, y: 984}
+  ports:
+    keys:
+    - SubExit
+    values:
+    - _fieldName: SubExit
+      _node: {fileID: 6782121212834525689}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 8886014702384901584}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  SubExit: 0
+  connectedStates:
+  - HoldAndSpinToBaseGameTransitionState (Entered)
+  AssignedGraph: {fileID: 11400000}
+--- !u!114 &7855359418145490153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinShowRollupMeterState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 18.772583, y: 323.03595}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    - BlackoutSerializedTrigger
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 7855359418145490153}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 6122401679978219657}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 7855359418145490153}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -7368474039744982243}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: BlackoutSerializedTrigger
+      _node: {fileID: 7855359418145490153}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 6237165915206294056}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: BlackoutSerializedTrigger
+    NextStateNode: {fileID: 6237165915206294056}
+    NextState: 
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -7368474039744982243}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinShowRollupMeterState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 2f7be4f103a0eac48917d48153b67400, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.AnimatorParameterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HnS_SpinCounter_Outro
+    - script: {fileID: 11500000, guid: f0562207e4fb46944bffc038f83cb818, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.DeductBonusSpinPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: b925ac18d222bb743bf82ced1298380f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.TimeDelayPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - OneSecExit
+    - script: {fileID: 11500000, guid: 443c44aa7ec451244ab192515199164f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.WinMeterPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - ShowHSWinMeter
+  triggersData:
+    array:
+    - {fileID: 11400000, guid: abf9b066aab30a54bb56257ee65dfcfa, type: 2}
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &8182862667542646113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: WinDelayState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -200, y: -344}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 8182862667542646113}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: SubEnter
+        node: {fileID: -8130661497079823345}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 8182862667542646113}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: -774047798076533716}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: -774047798076533716}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: WinDelayState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: b925ac18d222bb743bf82ced1298380f, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.TimeDelayPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - ThreeSecDelay
+    - script: {fileID: 11500000, guid: 22bdc0454e5ced24ba781fd83f480711, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Audio.TriggerPlayAudioEventPresenter,
+        Assembly_MilanCore_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BonusInitMusicPlay
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - BGMusicStop
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &8748129155543590052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinSpinState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 136, y: -56}
+  ports:
+    keys:
+    - Enter
+    - HasWinResult
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 8748129155543590052}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: SpinButtonPressed
+        node: {fileID: 3842974733001592547}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: HasWinResult
+      _node: {fileID: 8748129155543590052}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 5289105671942830248}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: Entered
+      _node: {fileID: 8748129155543590052}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Enter
+        node: {fileID: 5289105671942830248}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: HasWinResult
+    NextStateNode: {fileID: 5289105671942830248}
+    NextState: 
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 5289105671942830248}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinSpinState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: 389d8198475238f438b9551e9f0c86e2, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.NextReelStrips.NextReelStripsClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: bef664db5d6406b4c8059a51e047544d, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.SpinCore.V2.ModalSpinPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: f0562207e4fb46944bffc038f83cb818, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.DeductBonusSpinPresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 53708287567964cf98e276463a2925ca, type: 3}
+      value: Slotsburg.Slots.SharedFeatures.ActiveReelStripsStateExitPresenter, AssemblySlotsFeaturesShared_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 52bfb31234de31d48bee4cdfc71ec236, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+    - script: {fileID: 11500000, guid: 0d19e75eb0783e14bb67243cd4639490, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinClientModelStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: 5af9228aef14c524fba0846ce0f9c7c0, type: 3}
+    value: Milan.FrontEnd.Slots.v5_1_1.SpinCore.SpinState, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Slots.v5_1_1.SpinCore.SpinState, Assembly_MilanSlots_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &8886014702384901584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd800b6abb1c41b8ae54a93299093e6, type: 3}
+  m_Name: HoldAndSpinToBaseGameTransitionState
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 24, y: 968}
+  ports:
+    keys:
+    - Enter
+    - Entered
+    values:
+    - _fieldName: Enter
+      _node: {fileID: 8886014702384901584}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Entered
+        node: {fileID: 4618287003500152808}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Entered
+      _node: {fileID: 8886014702384901584}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: SubExit
+        node: {fileID: 6782121212834525689}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  NeedsUpgrade: 0
+  Enter: 0
+  transitions:
+  - ExitTrigger: Entered
+    NextStateNode: {fileID: 6782121212834525689}
+    NextState: 
+  metaData:
+    rid: -2
+  Serializing: 0
+  ParentNodes:
+  - {fileID: -9115943678423346658, guid: 5a39ff26b06cbeb43a6f47e39bd8cc07, type: 2}
+  _stateName: HoldAndSpinToBaseGameTransitionState
+  activePresenters:
+    array:
+    - script: {fileID: 11500000, guid: c5a78718be8448bd9e96678534fa1334, type: 3}
+      value: Milan.FrontEnd.Tutorials.v5_1_1.Meta.MetaEventStatePresenter, Assembly_MilanTutorials_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - ShowAppWidget
+    - script: {fileID: 11500000, guid: 415ff4427b4686f448b5f356066bbf5a, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.SyncBalanceFramePresenter, AssemblyGAMEID,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - Exit
+    - script: {fileID: 11500000, guid: b161aaeb7cd694cabbf484e5a1acf6a0, type: 3}
+      value: Milan.FrontEnd.Feature.v5_1_1.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - DisableHSReels
+    - script: {fileID: 11500000, guid: 5290eaf73c1598c40a93a79e578d7ea2, type: 3}
+      value: PixelUnited.NMG.Slots.Milan.GAMEID.IncrementWinClientStatePresenter,
+        AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - HoldAndSpinRack
+    - script: {fileID: 11500000, guid: 8d2ac3354a28644a5a059d032a523a1b, type: 3}
+      value: Milan.FrontEnd.Slots.v5_1_1.UI.SpinButtonVisualsPresenter, Assembly_MilanSlots_Runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      scriptName: 
+      tags:
+      - StandardSpin
+  triggersData:
+    array: []
+  stateMetaEvents:
+    array: []
+  serializedStateType:
+    script: {fileID: 11500000, guid: a343f7d65aeee4fd195e4a62a99a97bd, type: 3}
+    value: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  stateTypeName: Milan.FrontEnd.Core.v5_1_1.PresentationState, Assembly_MilanCore_Runtime,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

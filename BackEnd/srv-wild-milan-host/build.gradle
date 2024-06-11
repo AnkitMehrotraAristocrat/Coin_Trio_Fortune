@@ -1,0 +1,64 @@
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE"
+    }
+}
+
+plugins {
+    id 'com.productmadness.versioning' version '0.1.0'
+    id 'org.owasp.dependencycheck' version '7.0.4.1'
+    id 'com.gorylenko.gradle-git-properties' version '2.4.1'
+}
+
+group = 'com.productmadness'
+
+apply plugin:'base'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "${artifactory_context_url}/${artifactory_libs_repo_key}"
+        credentials {
+            username "${artifactory_user}"
+            password "${artifactory_password}"
+        }
+    }
+    mavenLocal()
+}
+
+dependencies {
+}
+
+versioning {
+    tagPrefix "v"
+    keywords {
+        major "[major]"
+        minor "[feature]", "[minor]", "feature/", "release/"
+        patch "[bug]", "[patch]", "hotfix/"
+    }
+}
+
+version = versioning.name()
+
+tasks.register('printVersion') {
+    print project.version
+}
+
+gitProperties {
+    gitPropertiesName = "git.properties"
+    gitPropertiesResourceDir = file("${project.buildDir}/resources/main")
+}
+
+import org.springframework.boot.gradle.tasks.buildinfo.BuildInfo
+
+task generateBuildInfo(type: BuildInfo) {
+    description = 'Generates build-info.properties file.'
+
+    group = BasePlugin.BUILD_GROUP
+
+    destinationDir = new File("${project.buildDir}/resources/main")
+
+    properties {
+        artifact = name
+    }
+}

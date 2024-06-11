@@ -1,0 +1,81 @@
+on: Build action
+
+inputs:
+  image_name:
+    description: Container image name
+    required: true
+  image_tag:
+    description: An image tag
+    required: true
+  image_sha_suffix:
+    description: Add commit SHA suffix to image_tag
+    default: false
+  gradle_module:
+    description: Gradle module name
+    default: ''
+  gcr_location:
+    description: GCR location
+    default: eu.gcr.io
+  gcr_project:
+    description: GCR project
+    default: pm-gcp
+  push_image:
+    description: Should an image be pushed to a registry
+    default: true
+  build_started_by:
+    description: Started By
+    required: true
+  vault_url:
+    description: Address of the Vault server
+    default: https://vault.madness.games
+  vault_role_id:
+    description: Vault AppRole ID
+    required: true
+  vault_secret_id:
+    description: Vault AppRole Secret ID
+    required: true
+  version:
+    description: Project version
+    required: true
+
+outputs:
+  image_repository:
+    value: ${{ inputs.image_name }}
+
+runs:
+  using: composite
+  steps:
+  - name: Import Vault secrets
+    id: vault
+    uses: hashicorp/vault-action@v2.4.2
+    with:
+      url: ${{ inputs.vault_url }}
+      method: approle
+      roleId: ${{ inputs.vault_role_id }}
+      secretId: ${{ inputs.vault_secret_id }}
+      secrets: |
+        common/data/gcp/${{ inputs.gcr_project }} google_credentials ;
+        jenkins/jfrog/service-accounts/nuget username | JFROG_USERNAME ;
+        jenkins/jfrog/service-accounts/nuget password | JFROG_PASSWORD ;
+
+  - name: Authenticate to Google Cloud
+    uses: google-github-actions/auth@v0.7.1
+    with:
+      credentials_json: ${{ steps.vault.outputs.google_credentials }}
+
+  - name: Setup Docker credentials
+    shell: sh
+    run: gcloud auth configure-docker
+
+  - name: Build and push an image
+    uses: docker/build-push-action@v2
+    with:
+      file: ./Dockerfile
+      context: .
+      push: ${{ inputs.push_image }}
+      tags: |
+        ${{ inputs.image_name }}:latest
+        ${{ inputs.image_name }}:${{ inputs.version }}
+      build-args: |
+        JFROG_USERNAME=${{ steps.vault.outputs.JFROG_USERNAME }}
+        JFROG_PASSWORD=${{ steps.vault.outputs.JFROG_PASSWORD }}

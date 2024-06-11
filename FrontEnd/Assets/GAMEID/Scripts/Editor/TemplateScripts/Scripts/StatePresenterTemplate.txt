@@ -1,0 +1,102 @@
+#region Using
+
+using System.Collections.Generic;
+using Milan.FrontEnd.Core.Async;
+using Milan.FrontEnd.Core;
+using UnityEngine;
+using Slotsburg.##GAMEID##.GameState;
+
+#endregion
+
+namespace Slotsburg.##GAMEID##
+{
+    /// <summary>
+    /// Class summary.
+    /// </summary>
+    public class ##NAME## : MonoBehaviour, IStatePresenter, ServiceLocator.IHandler, IRecoverable
+    {
+        #region Inspector
+        #endregion
+        
+        #region Properties
+        #endregion
+        
+        #region Fields
+        #endregion
+        
+        #region Interface Implementations
+
+        /// <summary>
+        /// The tag assigned to this component.
+        /// </summary>
+        public string Tag => this.GetTag();
+
+        /// <summary>
+        /// Notifier for this component.
+        /// </summary>
+        public INotifier Notifier { private get; set; }
+
+        /// <summary>
+        /// Called once the service adapter has finished initialization.
+        /// </summary>
+        public void OnServicesLoaded()
+        {
+            this.InitializeDependencies();
+        }
+
+        #endregion
+
+        #region Recovery
+
+        /// <summary>
+        /// Private version of eligible game states that can be edited in the inspector.
+        /// </summary>
+        [SerializeField]
+        private List<GameStateEnum> _eligibleGameStates;
+
+        /// <summary>
+        /// Valid game states that allow recovery.
+        /// </summary>
+        public List<GameStateEnum> RecoveryEligibleGameStates
+        {
+            get { return _eligibleGameStates; }
+            set { _eligibleGameStates = value; }
+        }
+
+        /// <summary>
+        /// Called by the recovery presenter.
+        /// </summary>
+        public void OnRecovery()
+        {
+            // Handle recovery here.
+        }
+
+        #endregion
+
+        #region State Handling
+
+        /// <summary>
+        /// Called when the state this presenter is assigned to is entered.
+        /// </summary>
+        public IEnumerator<Yield> Enter()
+        {
+            yield break;
+        }
+
+        /// <summary>
+        /// Called when the state this presenter is assigned to is beginning the process of exiting.
+        /// </summary>
+        public IEnumerator<Yield> Exit()
+        {
+            yield break;
+        }
+
+        #endregion
+        
+        #region Primary Methods
+        #endregion
+
+        #region Helper Methods
+        #endregion
+    }
+}

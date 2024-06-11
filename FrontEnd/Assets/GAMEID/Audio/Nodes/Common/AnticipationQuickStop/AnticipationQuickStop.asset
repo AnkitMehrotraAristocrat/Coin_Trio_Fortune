@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef1808c2c234aa0a5a54bb80de805b9, type: 3}
+  m_Name: AnticipationQuickStop
+  m_EditorClassIdentifier: 
+  trackName: SFX
+  behaviors:
+    array:
+    - behaviorLink: {fileID: 11400000, guid: 0a6e20ad7f77ac74e8dc6146be73e235, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 335e1208585949a47aaeb1d57a076742, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: a203e29d8c783be49ade685daa58b331, type: 2}
+  clipSource: {fileID: 11400000, guid: 7228ff96913070746944e49b03391be7, type: 2}

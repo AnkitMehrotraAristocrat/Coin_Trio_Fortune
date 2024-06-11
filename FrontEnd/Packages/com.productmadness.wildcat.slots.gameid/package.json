@@ -1,0 +1,21 @@
+{
+  "name": "com.productmadness.wildcat.slots.gameid",
+  "version": "0.0.1",
+  "description": "GAMEID",
+  "author": "New Media Games",
+  "license": "ISC",
+  "displayName": "com.productmadness.wildcat.slots.gameid",
+  "type": "library",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.aristocrat.milan.bridge": "1.1.1",
+    "com.aristocrat.milan.metaevents": "1.1.0",
+    "com.pixelunited.milan.core": "5.1.1",
+    "com.pixelunited.milan.slots": "5.1.1",
+    "com.aristocrat.milan.iceberg": "5.1.1",
+    "com.aristocrat.milan.jackpot-dtos": "1.4.0",
+    "com.aristocrat.milan.common.slotengine": "4.3.0",
+    "com.aristocrat.milan.frontend-dtos": "1.3.0",
+    "com.aristocrat.milan.thirdparty": "2.0.1-pre.2"
+  }
+}

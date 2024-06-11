@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce12667ce296ed4784120bbe458c36a, type: 3}
+  m_Name: Base_CORSymbolCondition
+  m_EditorClassIdentifier: 
+  SymbolList: 0a000000
+  FeatureTriggerThreshold: 3
+  AnimProviderSO: {fileID: 11400000, guid: 794c1d171f8a14749a97090e2cb36e23, type: 2}
+  SoundProviderSO: {fileID: 11400000, guid: c851ba56b9394e9488c613a8406d87ef, type: 2}
+  EligibilityModifiers: []

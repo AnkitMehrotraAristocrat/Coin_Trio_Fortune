@@ -1,0 +1,131 @@
+on: Build action
+
+inputs:
+  image_name:
+    description: Container image name
+    required: true
+  image_tag:
+    description: An image tag
+    required: true
+  image_sha_suffix:
+    description: Add commit SHA suffix to image_tag
+    default: false
+  gradle_module:
+    description: Gradle module name
+    default: ''
+  gcr_location:
+    description: GCR location
+    default: eu.gcr.io
+  gcr_project:
+    description: GCR project
+    default: pm-gcp
+  push_image:
+    description: Should an image be pushed to a registry
+    default: true
+  build_started_by:
+    description: Started By
+    required: true
+  vault_url:
+    description: Address of the Vault server
+    default: https://vault.madness.games
+  vault_role_id:
+    description: Vault AppRole ID
+    required: true
+  vault_secret_id:
+    description: Vault AppRole Secret ID
+    required: true
+  artifactory_cred:
+    description: Artifactory token for npm
+    required: true
+
+outputs:
+  image_repository:
+    value: ${{ inputs.image_name }}
+  image_tag:
+    value: ${{ steps.version.outputs.image_tag }}
+
+runs:
+  using: composite
+  steps:
+  - name: Import Vault secrets
+    id: vault
+    uses: hashicorp/vault-action@v2.4.2
+    with:
+      url: ${{ inputs.vault_url }}
+      method: approle
+      roleId: ${{ inputs.vault_role_id }}
+      secretId: ${{ inputs.vault_secret_id }}
+      secrets: |
+        common/data/gcp/${{ inputs.gcr_project }} google_credentials ;
+        jenkins/jfrog/service-accounts/coretech username | JFROG_USERNAME ;
+        jenkins/jfrog/service-accounts/coretech password | JFROG_PASSWORD
+
+  - name: Authenticate to Google Cloud
+    uses: google-github-actions/auth@v0.7.1
+    with:
+      credentials_json: ${{ steps.vault.outputs.google_credentials }}
+
+  - name: Setup Docker credentials
+    shell: sh
+    run: gcloud auth configure-docker
+
+  - name: Set Gradle properties
+    run: |
+      cat <<-EOF >> $GITHUB_ENV
+      ORG_GRADLE_PROJECT_artifactory_context_url=https://jfrog.madness.games/artifactory
+      ORG_GRADLE_PROJECT_artifactory_libs_repo_key=libs-release
+      ORG_GRADLE_PROJECT_artifactory_plugins_repo_key=plugins-release
+      ORG_GRADLE_PROJECT_artifactory_user=${{ env.JFROG_USERNAME }}
+      ORG_GRADLE_PROJECT_artifactory_password=${{ env.JFROG_PASSWORD }}
+      EOF
+    shell: sh
+
+  - name: Update version
+    run: ./gradlew ${{ inputs.gradle_module }}pullVersion
+    shell: sh
+
+  - name: Obtain version
+    id: version
+    run: |
+      CURRENT_APP_VERSION=$(./gradlew ${{ inputs.gradle_module }}printVersion -q)${{ inputs.image_sha_suffix == 'true' && '-$(git rev-parse --short=8 HEAD)' || '' }}
+      PROVIDED_VERSION=${{ inputs.image_tag }}
+      echo "image_tag=${PROVIDED_VERSION:-$CURRENT_APP_VERSION}" >> $GITHUB_OUTPUT
+    shell: sh
+
+  - name: Create Build and Git Properties
+    run: |
+      ./gradlew ${{ inputs.gradle_module }}generateGitProperties
+      ./gradlew ${{ inputs.gradle_module }}generateBuildInfo 
+    shell: sh
+
+  - name: Add build summary
+    shell: sh
+    run: |
+      echo '| Attribute | Value |' >> $GITHUB_STEP_SUMMARY
+      echo '| ------ | ------ |' >> $GITHUB_STEP_SUMMARY
+      echo '| Started By | @${{ inputs.build_started_by }} |' >> $GITHUB_STEP_SUMMARY
+      echo '| Image Name | ${{ inputs.image_name }}:latest |' >> $GITHUB_STEP_SUMMARY      
+      echo '| Image Name | ${{ inputs.image_name }}:${{ steps.version.outputs.image_tag }} |' >> $GITHUB_STEP_SUMMARY   
+
+  - name: Extract Folder Name from Gradle Module Name
+    id: service-folder-name
+    uses: mad9000/actions-find-and-replace-string@3
+    with:
+      source: ${{ inputs.gradle_module }}
+      find: ':'
+      replace: ''
+      replaceAll: true
+
+  - name: Build and push an image
+    uses: docker/build-push-action@v2
+    with:
+      context: ./${{ steps.service-folder-name.outputs.value }}
+      file: ./${{ steps.service-folder-name.outputs.value }}/Dockerfile
+      push: ${{ inputs.push_image }}
+      build-args: |
+        BUILD_VERSION=${{ steps.version.outputs.image_tag }}
+        JFROG_USERNAME=${{ steps.vault.outputs.JFROG_USERNAME }}
+        JFROG_PASSWORD=${{ steps.vault.outputs.JFROG_PASSWORD }}
+      tags: |
+        ${{ inputs.image_name }}:latest
+        ${{ inputs.image_name }}:${{ steps.version.outputs.image_tag }}

@@ -1,0 +1,11 @@
+// Add any preferences here, as key/value string pairs
+// GeneralHelper provides [GetPreference..] methods for access
+// Ensure you have a default code path when using them for conditional code execution
+{
+  // LRTB, TBLR (Left-Right-Top-Bottom, Top-Bottom-Left-Right)
+  "ClientPositionFormationValue": "LRTB", 
+  // true, false
+  "ReelStripsPerBetIndexEnabled": "false",
+  // Flag to consume first number to set reel strips in case of non-categorized gaffes
+  "ProcSelectReelSetOnGaffeReqForNonCat": "false"
+}

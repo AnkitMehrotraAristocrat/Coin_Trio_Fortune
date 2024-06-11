@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea0cf0fc807e8e4787540ad2671870d, type: 3}
+  m_Name: FreeSpinWaysMechanicConfiguration
+  m_EditorClassIdentifier: 
+  _id: FreeSpinWays
+  _subGraphElements: []
+  _triggerElements: []
+  _mechanicElements:
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 8196590687085644509, guid: 78854981fd4ee70478287904fecaadca,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/WaysClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component: Milan.FrontEnd.Slots.SpinCore.WaysClientModelStatePresenter, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: FreeSpin
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/WaysClientModelPresenters/WaysClientModelPresenter_FreeSpin
+    ReplaceExisting: 0
+    StateNodes:
+    - FreeSpinSpinState
+  - Type: 0
+    Component: Milan.FrontEnd.Slots.WinLine.WinWaysPresenter, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: 
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/GameView/BaseGame/ReelWindow/Reels
+    ReplaceExisting: 0
+    StateNodes:
+    - FreeSpinRollupState

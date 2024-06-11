@@ -1,0 +1,34 @@
+﻿{
+  "ReelWindowDefinitions": {
+    "Main": {
+      "Width": 5,
+      "Height": 3,
+      "Mask": [
+        {
+          "X": -1,
+          "Y": -1
+        }
+      ]
+    },
+    "FreeSpin": {
+      "Width": 5,
+      "Height": 3,
+      "Mask": [
+        {
+          "X": -1,
+          "Y": -1
+        }
+      ]
+    },
+    "HoldAndSpin": {
+      "Width": 15,
+      "Height": 1,
+      "Mask": [
+        {
+          "X": -1,
+          "Y": -1
+        }
+      ]
+    }
+  }
+}

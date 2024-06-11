@@ -1,0 +1,142 @@
+{
+  "ReelSets": [
+    {
+      "Name": "BaseReels_PIC1",
+      "Reels": [
+        "BaseReels_PIC1_Reel 1",
+        "BaseReels_PIC1_Reel 2",
+        "BaseReels_PIC1_Reel 3",
+        "BaseReels_PIC1_Reel 4",
+        "BaseReels_PIC1_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_PIC2",
+      "Reels": [
+        "BaseReels_PIC2_Reel 1",
+        "BaseReels_PIC2_Reel 2",
+        "BaseReels_PIC2_Reel 3",
+        "BaseReels_PIC2_Reel 4",
+        "BaseReels_PIC2_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_PIC3",
+      "Reels": [
+        "BaseReels_PIC3_Reel 1",
+        "BaseReels_PIC3_Reel 2",
+        "BaseReels_PIC3_Reel 3",
+        "BaseReels_PIC3_Reel 4",
+        "BaseReels_PIC3_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_PIC4",
+      "Reels": [
+        "BaseReels_PIC4_Reel 1",
+        "BaseReels_PIC4_Reel 2",
+        "BaseReels_PIC4_Reel 3",
+        "BaseReels_PIC4_Reel 4",
+        "BaseReels_PIC4_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_PIC5",
+      "Reels": [
+        "BaseReels_PIC5_Reel 1",
+        "BaseReels_PIC5_Reel 2",
+        "BaseReels_PIC5_Reel 3",
+        "BaseReels_PIC5_Reel 4",
+        "BaseReels_PIC5_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_ACE",
+      "Reels": [
+        "BaseReels_ACE_Reel 1",
+        "BaseReels_ACE_Reel 2",
+        "BaseReels_ACE_Reel 3",
+        "BaseReels_ACE_Reel 4",
+        "BaseReels_ACE_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_KING",
+      "Reels": [
+        "BaseReels_KING_Reel 1",
+        "BaseReels_KING_Reel 2",
+        "BaseReels_KING_Reel 3",
+        "BaseReels_KING_Reel 4",
+        "BaseReels_KING_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_QUEEN",
+      "Reels": [
+        "BaseReels_QUEEN_Reel 1",
+        "BaseReels_QUEEN_Reel 2",
+        "BaseReels_QUEEN_Reel 3",
+        "BaseReels_QUEEN_Reel 4",
+        "BaseReels_QUEEN_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_JACK",
+      "Reels": [
+        "BaseReels_JACK_Reel 1",
+        "BaseReels_JACK_Reel 2",
+        "BaseReels_JACK_Reel 3",
+        "BaseReels_JACK_Reel 4",
+        "BaseReels_JACK_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_TEN",
+      "Reels": [
+        "BaseReels_TEN_Reel 1",
+        "BaseReels_TEN_Reel 2",
+        "BaseReels_TEN_Reel 3",
+        "BaseReels_TEN_Reel 4",
+        "BaseReels_TEN_Reel 5"
+      ]
+    },
+    {
+      "Name": "BaseReels_NINE",
+      "Reels": [
+        "BaseReels_NINE_Reel 1",
+        "BaseReels_NINE_Reel 2",
+        "BaseReels_NINE_Reel 3",
+        "BaseReels_NINE_Reel 4",
+        "BaseReels_NINE_Reel 5"
+      ]
+    },
+
+
+
+    /*
+    {
+      "Name": "FreeSpin",
+      "Reels": [
+        "FreeSpinAN_Reel 1",
+        "FreeSpinAN_Reel 2",
+        "FreeSpinAN_Reel 3",
+        "FreeSpinAN_Reel 4",
+        "FreeSpinAN_Reel 5"
+      ]
+    },
+*/
+    {
+      "Name": "HoldAndSpin",
+      "Reels": [
+        "A_ReelStrip_1to5",
+        "A_ReelStrip_2to4",
+        "BlankB_ReelStrip_1to5",
+        "BlankB_ReelStrip_2to4",
+        "ScatB_ReelStrip_1to5",
+        "ScatB_ReelStrip_2to4"
+      ]
+    }
+
+
+  ]
+}

@@ -1,0 +1,297 @@
+﻿{
+  "states": [
+    {
+      "name": "Join",
+      "pipeline": {
+        "steps": [
+            // Setup
+            { "name": "GameBackend.Steps.General.InitilizeHiddenCells" },
+            { "name": "GameBackend.Steps.General.SetBetCurrrencyType" },
+            { "name": "GameBackend.Steps.General.MilanUpdateBetLines" },
+            { "name": "GameBackend.Features.Cors.Steps.SaveSymbolSkinJoinData" },
+
+            // Payloads
+            { "name": "GameBackend.Steps.Payloads.CreateFixedReelsConfigPayload" },
+            { "name": "GameBackend.Features.ReelSets.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Steps.Payloads.CreateStatePayloads" },
+            { "name": "GameBackend.Steps.Payloads.CreateReelWindowsConfigPayload" },
+            { "name": "GameBackend.Steps.Payloads.CreatePayLinesConfigPayload" },
+            { "name": "GameBackend.Steps.Payloads.CreateBetConfigPayload" },
+            { "name": "GameBackend.Steps.Payloads.CreateLinesModelRecoveryPayloads" },
+            { "name": "GameBackend.Steps.Payloads.CreateWinComboRecoveryPayloads" },
+            //{ "name": "GameBackend.Features.Jackpot.Steps.GetValuesJoinPayload" },
+            //{ "name": "GameBackend.Steps.Join.CreateJackpotConfigPayload" },
+            { "name": "GameBackend.Features.RoundModel.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Features.SymbolSkins.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Features.HoldAndSpin.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Features.Blackout.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Features.LockingReels.Steps.CreateJoinPayload" },
+            { "name": "GameBackend.Steps.Payloads.CreatePositionMapsPayload" }
+        ]
+      }
+    },
+    {
+      "name": "BaseSpin",
+      "pipeline": {
+        "steps": [
+          // Math Verification
+          { "name": "GameBackend.Steps.MathVerification.SetFeatureName" },
+          { "name": "GameBackend.Steps.MathVerification.IncrementFeatureHitFrequency" },
+
+          // General setup
+          { "name": "GameBackend.Steps.General.ResetRoundDataIfRoundComplete" },
+          { "name": "GameBackend.Steps.General.SetBetCurrrencyType" },
+          { "name": "GameBackend.Steps.General.RestoreBetAndLineIndexes" },
+          { "name": "GameBackend.Steps.General.SaveBaseBetValue" },
+          { "name": "GameBackend.Steps.General.MilanUpdateBetLines" },
+          //{ "name": "GameBackend.Features.Jackpot.Steps.ContributePayload" },
+
+          // ReelSets[PerBetIndex] setup
+          // SetReelStrip is setting ReelSetOperations.CurrentReelSetName,CurrentReelWindowDefinitionName,ReelSetOperations.ReelSets
+          // As currently Milan doesn't provide functionality to create/update custom reelset
+          // This replaces steps. InitializeMainReelSet + InitializeCurrentReelSet
+          { "name": "GameBackend.Features.ReelSets.Steps.SetReelStrips" },
+
+          // Spin process
+          { "name": "GameBackend.Steps.General.GenerateSetOfRandomValues" }, // Random Number Queue
+          { "name": "Milan.XSlotEngine.ExecutionSteps.ReelSet.UpdateReelSetPositions" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.ReelWindow.CreateAMainReelWindowFromReelSet" },
+          { "name": "GameBackend.Steps.EnableAllReelStrips" },
+          { "name": "GameBackend.Steps.General.UpdateReelWindow" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.UpdateBetMultiplier" },
+          { "name": "GameBackend.Steps.General.MilanUpdateBetLines" },
+          { "name": "GameBackend.Steps.General.MilanGetPatternReelPowerLeftToRight" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternGenerator.GetPatternScatters" },
+          { "name": "GameBackend.Steps.General.MilanGetPatternPayLines" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternMatcher.GetMatchesLeftToRight" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternMatcher.GetMatchesScatter" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.EvaluateMatchesReward" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.MultiplyMatchesReward" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PayTableProcessor.GetResults" },
+
+          // Debug output 
+          { "name": "GameBackend.Steps.General.PrintReelWindow" },
+
+          // Features process
+          { "name": "GameBackend.Features.Cors.Steps.GetLandedCorSymbols" },
+          { "name": "GameBackend.Features.Cors.Steps.DetermineCorSymbolPrizes" }, // Random Number Queue
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.SaveBlackoutData" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.BlackoutCheck" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.FeatureTrigger" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.SaveLockingReelsData" }, //step needs to be placed below HnS Trigger/Blackout determination
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.AwardBlackoutPrizes" },
+          { "name": "GameBackend.Features.Blackout.Steps.FeatureAwards" },
+
+          // Update spin result
+          { "name": "GameBackend.Features.RoundModel.Steps.SaveSpinResultToPersistentData" },
+          { "name": "GameBackend.Features.ReelSets.Steps.SaveReelsOutcomeData" },
+
+          // General post-process, states updated
+          { "name": "Milan.XSlotEngine.ExecutionSteps.Round.UpdateRoundDataTotalRewards" },
+          { "name": "GameBackend.Features.ReelSets.Steps.DetermineReelStripsForNextSpin" }, // Random Number Queue
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.DetermineReelStripsForNextSpin" },
+          { "name": "GameBackend.Steps.General.TransitionToNextState" },
+          { "name": "GameBackend.Steps.General.EvaluateRoundCompleted" },
+          { "name": "GameBackend.Features.Cors.Steps.SaveSymbolSkinSpinDataFromState" }, // Random Number Queue
+
+          // Custom Step
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.StateTrigger" },
+
+          // Payloads post-process 
+          { "name": "GameBackend.Steps.General.SplitAndStoreOffWinningCombinations" },
+          { "name": "GameBackend.Steps.Payloads.CreateWinComboRecoveryStatePayloads" },
+          { "name": "GameBackend.Steps.Payloads.CreateSpinResponsePayload" },
+          { "name": "GameBackend.Features.RoundModel.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.Blackout.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.LockingReels.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateReelsOutcomePayload" },
+
+          // After payloads process
+          { "name": "GameBackend.Steps.General.ProcessWindowCellSwaps" },
+          { "name": "GameBackend.Features.Cors.Steps.ProcessWindowCellSwaps" },
+          { "name": "GameBackend.Features.Cors.Steps.SaveSymbolSkinSpinDataToState" }, // Random Number Queue
+
+          // Send Metamorphic Information Payload
+          { "name": "GameBackend.Steps.Payloads.CreateMetamorphicPayload" },
+
+          // Transition dependant payloads
+          { "name": "GameBackend.Features.SymbolSkins.Steps.CreateFeaturePayload" },
+
+          // Spin Gaffe Debugging (not active in release)
+          { "name": "GameBackend.Steps.Payloads.CreateSpinGaffePayload" },
+
+          // Transition recovery setup
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.TransitionRecoverySetup" }
+        ]
+      },
+      "transitions": [
+        {
+          "name": "FreeSpinTriggered",
+          "targetState": "FreeSpin"
+        },
+        {
+          "name": "HoldAndSpinTriggered",
+          "targetState": "HoldAndSpin"
+        },
+        {
+          "name": "BaseSpinTriggered",
+          "targetState": "BaseSpin"
+        }
+      ]
+    },
+    {
+      "name": "FreeSpin",
+      "pipeline": {
+        "steps": [
+          // Math Verification
+          { "name": "GameBackend.Steps.MathVerification.SetFeatureName" },
+          { "name": "GameBackend.Steps.MathVerification.IncrementFeatureHitFrequency" },
+
+          // General setup
+          { "name": "GameBackend.Steps.General.SetBetCurrrencyType" },
+          { "name": "GameBackend.Steps.General.RestoreBetAndLineIndexes" },
+          { "name": "GameBackend.Steps.General.MilanUpdateBetLines" },
+          //{ "name": "GameBackend.Features.Jackpot.Steps.GetValuesPayload" },
+
+          // ReelSets[PerBetIndex] setup
+          // SetReelStrip is setting ReelSetOperations.CurrentReelSetName,CurrentReelWindowDefinitionName, ReelSetOperations.ReelSets
+          // As currently milan doesn't provide functionality to create/update custom reelset.
+          // This replaces steps. InitializeMainReelSet + InitializeCurrentReelSet
+          { "name": "GameBackend.Features.ReelSets.Steps.SetReelStrips" },
+
+          // Spin process 
+          { "name": "GameBackend.Steps.General.GenerateSetOfRandomValues" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.ReelSet.UpdateReelSetPositions" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.ReelWindow.CreateAMainReelWindowFromReelSet" },
+          { "name": "GameBackend.Steps.EnableAllReelStrips" },
+          { "name": "GameBackend.Steps.General.UpdateReelWindow" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.UpdateBetMultiplier" },
+          { "name": "GameBackend.Steps.General.MilanUpdateBetLines" },
+          { "name": "GameBackend.Steps.General.MilanGetPatternReelPowerLeftToRight" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternGenerator.GetPatternScatters" },
+          { "name": "GameBackend.Steps.General.MilanGetPatternPayLines" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternMatcher.GetMatchesLeftToRight" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PatternMatcher.GetMatchesScatter" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.EvaluateMatchesReward" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.BetManager.MultiplyMatchesReward" },
+          { "name": "Milan.XSlotEngine.ExecutionSteps.PayTableProcessor.GetResults" },
+
+          // Debug output 
+          { "name": "GameBackend.Steps.General.PrintReelWindow" },
+
+          // Features process
+          { "name": "GameBackend.Steps.General.DecrementFreeSpinsCount" },
+
+          // Update spin result 
+          { "name": "GameBackend.Features.RoundModel.Steps.SaveSpinResultToPersistentData" },
+          { "name": "GameBackend.Features.ReelSets.Steps.SaveReelsOutcomeData" },
+
+          // Features terminate 
+          { "name": "GameBackend.Steps.General.FeatureEnd" },
+
+          // General post-process, states updated
+          { "name": "Milan.XSlotEngine.ExecutionSteps.Round.UpdateRoundDataTotalRewards" },
+          { "name": "GameBackend.Features.ReelSets.Steps.DetermineReelStripsForNextSpin" },
+          { "name": "GameBackend.Steps.General.TransitionToNextState" },
+          { "name": "GameBackend.Steps.General.EvaluateRoundCompleted" },
+
+          // Payloads post-process
+          { "name": "GameBackend.Steps.General.SplitAndStoreOffWinningCombinations" },
+          { "name": "GameBackend.Steps.Payloads.CreateWinComboRecoveryStatePayloads" },
+          { "name": "GameBackend.Steps.Payloads.CreateSpinResponsePayload" },
+          { "name": "GameBackend.Features.RoundModel.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateReelsOutcomePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.RemoveReelWindowsPayload" },
+
+          // Spin Gaffe Debugging (not active in release)
+          { "name": "GameBackend.Steps.Payloads.CreateSpinGaffePayload" }
+        ]
+      },
+      "transitions": [
+        {
+          "name": "BaseSpinTriggered",
+          "targetState": "BaseSpin"
+        }
+      ]
+    },
+    {
+      "name": "HoldAndSpin",
+      "pipeline": {
+        "steps": [
+          // Math Verification
+          { "name": "GameBackend.Steps.MathVerification.SetFeatureName" },
+          { "name": "GameBackend.Steps.MathVerification.IncrementFeatureHitFrequency" },
+
+          // General setup
+          { "name": "GameBackend.Steps.General.RestoreBetAndLineIndexes" },
+          //{ "name": "GameBackend.Features.Jackpot.Steps.GetValuesPayload" },
+
+          // ReelSets[PerBetIndex] setup
+          // SetReelStrip is setting ReelSetOperations.CurrentReelSetName,CurrentReelWindowDefinitionName, ReelSetOperations.ReelSets
+          // As currently milan doesn't provide functionality to create/update custom reelset.
+          // This replaces steps. InitializeMainReelSet + InitializeCurrentReelSet
+          { "name": "GameBackend.Features.ReelSets.Steps.SetReelStrips" },
+
+          // Spin process
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.GenerateWindowWithStops" },
+
+          // Debug output 
+          { "name": "GameBackend.Steps.General.PrintReelWindow" },
+
+          // Features process
+          { "name": "GameBackend.Features.Cors.Steps.GetLandedCorSymbols" },
+          { "name": "GameBackend.Features.Cors.Steps.DetermineCorSymbolPrizes" }, // Random Number Queue
+          { "name": "GameBackend.Steps.General.DecrementFreeSpinsCount" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.FeatureRetrigger" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.SaveBlackoutData" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.SaveLockingReelsData" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.BlackoutCheck" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.AwardBlackoutPrizes" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.AwardPrizes" },
+          { "name": "GameBackend.Features.Blackout.Steps.FeatureAwards" },
+
+          // Debug output
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.PrintWindowCellsData" },
+
+          // Update spin result
+          { "name": "GameBackend.Features.RoundModel.Steps.SaveSpinResultToPersistentData" },
+
+          // Features terminate 
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.FeatureEnd" },
+
+          // General post-process, states updated
+          { "name": "Milan.XSlotEngine.ExecutionSteps.Round.UpdateRoundDataTotalRewards" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.DetermineReelStripsForNextSpin" },
+          { "name": "GameBackend.Steps.General.TransitionToNextState" },
+          { "name": "GameBackend.Steps.General.EvaluateRoundCompleted" },
+          { "name": "GameBackend.Features.Cors.Steps.SaveSymbolSkinSpinDataFromState" },
+
+          // Payloads post-process
+          { "name": "GameBackend.Steps.Payloads.CreateSpinResponsePayload" },
+          { "name": "GameBackend.Steps.Payloads.CreateLinesModelPayload" },
+          { "name": "GameBackend.Features.RoundModel.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.SymbolSkins.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.HoldAndSpin.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.Blackout.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.LockingReels.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateFeaturePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.CreateReelsOutcomePayload" },
+          { "name": "GameBackend.Features.ReelSets.Steps.RemoveReelWindowsPayload" },
+
+          // Spin Gaffe Debugging (not active in release)
+          { "name": "GameBackend.Steps.Payloads.CreateSpinGaffePayload" }
+        ]
+      },
+      "transitions": [
+        {
+          "name": "BaseSpinTriggered",
+          "targetState": "BaseSpin"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0588490c03e73cd49a075780895aa5ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - baseMap: {fileID: 2800000, guid: 48fcac94fc543ec429b7239da2931a20, type: 3}
+  - maskMaterial: {fileID: 2100000, guid: f28e9c74bf5c9174289a068a9e792c59, type: 2}
+  - editorMesh: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,114 @@
+{
+  "programs": [
+    {
+      "name": "[A00] Base: Win",
+      "values": [
+        "SelectReelSet", 5, //Main from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 32, 32, 5, 18, 6 //Stops willd on all position from Base reelset
+      ]
+    },
+    {
+      "name": "[A01] Base: Trigger FreeSpins",
+      "values": [
+        "SelectReelSet", 14, //BaseAN from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 36, 1, 1, 6, 3 //Stops from BaseAN reelset
+      ]
+    },
+    {
+      "name": "[A02] Base: Trigger HnS",
+      "values": [
+        "SelectReelSet", 49, //BaseHS from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 6, 13, 17, 3, 27 //Stops from BaseHS reelset
+      ]
+    },
+    {
+      "name": "[A03] Base: Trigger HnS with Jackpot",
+      "values": [
+        "SelectReelSet", 49, //BaseHS from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 6, 13, 17, 3, 27, //Stops from BaseHS reelset
+        "DetermineCorSymbolPrizes", 1305 //Jackpot prize from CorPrizes 
+      ]
+    },
+    {
+        "name": "[A04] Base: No Win",
+        "values": [
+            "SelectReelSet", 39, //BaseAN from BaseReelSets weight table
+            "GenerateSetOfRandomValues", 11, 189, 5, 7, 110 //Stops from Base reelset
+        ]
+    },
+    {
+        "name": "[A05] Base: Trigger HnS with Blackout",
+        "values": [
+            "SelectReelSet", 14, //Main from BaseReelSets weight table
+            "GenerateSetOfRandomValues", 65, 77, 75, 94, 28 //Stops from Base reelset
+        ]
+    },
+    {
+      "name": "[A06] Base: 2Spins : Trigger HnS, Blackout on first spin of HnS",
+      "values": [
+        "SelectReelSet", 14, 
+        "GenerateSetOfRandomValues", 65, 77, 75, 94, 29, // stop reel in base game with 14 COR position
+        "GenerateWindowWithStops", 1,1,1,1,1,1,1,1,1,1,1,1,1,1,11 // Stop COR on last position on first spin of HnS
+      ]
+    },
+
+    {
+      "name": "[B00] HnS: Get jackpot prize",
+      "values": [
+        "GenerateWindowWithStops", 94,94,94,94,94, 94,94,94,94,94, 94,94,94,94,94, //Stops for all 15 reels
+        "DetermineCorSymbolPrizes", 1305 //Jackpot prize from CorPrizes 
+      ]
+    },
+    {
+      "name": "[B01] HnS: Get Mini jackpot prize",
+      "values": [
+        "GenerateWindowWithStops", 94,94,94,94,94, 94,94,94,94,94, 94,94,94,94,94, //Stops for all 15 reels
+        "DetermineCorSymbolPrizes", 1302 //Jackpot prize from CorPrizes 
+      ]
+    },
+    {
+      "name": "[B02] HnS: Get Minor jackpot prize",
+      "values": [
+        "GenerateWindowWithStops", 94,94,94,94,94, 94,94,94,94,94, 94,94,94,94,94, //Stops for all 15 reels
+        "DetermineCorSymbolPrizes", 1307 //Jackpot prize from CorPrizes 
+      ]
+    },
+    {
+      "name": "[B03] HnS: Get Major jackpot prize",
+      "values": [
+        "GenerateWindowWithStops", 94,94,94,94,94, 94,94,94,94,94, 94,94,94,94,94, //Stops for all 15 reels
+        "DetermineCorSymbolPrizes", 1310 //Jackpot prize from CorPrizes 
+      ]
+    },
+    {
+      "name": "[B04] HnS: Get Grand jackpot prize",
+      "values": [
+        "GenerateWindowWithStops", 94,94,94,94,94, 94,94,94,94,94, 94,94,94,94,94, //Stops for all 15 reels
+        "DetermineCorSymbolPrizes", 1313 //Jackpot prize from CorPrizes 
+      ]
+    },
+
+    {
+      "name": "[C00] FreeSpin: Retrigger FreeSpins",
+      "values": [
+        "GenerateSetOfRandomValues", 36, 1, 1, 6, 3 //Stops from FreeSpin reelset
+      ]
+    },
+    {
+      "name": "[C01] FreeSpin: No retrigger for 5 spins", 
+        "values": [
+            "GenerateSetOfRandomValues", 2, 3, 3, 3, 2,
+            "GenerateSetOfRandomValues", 2, 3, 3, 3, 2,
+            "GenerateSetOfRandomValues", 2, 3, 3, 3, 2,
+            "GenerateSetOfRandomValues", 2, 3, 3, 3, 2,
+            "GenerateSetOfRandomValues", 2, 3, 3, 3, 2
+        ]
+    }
+  ],
+   "categories":  [
+    "SelectReelSet",
+    "GenerateSetOfRandomValues",
+    "DetermineCorSymbolPrizes",
+    "GenerateWindowWithStops"
+  ]
+}

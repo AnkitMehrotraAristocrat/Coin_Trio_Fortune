@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a25569c71ea49b0b39081acf1d985d, type: 3}
+  m_Name: normal15x1
+  m_EditorClassIdentifier: 
+  spinMode: normal15x1
+  spin: {fileID: 11400000, guid: c2e8fcd1910220447bc860d9ab3db778, type: 2}
+  stop: {fileID: 11400000, guid: be653f8f6ea23d64eba4fe4e63dd66cd, type: 2}
+  quickStop: {fileID: 11400000, guid: f0656a1f283368e48a111dc27b84a77a, type: 2}
+  reelData: []

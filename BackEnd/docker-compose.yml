@@ -1,0 +1,19 @@
+# docker-compose build --build-arg JFROG_USERNAME='<your jfrog username>' --build-arg JFROG_PASSWORD='<you jfrog password>'
+# docker image prune
+# docker-compose up
+
+# NOTE: To change ports update the services.api.ports leading port number (the one prior to the colon)
+
+version: '3.4'
+
+services:
+  wildcat.milan.host:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: GAMEID
+    image: GAMEID
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:8080"

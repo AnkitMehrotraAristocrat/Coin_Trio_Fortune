@@ -1,0 +1,653 @@
+name: Milan .NET Core branch Scan
+
+on:
+  push:
+    branches-ignore:
+      - dev
+      - rc
+      - main
+  
+jobs:
+  branch_scan:
+    if: (contains(github.event.head_commit.message, '#SCANME') ) 
+    timeout-minutes: 20
+    runs-on: ubuntu-18.04
+    env:
+      # Define here the environment variables that will be used along the Workflow.
+      NEXUS_URL: "https://nexus.bigfishgames.com"
+      SLACK_CHANNEL: "milan-test-notifications"
+      BUILD_CONFIG: "Debug"
+      GCP_PROJECT_ID: "milan-development"
+      #GCP_IAP_HOST: "gke-milan-gke-cluster-milan-private-po-a9e72990-t978"
+      SONAR_PROJECT: "milan-gdk-host"
+      PROJECT: "Milan.Host"
+      SONAR_HOST_URL: "http://localhost:31285"
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+            
+    #Send the first Slack message notifying
+    #- name: Send Slack Message
+    #  uses: archive/github-actions-slack@master
+    #  id: send-message
+    #  with:
+    #    slack-function: send-message
+    #    slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #    slack-channel: ${{ env.SLACK_CHANNEL }}
+    #    slack-text: "New PR Detected in the *${{ env.PROJECT }}* repository. Scanning started"
+    #    slack-color: "#0037fa"
+    #Install the gcloud utility to be able to use IAP tunnels.
+    - name: Set up GCloud SDK
+      uses: google-github-actions/setup-gcloud@v0.6.0
+      with:
+        service_account_key: ${{ secrets.GCP_KEY }}
+        export_default_credentials: true
+    #Open the IAP tunnel to connect to SonarQube.
+    - name: Open GCP Tunnel
+      run: |
+        sudo gcloud compute start-iap-tunnel ${{ secrets.GCP_IAP_HOST }} 31285 --local-host-port=localhost:31285  --zone=us-central1-a --project $GCP_PROJECT_ID & 
+    #Wait until the tunnel is started.
+    - name: Sleep for 20 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '20s'
+    #Configure NuGet Milan Repositories.
+    - name: Configure Milan NuGet Repositories
+      run: |
+        dotnet nuget disable source nuget.org
+        dotnet nuget add source $NEXUS_URL/repository/milan-nuget-group/ -n Milan-Private -u ${{ secrets.NEXUS_USER }} -p '${{ secrets.NEXUS_PASSWORD }}' --store-password-in-clear-text
+    #Get base branch name
+    - name: Extract parent branch 
+      shell: bash
+      run: | 
+        if echo "${{ github.event.head_commit.message}}"| grep '#MAIN' ; then
+          parent='main'
+        elif echo "${{github.event.head_commit.message }}" | grep '#RC'  ; then
+          parent='rc'
+        else
+          parent='dev'
+        fi
+        echo "::set-output name=basebranch::$parent"  
+      id: extract_parent_branc
+    #Create Milan.targets File depending base branch
+    - name: Is Rc
+      if: endsWith(steps.extract_parent_branc.outputs.basebranch, 'rc')
+      uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: ../Milan.targets
+        contents: |
+              <Project InitialTargets="Validate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <!--MILAN MONO-SOLUTION CONFIGURATION-->
+                    <PropertyGroup>
+                        <!-- MilanReleaseType
+                            The valid release types are 'Development', 'Test', and 'Production'.
+                            Development signals to all Milan projects that local project references should be used.
+                            Test signals that the latest release and/or pre-releases packages may be used.
+                            Production siganls to use the latest release packages only. Production is the default release type. -->
+                        <MilanReleaseType>Test</MilanReleaseType>
+                        <!-- MilanServiceType
+                            The valid service types are 'Default' and 'Custom'.
+                            Default signals that Milan.ServiceAdapter.Dev should deploy to Milan.Host if built.
+                            Custom prevents the default service adapter from being deploying. -->
+                        <MilanServiceType>Default</MilanServiceType>
+                        <!-- MilanStorageType
+                            The valid storage types are 'Default', 'Memory', 'File System', 'MongoDB', and 'Custom'.
+                            Default uses memory-based storage.
+                            Memory signals that Milan.Storage.Memory should be deployed to Milan.Host if built.
+                            File System signals that Milan.Storage.FileSystem should be deployed.
+                            MongoDB signals that Milan.Storage.MongoDB should be deployed.
+                            Custom prevents any of the above storage adapters from deploying. -->
+                        <MilanStorageType>Default</MilanStorageType>
+                        <!-- MilanDeployBackend
+                            This option controls the deployment of the default backend to Milan.Host-->
+                        <MilanDeployBackend>false</MilanDeployBackend>
+                        <!-- MilanDeployBackendTemplate
+                            This option controls the deployment of the default backend template to Milan.Host-->
+                        <MilanDeployBackendTemplate>true</MilanDeployBackendTemplate>
+                        <!-- MilanDeployChimera
+                            This option controls the deployment of Chimera to Milan.Host-->
+                        <MilanDeployChimera>false</MilanDeployChimera>
+                        <!-- MilanDeployMathVeriAdapter
+                            This option controls the deployment of MathVerification.Agent.Adapter to Milan.Host-->
+                        <MilanDeployMathVeriAdapter>true</MilanDeployMathVeriAdapter>
+                        <!-- MilanDeployMathVeriBackend
+                            This option controls the deployment of MathVerification.SlotGameBackendLite to Milan.Host-->
+                        <MilanDeployMathVeriBackend>false</MilanDeployMathVeriBackend>
+                        <!-- MilanMonoSolution
+                            Signals to project configurations that a mono-solution layout is being used. -->
+                        <MilanMonoSolution>true</MilanMonoSolution>
+                    </PropertyGroup>
+                    <!--VERSIONS SETTINGS
+                            The following variables control which version of a package is used throughout the mono-solution for 
+                            test/prod release types. For example, if you would like to use on only beta releases throughout for the
+                            test release type, then change MilanDefaultTestVersion to *-beta*. Alternatively, if you want to use a
+                            specific version of a package, set that version directly for the package/release type.-->
+                    <PropertyGroup>
+                        <!--Default
+                            These are the default version patterns used for test/prod release types.-->
+                        <MilanDefaultTestVersion>*-r*</MilanDefaultTestVersion>
+                        <MilanDefaultProdVersion>*</MilanDefaultProdVersion>
+                        <!--Milan.Common-->
+                        <MilanCommonTestVersion>$(MilanDefaultTestVersion)</MilanCommonTestVersion>
+                        <MilanCommonProdVersion>$(MilanDefaultProdVersion)</MilanCommonProdVersion>
+                        <!--Milan.Common.Utilities-->
+                        <MilanCommonUtilitiesTestVersion>$(MilanDefaultTestVersion)</MilanCommonUtilitiesTestVersion>
+                        <MilanCommonUtilitiesProdVersion>$(MilanDefaultProdVersion)</MilanCommonUtilitiesProdVersion>
+                        <!--Milan.Common.MathVerification-->
+                        <MilanCommonMathVerificationTestVersion>$(MilanDefaultTestVersion)</MilanCommonMathVerificationTestVersion>
+                        <MilanCommonMathVerificationProdVersion>$(MilanDefaultProdVersion)</MilanCommonMathVerificationProdVersion>
+                        <!--Milan.Common.SlotEngine-->
+                        <MilanCommonSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanCommonSlotEngineTestVersion>
+                        <MilanCommonSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanCommonSlotEngineProdVersion>
+                        <!--Milan.CryptoRng-->
+                        <MilanCryptoRngTestVersion>$(MilanDefaultTestVersion)</MilanCryptoRngTestVersion>
+                        <MilanCryptoRngProdVersion>$(MilanDefaultProdVersion)</MilanCryptoRngProdVersion>
+                        <!--Milan.Host-->
+                        <MilanHostTestVersion>$(MilanDefaultTestVersion)</MilanHostTestVersion>
+                        <MilanHostProdVersion>$(MilanDefaultProdVersion)</MilanHostProdVersion>
+                        <!--Milan.SlotEngine.Shared-->
+                        <MilanSlotEngineSharedTestVersion>$(MilanDefaultTestVersion)</MilanSlotEngineSharedTestVersion>
+                        <MilanSlotEngineSharedProdVersion>$(MilanDefaultProdVersion)</MilanSlotEngineSharedProdVersion>
+                        <!--Milan.XSlotEngine-->
+                        <MilanXSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanXSlotEngineTestVersion>
+                        <MilanXSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanXSlotEngineProdVersion>
+                        <!--Milan.ServiceAdapter.Dev-->
+                        <MilanServiceAdapterTestVersion>$(MilanDefaultTestVersion)</MilanServiceAdapterTestVersion>
+                        <MilanServiceAdapterProdVersion>$(MilanDefaultProdVersion)</MilanServiceAdapterProdVersion>
+                        <!--Milan.Storage.FileSystem-->
+                        <MilanStorageFileSystemTestVersion>$(MilanDefaultTestVersion)</MilanStorageFileSystemTestVersion>
+                        <MilanStorageFileSystemProdVersion>$(MilanDefaultProdVersion)</MilanStorageFileSystemProdVersion>
+                        <!--Milan.Storage.Memory-->
+                        <MilanStorageMemoryTestVersion>$(MilanDefaultTestVersion)</MilanStorageMemoryTestVersion>
+                        <MilanStorageMemoryProdVersion>$(MilanDefaultProdVersion)</MilanStorageMemoryProdVersion>
+                        <!--Milan.Storage.MongoDB-->
+                        <MilanStorageMongoDBTestVersion>$(MilanDefaultTestVersion)</MilanStorageMongoDBTestVersion>
+                        <MilanStorageMongoDBProdVersion>$(MilanDefaultProdVersion)</MilanStorageMongoDBProdVersion>
+                        <!--MathVerification.Adapter-->
+                        <MathVerificationAdapterTestVersion>$(MilanDefaultTestVersion)</MathVerificationAdapterTestVersion>
+                        <MathVerificationAdapterProdVersion>$(MilanDefaultProdVersion)</MathVerificationAdapterProdVersion>
+                        <!--MathVerification.Controller-->
+                        <MathVerificationControllerTestVersion>$(MilanDefaultTestVersion)</MathVerificationControllerTestVersion>
+                        <MathVerificationControllerProdVersion>$(MilanDefaultProdVersion)</MathVerificationControllerProdVersion>
+                        <!--MathVerification.SlotGameBackendLite-->
+                        <MathVerificationSlotGameBackendLiteTestVersion>$(MilanDefaultTestVersion)</MathVerificationSlotGameBackendLiteTestVersion>
+                        <MathVerificationSlotGameBackendLiteProdVersion>$(MilanDefaultProdVersion)</MathVerificationSlotGameBackendLiteProdVersion>
+                        <!--Milan.StateMachine-->
+                        <MilanStateMachineTestVersion>$(MilanDefaultTestVersion)</MilanStateMachineTestVersion>
+                        <MilanStateMachineProdVersion>$(MilanDefaultProdVersion)</MilanStateMachineProdVersion>
+                    </PropertyGroup>
+                    <!--CONDITIONAL CONFIGURATION-->
+                    <!--MilanReleaseType-->
+                    <Choose>
+                        <When Condition="$(MilanReleaseType)=='Development' Or $(MilanReleaseType)=='Test' Or $(MilanReleaseType)=='Production'">
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>true</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>false</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanServiceType-->
+                    <Choose>
+                        <When Condition="$(MilanServiceType)=='Default' Or $(MilanServiceType)=='Custom'">
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>true</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>false</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanStorageType-->
+                    <Choose>
+                        <!--DEFAULT-->
+                        <When Condition="$(MilanStorageType)=='Default' Or $(MilanStorageType)=='Memory' Or $(MilanStorageType)=='File System' Or $(MilanStorageType)=='MongoDB' Or $(MilanStorageType)=='Custom'">
+                            <PropertyGroup>
+                                <StorageTypeIsValid>true</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <StorageTypeIsValid>false</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--VALIDATE CONFIGURATION-->
+                    <Target Name="Validate">
+                        <Error Text="MilanReleaseType $(MilanReleaseType) is not valid." Condition="!$(ReleaseTypeIsValid)"/>
+                        <Error Text="MilanServiceType $(MilanServiceType) is not valid." Condition="!$(ServiceTypeIsValid)"/>
+                        <Error Text="MilanStorageType $(MilanStorageType) is not valid." Condition="!$(StorageTypeIsValid)"/>
+                    </Target>
+                </Project>
+        write-mode: overwrite
+    - name: Is Dev
+      if: endsWith(steps.extract_parent_branc.outputs.basebranch, 'dev')
+      uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: ../Milan.targets
+        contents: |
+              <Project InitialTargets="Validate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <!--MILAN MONO-SOLUTION CONFIGURATION-->
+                    <PropertyGroup>
+                        <!-- MilanReleaseType
+                            The valid release types are 'Development', 'Test', and 'Production'.
+                            Development signals to all Milan projects that local project references should be used.
+                            Test signals that the latest release and/or pre-releases packages may be used.
+                            Production siganls to use the latest release packages only. Production is the default release type. -->
+                        <MilanReleaseType>Test</MilanReleaseType>
+                        <!-- MilanServiceType
+                            The valid service types are 'Default' and 'Custom'.
+                            Default signals that Milan.ServiceAdapter.Dev should deploy to Milan.Host if built.
+                            Custom prevents the default service adapter from being deploying. -->
+                        <MilanServiceType>Default</MilanServiceType>
+                        <!-- MilanStorageType
+                            The valid storage types are 'Default', 'Memory', 'File System', 'MongoDB', and 'Custom'.
+                            Default uses memory-based storage.
+                            Memory signals that Milan.Storage.Memory should be deployed to Milan.Host if built.
+                            File System signals that Milan.Storage.FileSystem should be deployed.
+                            MongoDB signals that Milan.Storage.MongoDB should be deployed.
+                            Custom prevents any of the above storage adapters from deploying. -->
+                        <MilanStorageType>Default</MilanStorageType>
+                        <!-- MilanDeployBackend
+                            This option controls the deployment of the default backend to Milan.Host-->
+                        <MilanDeployBackend>false</MilanDeployBackend>
+                        <!-- MilanDeployBackendTemplate
+                            This option controls the deployment of the default backend template to Milan.Host-->
+                        <MilanDeployBackendTemplate>true</MilanDeployBackendTemplate>
+                        <!-- MilanDeployChimera
+                            This option controls the deployment of Chimera to Milan.Host-->
+                        <MilanDeployChimera>false</MilanDeployChimera>
+                        <!-- MilanDeployMathVeriAdapter
+                            This option controls the deployment of MathVerification.Agent.Adapter to Milan.Host-->
+                        <MilanDeployMathVeriAdapter>true</MilanDeployMathVeriAdapter>
+                        <!-- MilanDeployMathVeriBackend
+                            This option controls the deployment of MathVerification.SlotGameBackendLite to Milan.Host-->
+                        <MilanDeployMathVeriBackend>false</MilanDeployMathVeriBackend>
+                        <!-- MilanMonoSolution
+                            Signals to project configurations that a mono-solution layout is being used. -->
+                        <MilanMonoSolution>true</MilanMonoSolution>
+                    </PropertyGroup>
+                    <!--VERSIONS SETTINGS
+                            The following variables control which version of a package is used throughout the mono-solution for 
+                            test/prod release types. For example, if you would like to use on only beta releases throughout for the
+                            test release type, then change MilanDefaultTestVersion to *-beta*. Alternatively, if you want to use a
+                            specific version of a package, set that version directly for the package/release type.-->
+                    <PropertyGroup>
+                        <!--Default
+                            These are the default version patterns used for test/prod release types.-->
+                        <MilanDefaultTestVersion>*-d*</MilanDefaultTestVersion>
+                        <MilanDefaultProdVersion>*</MilanDefaultProdVersion>
+                        <!--Milan.Common-->
+                        <MilanCommonTestVersion>$(MilanDefaultTestVersion)</MilanCommonTestVersion>
+                        <MilanCommonProdVersion>$(MilanDefaultProdVersion)</MilanCommonProdVersion>
+                        <!--Milan.Common.Utilities-->
+                        <MilanCommonUtilitiesTestVersion>$(MilanDefaultTestVersion)</MilanCommonUtilitiesTestVersion>
+                        <MilanCommonUtilitiesProdVersion>$(MilanDefaultProdVersion)</MilanCommonUtilitiesProdVersion>
+                        <!--Milan.Common.MathVerification-->
+                        <MilanCommonMathVerificationTestVersion>$(MilanDefaultTestVersion)</MilanCommonMathVerificationTestVersion>
+                        <MilanCommonMathVerificationProdVersion>$(MilanDefaultProdVersion)</MilanCommonMathVerificationProdVersion>
+                        <!--Milan.Common.SlotEngine-->
+                        <MilanCommonSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanCommonSlotEngineTestVersion>
+                        <MilanCommonSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanCommonSlotEngineProdVersion>
+                        <!--Milan.CryptoRng-->
+                        <MilanCryptoRngTestVersion>$(MilanDefaultTestVersion)</MilanCryptoRngTestVersion>
+                        <MilanCryptoRngProdVersion>$(MilanDefaultProdVersion)</MilanCryptoRngProdVersion>
+                        <!--Milan.Host-->
+                        <MilanHostTestVersion>$(MilanDefaultTestVersion)</MilanHostTestVersion>
+                        <MilanHostProdVersion>$(MilanDefaultProdVersion)</MilanHostProdVersion>
+                        <!--Milan.SlotEngine.Shared-->
+                        <MilanSlotEngineSharedTestVersion>$(MilanDefaultTestVersion)</MilanSlotEngineSharedTestVersion>
+                        <MilanSlotEngineSharedProdVersion>$(MilanDefaultProdVersion)</MilanSlotEngineSharedProdVersion>
+                        <!--Milan.XSlotEngine-->
+                        <MilanXSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanXSlotEngineTestVersion>
+                        <MilanXSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanXSlotEngineProdVersion>
+                        <!--Milan.ServiceAdapter.Dev-->
+                        <MilanServiceAdapterTestVersion>$(MilanDefaultTestVersion)</MilanServiceAdapterTestVersion>
+                        <MilanServiceAdapterProdVersion>$(MilanDefaultProdVersion)</MilanServiceAdapterProdVersion>
+                        <!--Milan.Storage.FileSystem-->
+                        <MilanStorageFileSystemTestVersion>$(MilanDefaultTestVersion)</MilanStorageFileSystemTestVersion>
+                        <MilanStorageFileSystemProdVersion>$(MilanDefaultProdVersion)</MilanStorageFileSystemProdVersion>
+                        <!--Milan.Storage.Memory-->
+                        <MilanStorageMemoryTestVersion>$(MilanDefaultTestVersion)</MilanStorageMemoryTestVersion>
+                        <MilanStorageMemoryProdVersion>$(MilanDefaultProdVersion)</MilanStorageMemoryProdVersion>
+                        <!--Milan.Storage.MongoDB-->
+                        <MilanStorageMongoDBTestVersion>$(MilanDefaultTestVersion)</MilanStorageMongoDBTestVersion>
+                        <MilanStorageMongoDBProdVersion>$(MilanDefaultProdVersion)</MilanStorageMongoDBProdVersion>
+                        <!--MathVerification.Adapter-->
+                        <MathVerificationAdapterTestVersion>$(MilanDefaultTestVersion)</MathVerificationAdapterTestVersion>
+                        <MathVerificationAdapterProdVersion>$(MilanDefaultProdVersion)</MathVerificationAdapterProdVersion>
+                        <!--MathVerification.Controller-->
+                        <MathVerificationControllerTestVersion>$(MilanDefaultTestVersion)</MathVerificationControllerTestVersion>
+                        <MathVerificationControllerProdVersion>$(MilanDefaultProdVersion)</MathVerificationControllerProdVersion>
+                        <!--MathVerification.SlotGameBackendLite-->
+                        <MathVerificationSlotGameBackendLiteTestVersion>$(MilanDefaultTestVersion)</MathVerificationSlotGameBackendLiteTestVersion>
+                        <MathVerificationSlotGameBackendLiteProdVersion>$(MilanDefaultProdVersion)</MathVerificationSlotGameBackendLiteProdVersion>
+                        <!--Milan.StateMachine-->
+                        <MilanStateMachineTestVersion>$(MilanDefaultTestVersion)</MilanStateMachineTestVersion>
+                        <MilanStateMachineProdVersion>$(MilanDefaultProdVersion)</MilanStateMachineProdVersion>
+                    </PropertyGroup>
+                    <!--CONDITIONAL CONFIGURATION-->
+                    <!--MilanReleaseType-->
+                    <Choose>
+                        <When Condition="$(MilanReleaseType)=='Development' Or $(MilanReleaseType)=='Test' Or $(MilanReleaseType)=='Production'">
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>true</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>false</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanServiceType-->
+                    <Choose>
+                        <When Condition="$(MilanServiceType)=='Default' Or $(MilanServiceType)=='Custom'">
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>true</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>false</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanStorageType-->
+                    <Choose>
+                        <!--DEFAULT-->
+                        <When Condition="$(MilanStorageType)=='Default' Or $(MilanStorageType)=='Memory' Or $(MilanStorageType)=='File System' Or $(MilanStorageType)=='MongoDB' Or $(MilanStorageType)=='Custom'">
+                            <PropertyGroup>
+                                <StorageTypeIsValid>true</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <StorageTypeIsValid>false</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--VALIDATE CONFIGURATION-->
+                    <Target Name="Validate">
+                        <Error Text="MilanReleaseType $(MilanReleaseType) is not valid." Condition="!$(ReleaseTypeIsValid)"/>
+                        <Error Text="MilanServiceType $(MilanServiceType) is not valid." Condition="!$(ServiceTypeIsValid)"/>
+                        <Error Text="MilanStorageType $(MilanStorageType) is not valid." Condition="!$(StorageTypeIsValid)"/>
+                    </Target>
+                </Project>
+        write-mode: overwrite
+    - name: Is Main
+      if: endsWith(steps.extract_parent_branc.outputs.basebranch, 'main')
+      uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: ../Milan.targets
+        contents: |
+              <Project InitialTargets="Validate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+                    <!--MILAN MONO-SOLUTION CONFIGURATION-->
+                    <PropertyGroup>
+                        <!-- MilanReleaseType
+                            The valid release types are 'Development', 'Test', and 'Production'.
+                            Development signals to all Milan projects that local project references should be used.
+                            Test signals that the latest release and/or pre-releases packages may be used.
+                            Production siganls to use the latest release packages only. Production is the default release type. -->
+                        <MilanReleaseType>Production</MilanReleaseType>
+                        <!-- MilanServiceType
+                            The valid service types are 'Default' and 'Custom'.
+                            Default signals that Milan.ServiceAdapter.Dev should deploy to Milan.Host if built.
+                            Custom prevents the default service adapter from being deploying. -->
+                        <MilanServiceType>Default</MilanServiceType>
+                        <!-- MilanStorageType
+                            The valid storage types are 'Default', 'Memory', 'File System', 'MongoDB', and 'Custom'.
+                            Default uses memory-based storage.
+                            Memory signals that Milan.Storage.Memory should be deployed to Milan.Host if built.
+                            File System signals that Milan.Storage.FileSystem should be deployed.
+                            MongoDB signals that Milan.Storage.MongoDB should be deployed.
+                            Custom prevents any of the above storage adapters from deploying. -->
+                        <MilanStorageType>Default</MilanStorageType>
+                        <!-- MilanDeployBackend
+                            This option controls the deployment of the default backend to Milan.Host-->
+                        <MilanDeployBackend>false</MilanDeployBackend>
+                        <!-- MilanDeployBackendTemplate
+                            This option controls the deployment of the default backend template to Milan.Host-->
+                        <MilanDeployBackendTemplate>true</MilanDeployBackendTemplate>
+                        <!-- MilanDeployChimera
+                            This option controls the deployment of Chimera to Milan.Host-->
+                        <MilanDeployChimera>false</MilanDeployChimera>
+                        <!-- MilanDeployMathVeriAdapter
+                            This option controls the deployment of MathVerification.Agent.Adapter to Milan.Host-->
+                        <MilanDeployMathVeriAdapter>true</MilanDeployMathVeriAdapter>
+                        <!-- MilanDeployMathVeriBackend
+                            This option controls the deployment of MathVerification.SlotGameBackendLite to Milan.Host-->
+                        <MilanDeployMathVeriBackend>false</MilanDeployMathVeriBackend>
+                        <!-- MilanMonoSolution
+                            Signals to project configurations that a mono-solution layout is being used. -->
+                        <MilanMonoSolution>true</MilanMonoSolution>
+                    </PropertyGroup>
+                    <!--VERSIONS SETTINGS
+                            The following variables control which version of a package is used throughout the mono-solution for 
+                            test/prod release types. For example, if you would like to use on only beta releases throughout for the
+                            test release type, then change MilanDefaultTestVersion to *-beta*. Alternatively, if you want to use a
+                            specific version of a package, set that version directly for the package/release type.-->
+                    <PropertyGroup>
+                        <!--Default
+                            These are the default version patterns used for test/prod release types.-->
+                        <MilanDefaultTestVersion>*-a*</MilanDefaultTestVersion>
+                        <MilanDefaultProdVersion>*</MilanDefaultProdVersion>
+                        <!--Milan.Common-->
+                        <MilanCommonTestVersion>$(MilanDefaultTestVersion)</MilanCommonTestVersion>
+                        <MilanCommonProdVersion>$(MilanDefaultProdVersion)</MilanCommonProdVersion>
+                        <!--Milan.Common.Utilities-->
+                        <MilanCommonUtilitiesTestVersion>$(MilanDefaultTestVersion)</MilanCommonUtilitiesTestVersion>
+                        <MilanCommonUtilitiesProdVersion>$(MilanDefaultProdVersion)</MilanCommonUtilitiesProdVersion>
+                        <!--Milan.Common.MathVerification-->
+                        <MilanCommonMathVerificationTestVersion>$(MilanDefaultTestVersion)</MilanCommonMathVerificationTestVersion>
+                        <MilanCommonMathVerificationProdVersion>$(MilanDefaultProdVersion)</MilanCommonMathVerificationProdVersion>
+                        <!--Milan.Common.SlotEngine-->
+                        <MilanCommonSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanCommonSlotEngineTestVersion>
+                        <MilanCommonSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanCommonSlotEngineProdVersion>
+                        <!--Milan.CryptoRng-->
+                        <MilanCryptoRngTestVersion>$(MilanDefaultTestVersion)</MilanCryptoRngTestVersion>
+                        <MilanCryptoRngProdVersion>$(MilanDefaultProdVersion)</MilanCryptoRngProdVersion>
+                        <!--Milan.Host-->
+                        <MilanHostTestVersion>$(MilanDefaultTestVersion)</MilanHostTestVersion>
+                        <MilanHostProdVersion>$(MilanDefaultProdVersion)</MilanHostProdVersion>
+                        <!--Milan.SlotEngine.Shared-->
+                        <MilanSlotEngineSharedTestVersion>$(MilanDefaultTestVersion)</MilanSlotEngineSharedTestVersion>
+                        <MilanSlotEngineSharedProdVersion>$(MilanDefaultProdVersion)</MilanSlotEngineSharedProdVersion>
+                        <!--Milan.XSlotEngine-->
+                        <MilanXSlotEngineTestVersion>$(MilanDefaultTestVersion)</MilanXSlotEngineTestVersion>
+                        <MilanXSlotEngineProdVersion>$(MilanDefaultProdVersion)</MilanXSlotEngineProdVersion>
+                        <!--Milan.ServiceAdapter.Dev-->
+                        <MilanServiceAdapterTestVersion>$(MilanDefaultTestVersion)</MilanServiceAdapterTestVersion>
+                        <MilanServiceAdapterProdVersion>$(MilanDefaultProdVersion)</MilanServiceAdapterProdVersion>
+                        <!--Milan.Storage.FileSystem-->
+                        <MilanStorageFileSystemTestVersion>$(MilanDefaultTestVersion)</MilanStorageFileSystemTestVersion>
+                        <MilanStorageFileSystemProdVersion>$(MilanDefaultProdVersion)</MilanStorageFileSystemProdVersion>
+                        <!--Milan.Storage.Memory-->
+                        <MilanStorageMemoryTestVersion>$(MilanDefaultTestVersion)</MilanStorageMemoryTestVersion>
+                        <MilanStorageMemoryProdVersion>$(MilanDefaultProdVersion)</MilanStorageMemoryProdVersion>
+                        <!--Milan.Storage.MongoDB-->
+                        <MilanStorageMongoDBTestVersion>$(MilanDefaultTestVersion)</MilanStorageMongoDBTestVersion>
+                        <MilanStorageMongoDBProdVersion>$(MilanDefaultProdVersion)</MilanStorageMongoDBProdVersion>
+                        <!--MathVerification.Adapter-->
+                        <MathVerificationAdapterTestVersion>$(MilanDefaultTestVersion)</MathVerificationAdapterTestVersion>
+                        <MathVerificationAdapterProdVersion>$(MilanDefaultProdVersion)</MathVerificationAdapterProdVersion>
+                        <!--MathVerification.Controller-->
+                        <MathVerificationControllerTestVersion>$(MilanDefaultTestVersion)</MathVerificationControllerTestVersion>
+                        <MathVerificationControllerProdVersion>$(MilanDefaultProdVersion)</MathVerificationControllerProdVersion>
+                        <!--MathVerification.SlotGameBackendLite-->
+                        <MathVerificationSlotGameBackendLiteTestVersion>$(MilanDefaultTestVersion)</MathVerificationSlotGameBackendLiteTestVersion>
+                        <MathVerificationSlotGameBackendLiteProdVersion>$(MilanDefaultProdVersion)</MathVerificationSlotGameBackendLiteProdVersion>
+                        <!--Milan.StateMachine-->
+                        <MilanStateMachineTestVersion>$(MilanDefaultTestVersion)</MilanStateMachineTestVersion>
+                        <MilanStateMachineProdVersion>$(MilanDefaultProdVersion)</MilanStateMachineProdVersion>
+                    </PropertyGroup>
+                    <!--CONDITIONAL CONFIGURATION-->
+                    <!--MilanReleaseType-->
+                    <Choose>
+                        <When Condition="$(MilanReleaseType)=='Development' Or $(MilanReleaseType)=='Test' Or $(MilanReleaseType)=='Production'">
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>true</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ReleaseTypeIsValid>false</ReleaseTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanServiceType-->
+                    <Choose>
+                        <When Condition="$(MilanServiceType)=='Default' Or $(MilanServiceType)=='Custom'">
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>true</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <ServiceTypeIsValid>false</ServiceTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--MilanStorageType-->
+                    <Choose>
+                        <!--DEFAULT-->
+                        <When Condition="$(MilanStorageType)=='Default' Or $(MilanStorageType)=='Memory' Or $(MilanStorageType)=='File System' Or $(MilanStorageType)=='MongoDB' Or $(MilanStorageType)=='Custom'">
+                            <PropertyGroup>
+                                <StorageTypeIsValid>true</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </When>
+                        <Otherwise>
+                            <PropertyGroup>
+                                <StorageTypeIsValid>false</StorageTypeIsValid>
+                            </PropertyGroup>
+                        </Otherwise>
+                    </Choose>
+                    <!--VALIDATE CONFIGURATION-->
+                    <Target Name="Validate">
+                        <Error Text="MilanReleaseType $(MilanReleaseType) is not valid." Condition="!$(ReleaseTypeIsValid)"/>
+                        <Error Text="MilanServiceType $(MilanServiceType) is not valid." Condition="!$(ServiceTypeIsValid)"/>
+                        <Error Text="MilanStorageType $(MilanStorageType) is not valid." Condition="!$(StorageTypeIsValid)"/>
+                    </Target>
+                </Project>
+        write-mode: overwrite
+    #Check Milan.targets.
+    - name: Install Used Tools
+      run: |
+        cat ../Milan.targets    
+    #Install tools used for SonarQube code scan coverage.
+    - name: Install Used Tools
+      run: |
+        dotnet tool install --global dotnet-sonarscanner --version 5.5.3
+        dotnet tool install --global coverlet.console --version 3.1.2
+
+    #Scan the project and send it to SonarQube.
+    - name: Sonar Scan
+      run: |
+          dotnet sonarscanner begin /k:"${{ env.SONAR_PROJECT }}" /d:sonar.branch.name=${{ github.ref_name}}  /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.login=${{ secrets.SONAR_TOKEN }} /d:sonar.exclusions=**/*.js,**/*.css /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml' /d:sonar.cs.vstest.reportsPaths='**/TestResults.trx'
+          dotnet build ${{ env.PROJECT }}.sln
+          dotnet sonarscanner end /d:sonar.login=${{ secrets.SONAR_TOKEN }}
+    #Wait for SonarQube to finish the analysis.
+    - name: Wait for SonarQube Scan
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '10s'
+    #Bring the status of the project and the status of the quality gate.
+    - name: Check SonarQube Status
+      id: sonarstatus
+      run: |
+          RES=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}&branch=${{ github.ref_name}}' | jq '.projectStatus.status == "OK"')
+          echo "Result: $RES"
+          echo "::set-output name=status::$RES"
+          NAME1=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[0] .metricKey')
+          VAL1=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[0] .actualValue')
+          echo "$NAME1 - $VAL1"
+          NAME2=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[1] .metricKey')
+          VAL2=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[1] .actualValue')
+          echo "$NAME2 - $VAL2"
+          NAME3=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[2] .metricKey')
+          VAL3=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[2] .actualValue')
+          echo "$NAME3 - $VAL3"
+          NAME4=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[3] .metricKey')
+          VAL4=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[3] .actualValue')
+          echo "$NAME4 - $VAL4"
+          NAME5=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[4] .metricKey')
+          VAL5=$(curl -s -u ${{ secrets.SONAR_TOKEN }}: -X GET '${{ env.SONAR_HOST_URL }}/api/qualitygates/project_status?projectKey=${{ env.SONAR_PROJECT }}' | jq -r '.projectStatus.conditions[4] .actualValue')
+          echo "$NAME5 - $VAL5" 
+          FULLRES="$NAME1: $VAL1 - $NAME2: $VAL2 - $NAME3: $VAL3 - $NAME4: $VAL4 - $NAME5: $VAL5"
+          
+          echo "::set-output name=fullres::$FULLRES"
+          echo "::set-output name=branch::$GITHUB_HEAD_REF"
+    # #Notify in a thread if the quality gate has passed.    
+    # - name: Send Slack Thread
+    #   uses: archive/github-actions-slack@master
+    #   id: send-message-true
+    #   if: contains(steps.sonarstatus.outputs.status, 'true')
+    #   with:
+    #     slack-function: send-message
+    #     slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #     slack-channel: ${{ env.SLACK_CHANNEL }}
+    #     slack-text: The branch `${{ steps.sonarstatus.outputs.branch }}` was scanned and passed the quality gate.
+    #     slack-optional-thread_ts: ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }}
+    # #Notify in a thread if the quality gate is not passed.
+    # - name: Send Slack Thread
+    #   uses: archive/github-actions-slack@master
+    #   id: send-message-false
+    #   if: contains(steps.sonarstatus.outputs.status, 'false')
+    #   with:
+    #     slack-function: send-message
+    #     slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #     slack-channel: ${{ env.SLACK_CHANNEL }}
+    #     slack-text: The branch `${{ steps.sonarstatus.outputs.branch }}` did not pass the quality gate.
+    #     slack-optional-thread_ts: ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }}
+    # #Notifies the result of the scan.
+    # - name: Send Slack Thread
+    #   uses: archive/github-actions-slack@master
+    #   id: send-message-result-true
+    #   with:
+    #     slack-function: send-message
+    #     slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #     slack-channel: ${{ env.SLACK_CHANNEL }}
+    #     slack-text: "*Sonarqube Report : ${{ steps.sonarstatus.outputs.fullres }} \nMore info at : https://sonar.milan.aristocrat.com/dashboard?id=${{ env.SONAR_PROJECT }}&pullRequest=${{github.event.number}}
+    #     https://sonar.milan.aristocrat.com/dashboard?branch=&id=${{ env.SONAR_PROJECT }}"
+    #     slack-optional-thread_ts: ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }}
+    #Comment on the PR with the result of the analysis.
+    # - name: Comment PR
+    #   uses: thollander/actions-comment-pull-request@v1
+    #   with:
+    #     message: 'SonarQube Report (of new code lines): ${{ steps.sonarstatus.outputs.fullres }}. <br> More info at : https://sonar.milan.aristocrat.com/dashboard?id=${{ env.SONAR_PROJECT }}&pullRequest=${{github.event.number}}'
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # #Send a thumbsup if  pass the quality gate.
+    # - name: Send Slack Reaction To Message
+    #   uses: archive/github-actions-slack@v2.0.0
+    #   if: contains(steps.sonarstatus.outputs.status, 'true')
+    #   with:
+    #     slack-function: send-reaction
+    #     slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #     slack-channel: ${{ fromJson(steps.send-message.outputs.slack-result).response.channel }}
+    #     slack-emoji-name: thumbsup
+    #     slack-message-timestamp: ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }}
+    # #Send a thumbsdown if  pass the quality gate.
+    # - name: Send Slack Reaction To Message
+    #   uses: archive/github-actions-slack@v2.0.0
+    #   if: contains(steps.sonarstatus.outputs.status, 'false')
+    #   with:
+    #     slack-function: send-reaction
+    #     slack-bot-user-oauth-access-token: ${{ secrets.SLACK_SECRET }}
+    #     slack-channel: ${{ fromJson(steps.send-message.outputs.slack-result).response.channel }}
+    #     slack-emoji-name: thumbsdown
+    #     slack-message-timestamp: ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }}
+    #Terminate the workflow with error if the project did not pass the quality gate..
+    - name: Stop Pipeline On Error
+      if: contains(steps.sonarstatus.outputs.status, 'false')
+      run: |
+        exit 1

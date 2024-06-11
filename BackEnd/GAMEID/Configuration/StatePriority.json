@@ -1,0 +1,7 @@
+{
+  "StatePriority": {
+    "BaseSpin" : 99999,
+    "HoldAndSpin" : 0,
+    "LongTermHoldAndSpin" : 1
+  }
+}

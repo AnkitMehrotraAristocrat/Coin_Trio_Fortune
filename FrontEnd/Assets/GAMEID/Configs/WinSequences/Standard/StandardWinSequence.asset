@@ -1,0 +1,827 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f6fb14975e49d7bb4ecb078ba15bf, type: 3}
+  m_Name: StandardWinSequence
+  m_EditorClassIdentifier: 
+  presenterSettings:
+  - requirementName: BigWin
+    requirementIdent: 191B1D
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+  - requirementName: Coins
+    requirementIdent: C00B0B
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+  - requirementName: Fireworks
+    requirementIdent: 087454
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+  - requirementName: Rollup
+    requirementIdent: 709560
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0.55
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0.55
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0.55
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0.55
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0.55
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1.55
+  - requirementName: RollupValue
+    requirementIdent: 71C7D4
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0.05
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0.05
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0.05
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0.05
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0.05
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1.05
+      additionalDuration: 1
+  - requirementName: BigWinMusic1
+    requirementIdent: 776952
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: BigWinMusic2
+    requirementIdent: 48E877
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: BigWinMusic3
+    requirementIdent: 78BB99
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: BigWinMusic4
+    requirementIdent: 7D4070
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: BigWinMusic5
+    requirementIdent: 34C25E
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: BigWinMusic6
+    requirementIdent: 5C111E
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 1
+  - requirementName: RollupAudio
+    requirementIdent: A9D249
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: WinMetaEvent
+    requirementIdent: D99824
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: WinFrame
+    requirementIdent: 7B289A
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 1

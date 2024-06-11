@@ -1,0 +1,173 @@
+// This file is generated at the backend for all window combinations
+// If custom position map is required rename this file from Example_PositionMap.json to PositionMap.json
+//
+// NOTE: If you choose to use a custom map...
+// Non-standard moves will require new features with persistant position data to process   
+// window cell swaps (search ProcessWindowCellSwaps for examples of how built-in features do it).
+// Non-standard moves are defined as moves that cause a visual location change (anchored at bottom-left, window size is not relevant)
+// Note that with state/window based data you'd only consider the data for the window you are transitioning to 
+//
+{
+    "Data": [
+        {
+            "FromHeight": 3,
+            "ToHeight": 3,
+            "ReelWindows": [
+              "Main",
+              "HoldAndSpin"
+            ],
+            "PositionMaps": [
+              {
+                "Main": {
+                  "ReelIndex": 0,
+                  "SymbolIndex": 0
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 0,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 1,
+                  "SymbolIndex": 0
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 1,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 2,
+                  "SymbolIndex": 0
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 2,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 3,
+                  "SymbolIndex": 0
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 3,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 4,
+                  "SymbolIndex": 0
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 4,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 0,
+                  "SymbolIndex": 1
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 5,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 1,
+                  "SymbolIndex": 1
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 6,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 2,
+                  "SymbolIndex": 1
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 7,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 3,
+                  "SymbolIndex": 1
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 8,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 4,
+                  "SymbolIndex": 1
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 9,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 0,
+                  "SymbolIndex": 2
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 10,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 1,
+                  "SymbolIndex": 2
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 11,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 2,
+                  "SymbolIndex": 2
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 12,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 3,
+                  "SymbolIndex": 2
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 13,
+                  "SymbolIndex": 0
+                }
+              },
+              {
+                "Main": {
+                  "ReelIndex": 4,
+                  "SymbolIndex": 2
+                },
+                "HoldAndSpin": {
+                  "ReelIndex": 14,
+                  "SymbolIndex": 0
+                }
+              }
+            ]
+        }
+    ]
+}

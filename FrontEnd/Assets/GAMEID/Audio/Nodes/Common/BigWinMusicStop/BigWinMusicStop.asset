@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef1808c2c234aa0a5a54bb80de805b9, type: 3}
+  m_Name: BigWinMusicStop
+  m_EditorClassIdentifier: 
+  trackName: WinMusic
+  behaviors:
+    array:
+    - behaviorLink: {fileID: 11400000, guid: afb3f1db68ed18847ab36c2fff9303ca, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 7157850dbbeef1a4b87558cff951c79c, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 822e7dbfefb82a441986da1a64f697c2, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 6449fe0128766b044a63556771131b15, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 1adc462bcebcb0c4d930278648bd53ec, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 2ba898da76201c44093317b577a8c384, type: 2}
+  clipSource: {fileID: 11400000, guid: 6ee5ceca6fa780e4d838936c67201f7a, type: 2}

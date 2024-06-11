@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea0cf0fc807e8e4787540ad2671870d, type: 3}
+  m_Name: FreeSpinMechanicConfiguration
+  m_EditorClassIdentifier: 
+  _id: FreeSpin
+  _subGraphElements:
+  - FeatureSubgraph: {fileID: 11400000, guid: 9b551d81d7073204085e075d97c8351f, type: 2}
+    ExitTransitions:
+    - ExitStatePort: FreeSpinToBaseSpinTransitionState (Entered)
+      DestinationNode: DeactivateAutospinState
+      DestinationType: 0
+  _triggerElements:
+  - Trigger: {fileID: 11400000, guid: 24e06a7338c12cf47bf004d7b4fdab66, type: 2}
+    StateNodes:
+    - TargetNode: BaseRollupState
+      DestinationNode: FreeSpinsSubgraph
+      DestinationType: 1
+    - TargetNode: AnimateScatterState
+      DestinationNode: FreeSpinsSubgraph
+      DestinationType: 1
+  _mechanicElements:
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3592600926305812402, guid: e6240c28aff0f024c9f236632ce42909,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3336436100142327933, guid: dea62f56edc4096479c505733e8e5367,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/RecoveryPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 2250247420060546144, guid: 7e2994f86c019354394da5aaa2fd6c37,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/BonusSpinEndPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6360005033274178316, guid: c3728520fc59dd24a9a043589206ad5a,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/GameStatePresenters/
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6831442220030339849, guid: 7f1434e2c5028a547bf304c29c310d36,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/DeductBonusSpinPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 7709476323039932342, guid: 9d463acf2b3788b48bf6e6c08350cd1e,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/TimeDelayPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 2607441969186402157, guid: 83936e6ca7f75a148b8655209997a2ec,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/BonusGameActivatingStatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3244230769514285020, guid: 6806048f4ed9fa749b00764b7ddf2c9a,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/ReelsOutcomePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 5169934864859874678, guid: 167803bea94c6ea4ba8844bce8b7b772,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/NextReelStripsClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 9098271465222731579, guid: 7f2d32c93babc3d43b483b1c4cc33c17,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/DynamicSymbolClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 332529706631252102, guid: a472184b175e4d848beee8de15658b0f, type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6477406467653860168, guid: 2d6b418e7c1c06b4dae5512fe5d1cf66,
+      type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 7094159670271589518, guid: 11ef44fd6c5dc8d4285bfa7786d8dc98,
+      type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 2712095563723373880, guid: 2e0fabd31af83db4d9ab9e4eb185134a,
+      type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6959654875806739405, guid: 4e9a828155b0294408a2ff146a3f9941,
+      type: 3}
+    ScenePath: SlotMachine/AudioContainer/StateDrivenAudio
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 8640452259221274903, guid: dea876ad48ae3dc469a9eb9874a472a0,
+      type: 3}
+    ScenePath: SlotMachine/AudioContainer/StateDrivenAudio/
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component: Milan.FrontEnd.Slots.WinCore.WinSequences.V2.WinStartSequencer, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: FreeSpinWinSequencesParent
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine
+    ReplaceExisting: 0
+    StateNodes:
+    - FreeSpinRollupState
+  - Type: 0
+    Component: Milan.FrontEnd.Slots.WinCore.RoundWinAmountProvider, Assembly_MilanSlots_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: FreeSpinWinSequencesParent
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component: Milan.FrontEnd.Slots.WinCore.WinSequences.V2.MultiplierWinSequenceSelector,
+      Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: FreeSpinWinSequencesParent
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine
+    ReplaceExisting: 0
+    StateNodes: []

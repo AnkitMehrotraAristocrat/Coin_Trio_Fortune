@@ -1,0 +1,34 @@
+#region Using
+
+using System.Linq;
+using Milan.FrontEnd.Core;
+
+#endregion
+
+namespace Slotsburg.##GAMEID##
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ##NAME## : BaseTrigger
+    {
+        #region Models
+        
+        //private readonly Model _model;
+        
+        #endregion
+        
+        public ##NAME##(ServiceLocator serviceLocator)
+        {
+            // Set up model here like so...
+            // _model = serviceLocator.GetOrCreate<Model>();
+        }
+        
+        public override bool IsTriggered()
+        {
+            // Do the work to determine if the trigger is true or false.
+            
+            return false;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        BUILD_NUMBER: 1.0.1
+        JFROG_USERNAME: nuget-service
+        JFROG_PASSWORD: TODO-FILL-THIS
+    ports:
+      - 8888:8080
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f6fb14975e49d7bb4ecb078ba15bf, type: 3}
+  m_Name: StandardReelsWinSequence
+  m_EditorClassIdentifier: 
+  presenterSettings:
+  - requirementName: CyclingWinLineView
+    requirementIdent: 7C9795
+    levelSettings:
+    - winLevel: 0
+      winLevelIdent: A9EA93
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2
+      winLevelIdent: 06B2EE
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4
+      winLevelIdent: CE3C18
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 6
+      winLevelIdent: 5044B2
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 8
+      winLevelIdent: 9040DD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 10 (Big Win)
+      winLevelIdent: 19C306
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 20 (Huge Win)
+      winLevelIdent: BA6CC0
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 30 (Massive Win)
+      winLevelIdent: 864D16
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 40 (Gigantic Win)
+      winLevelIdent: D9D5EB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 50 (Spectacular Win)
+      winLevelIdent: 5C9642
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 100 (Inconceivable Win)
+      winLevelIdent: C144BB
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0

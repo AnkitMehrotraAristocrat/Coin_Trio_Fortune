@@ -1,0 +1,345 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f6fb14975e49d7bb4ecb078ba15bf, type: 3}
+  m_Name: JackpotWinSequence
+  m_EditorClassIdentifier: 
+  presenterSettings:
+  - requirementName: JPMusic1
+    requirementIdent: 38CA38
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: JPMusic2
+    requirementIdent: E58454
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: JPMusic5
+    requirementIdent: B35110
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: JackpotPresenter
+    requirementIdent: 67A750
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: CoinRain
+    requirementIdent: 05736C
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+  - requirementName: FlavorRain
+    requirementIdent: E26486
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 0
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 0
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 0
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 0
+      startDelay: 1
+      additionalDuration: 0
+  - requirementName: WinBox
+    requirementIdent: 6A798D
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+  - requirementName: FireworksIntro
+    requirementIdent: BC577B
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 0
+      additionalDuration: 0
+  - requirementName: JPMusic6
+    requirementIdent: E899CA
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 0
+      startDelay: 0
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+  - requirementName: RollupValue
+    requirementIdent: 04ED50
+    levelSettings:
+    - winLevel: 0 (Mini)
+      winLevelIdent: 159B8E
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 1 (Minor)
+      winLevelIdent: 1C3566
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 2 (Mega)
+      winLevelIdent: 2D2526
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 3 (Maxi)
+      winLevelIdent: 8301CD
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 4 (Major)
+      winLevelIdent: C36ADD
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0
+    - winLevel: 5 (Grand)
+      winLevelIdent: 5413B9
+      enabled: 1
+      startDelay: 1
+      additionalDuration: 0

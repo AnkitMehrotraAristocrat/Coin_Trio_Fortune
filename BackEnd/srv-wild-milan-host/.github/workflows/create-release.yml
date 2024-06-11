@@ -1,0 +1,42 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      semver:
+        type: choice
+        description: Choose a release type
+        options:
+        - patch
+        - minor
+        - major
+      description:
+        description: Pull request description (Optional)
+        default: 'No specific description provided.'
+
+jobs:
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Pull Request
+        id: cpr
+        run: |
+          message=$(echo "$(gh pr create -B master -H develop --title '[${{ github.event.inputs.semver }}] Create release' --body '${{ github.event.inputs.description }}' -a '${{github.actor}}')" | tr '\n' ' ')
+          echo "text=$message" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Set the newly created PR to auto merge
+        run: gh pr merge "${{join(steps.cpr.outputs.*, '\n')}}" --auto --merge
+        env: 
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Add build summary
+        shell: sh
+        run: |
+          echo '| Attribute | Value |' >> $GITHUB_STEP_SUMMARY
+          echo '| ------ | ------ |' >> $GITHUB_STEP_SUMMARY
+          echo '| Started By | @${{ github.actor }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Pull Request | ${{join(steps.cpr.outputs.*, '\n')}} |' >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,62 @@
+#region Using
+
+using Milan.FrontEnd.Core;
+using Milan.FrontEnd.Core.Data;
+using Newtonsoft.Json;
+using UnityEngine;
+
+#endregion
+
+namespace Slotsburg.##GAMEID##
+{
+    /// <summary>
+    /// Driver.
+    /// </summary>
+    public class ##NAME## : MonoBehaviour, ServiceLocator.IHandler, ServiceLocator.IService
+    {
+        /// <summary>
+        /// Milan Main Driver.
+        /// </summary>
+        [FieldRequiresGlobal] private MilanMainDriver _mainDriver = default;
+
+        /// <summary>
+        /// Service locator.
+        /// </summary>
+        [FieldRequiresGlobal] private ServiceLocator _serviceLocator = default;
+
+        /// <summary>
+        /// Model holding data to be deserialized.
+        /// </summary>
+        private IModel _genericModel = default;
+
+        /// <summary>
+        /// Called after service locator has been populated.
+        /// </summary>
+        public void OnServicesLoaded()
+        {
+            this.InitializeDependencies();
+
+            // SET THE SPECIFIC MODEL!!!
+            _genericModel = _serviceLocator.GetOrCreate<IModel>();
+
+            // DEFINE SERVER PAYLOAD STRING!!!
+            _mainDriver.RegisterPayloads(new MilanMainDriver.PayloadRegistrator()
+                .Add("ServerPayload", DeserializePayload)
+            );
+        }
+
+        /// <summary>
+        /// Deserialize the payload from the server and put it into our model.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="payloads"></param>
+        private void DeserializePayload(string json, MilanMainDriver.IPayloadWriter payloads)
+        {
+            var payload = JsonConvert.DeserializeObject<IPayloadData>(json);
+            payloads.Set(payload);
+
+            // SET YOUR DATA HERE!!!
+            //_genericModel.Data = payload;
+        }
+    }
+}

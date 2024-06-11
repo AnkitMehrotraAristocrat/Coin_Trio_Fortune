@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../parent.props" Condition="Exists('../../parent.props')" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AllowedReferenceRelatedFileExtensions>.pdb</AllowedReferenceRelatedFileExtensions>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
+    <IsOSX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</IsOSX>
+    <IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</IsLinux>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsWindows)'=='true'">
+    <DefineConstants>Windows</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsOSX)'=='true'">
+    <DefineConstants>OSX</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsLinux)'=='true'">
+    <DefineConstants>Linux</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>embedded</DebugType>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <Target Name="_ResolveCopyLocalNuGetPackagePdbsAndXml" Condition="$(CopyLocalLockFileAssemblies) == true" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).pdb')" Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != '' and Exists('%(RootDir)%(Directory)%(Filename).pdb')" />
+      <ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).xml')" Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != '' and Exists('%(RootDir)%(Directory)%(Filename).xml')" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ProductMadness.Phoenix.Api" Version="6.0.5" />
+    <PackageReference Include="ProductMadness.Phoenix.Core" Version="6.0.5" />
+    <PackageReference Include="ProductMadness.Wildcat.Milan.Shared.Dtos" Version="6.0.5" />
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Milan.Infrastructure" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="NewRelic.Agent.Api" Version="10.16.0" />
+    <PackageReference Include="System.Composition.AttributedModel" Version="7.0.0" />
+    <PackageReference Include="System.Composition.TypedParts" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(SlotProjectPath)" Condition="Exists('../../parent.props')" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+		<ProjectReference Include="..\..\srv-net-lib-core\Wildcat.Milan.Core\Wildcat.Milan.Core.csproj" Condition="'$(Configuration)'=='Debug'" />
+	</ItemGroup>-->
+
+  <ItemGroup>
+    <None Update="*.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="config.Features.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="config.QA.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!--<Target Name="Clean" AfterTargets="AfterClean">
+    <Message Importance="high" Text="Removing adapter from Milan Host... `$(ProjectDir)..\Milan.Host\plugins\adapters\$(TargetName)`" />
+    <RemoveDir Directories="$(ProjectDir)..\Milan.Host\plugins\adapters\$(TargetName)" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Message Importance="high" Text="Copying prebuilt service and storage adapters to the Milan Host plugins folder..." />
+    <MakeDir Directories="$(ProjectDir)..\Milan.Host\plugins" />
+    <MakeDir Directories="$(ProjectDir)..\Milan.Host\plugins\adapters" />
+    <ItemGroup>
+      <ServiceAdapterAndConfiguration Include="$(TargetDir)\**\*.*" />
+    </ItemGroup>
+    <Message Importance="high" Text="Copying the game backend and associated configuration files to the Milan Host plugins folder..." />
+    <Copy SourceFiles="@(ServiceAdapterAndConfiguration)" DestinationFolder="$(ProjectDir)..\Milan.Host\plugins\adapters\$(TargetName)\%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>-->
+
+
+</Project>

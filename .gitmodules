@@ -1,0 +1,3 @@
+[submodule "BackEnd/srv-wild-milan-host"]
+	path = BackEnd/srv-wild-milan-host
+	url = git@github.com:ProductMadness/srv-wild-milan-host.git

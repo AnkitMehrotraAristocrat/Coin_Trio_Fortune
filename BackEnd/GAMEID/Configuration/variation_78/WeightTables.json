@@ -1,0 +1,176 @@
+{
+  "WeightTables": [
+    {
+      "name": "BaseReelSets",
+      "entries": [
+        {
+          "weight": 24,
+          "value": "BaseReels_PIC1"
+        },
+        {
+          "weight": 35,
+          "value": "BaseReels_PIC2"
+        },
+        {
+          "weight": 35,
+          "value": "BaseReels_PIC3"
+        },
+        {
+          "weight": 38,
+          "value": "BaseReels_PIC4"
+        },
+        {
+          "weight": 25,
+          "value": "BaseReels_PIC5"
+        },
+        {
+          "weight": 32,
+          "value": "BaseReels_ACE"
+        },
+        {
+          "weight": 30,
+          "value": "BaseReels_KING"
+        },
+        {
+          "weight": 28,
+          "value": "BaseReels_QUEEN"
+        },
+        {
+          "weight": 28,
+          "value": "BaseReels_JACK"
+        },
+        {
+          "weight": 25,
+          "value": "BaseReels_TEN"
+        },
+        {
+          "weight": 20,
+          "value": "BaseReels_NINE"
+        }
+      ]
+    },
+    {
+      "name": "ANSymbol",
+      "entries": [
+        {
+          "weight": 1,
+          "value": "Wild"
+        },
+        {
+          "weight": 15,
+          "value": "PIC1"
+        },
+        {
+          "weight": 15,
+          "value": "PIC2"
+        },
+        {
+          "weight": 20,
+          "value": "PIC3"
+        },
+        {
+          "weight": 25,
+          "value": "PIC4"
+        },
+        {
+          "weight": 30,
+          "value": "ACE"
+        },
+        {
+          "weight": 20,
+          "value": "KING"
+        },
+        {
+          "weight": 25,
+          "value": "KING"
+        },
+        {
+          "weight": 25,
+          "value": "QUEEN"
+        }
+      ]
+    },
+    {
+      "name": "CorPrizes",
+      "entries": [
+        {
+          "weight": 50,
+          "value": "0.2"
+        },
+        {
+          "weight": 150,
+          "value": "0.4"
+        },
+        {
+          "weight": 200,
+          "value": "0.6"
+        },
+        {
+          "weight": 300,
+          "value": "1"
+        },
+        {
+          "weight": 300,
+          "value": "1.5"
+        },
+        {
+          "weight": 125,
+          "value": "2"
+        },
+        {
+          "weight": 75,
+          "value": "3"
+        },
+        {
+          "weight": 50,
+          "value": "4"
+        },
+        {
+          "weight": 35,
+          "value": "5"
+        },
+        {
+          "weight": 10,
+          "value": "7"
+        },
+        {
+          "weight": 5,
+          "value": "10"
+        },
+        {
+          "weight": 5,
+          "value": "Mini"
+        },
+        {
+          "weight": 4,
+          "value": "Minor"
+        },
+        {
+          "weight": 3,
+          "value": "Major"
+        },
+        {
+          "weight": 2,
+          "value": "Grand"
+        }
+      ]
+    },
+    {
+      "name": "ScatSelection",
+      "entries": [
+        {
+          "weight": 1,
+          "value": "SCAT_RED"
+        },
+        {
+          "weight": 1,
+          "value": "SCAT_GREEN"
+        },
+        {
+          "weight": 1,
+          "value": "SCAT_BLUE"
+        }
+      ]
+    }
+  ]
+}

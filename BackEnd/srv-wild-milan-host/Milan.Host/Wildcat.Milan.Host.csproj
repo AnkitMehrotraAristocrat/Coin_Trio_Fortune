@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--GENERAL CONFIGURATION-->
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <Version>2.4.0</Version>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+    <IsPackable>true</IsPackable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DefineConstants Condition="Exists('../../parent.props')">$(DefineConstants);SlotIncluded</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\version.json" Link="version.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <!--PACKAGE REFERENCES-->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.11" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <!-- should point to 3.3.* for release -->
+    <!-- END should point to 3.3.* for release -->
+    <PackageReference Include="Polly" Version="7.2.4" />
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="3.2.3" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.PlaceholderCore" Version="3.2.3" />
+    <PackageReference Include="Steeltoe.Management.Abstractions" Version="3.2.3" />
+    <PackageReference Include="Steeltoe.Management.EndpointCore" Version="3.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.5.0" />
+    <PackageReference Include="System.Composition.TypedParts" Version="7.0.0" />
+    <PackageReference Include="System.Net.WebSockets" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Asp.Versioning.Mvc" Version="7.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\wild-milan-game-development-template\BackEnd\GAMEID\GAMEID.csproj" Condition="!Exists('../parent.props')"/>-->
+    <ProjectReference Include="$(SlotProjectPath)" Condition="Exists('../../parent.props')" />
+    <ProjectReference Include="..\Milan.Host.Core\Wildcat.Milan.Host.Core.csproj" />
+    <ProjectReference Include="..\Storage\Milan.Storage.FileSystem\Wildcat.Milan.Storage.FileSystem.csproj" />
+    <ProjectReference Include="..\Storage\Milan.Storage.MongoDb\Wildcat.Milan.Storage.MongoDb.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Production.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Staging.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="version.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="ParentPropsExistsNot" AfterTargets="Build" Condition="!Exists('../../parent.props')">
+    <Message Importance="high" Text="'parent.props' doesn't exists." />
+  </Target>
+
+  <Target Name="ParentPropsExists" AfterTargets="Build" Condition="Exists('../../parent.props')">
+    <Message Importance="high" Text="'parent.props' exists." />
+    <Message Importance="high" Text="$(SlotProjectPath)" />
+  </Target>
+
+  <!--<Target Name="CleanPlugins" AfterTargets="Clean">
+		<Message Importance="high" Text="Removing plugins..." ContinueOnError="true"/>
+		<RemoveDir Directories="plugins\backend\" />
+	</Target>-->
+
+</Project>

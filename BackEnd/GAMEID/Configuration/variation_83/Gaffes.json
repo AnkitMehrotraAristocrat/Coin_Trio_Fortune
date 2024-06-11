@@ -1,0 +1,53 @@
+{
+  "programs": [
+    {
+      "name": "[BG] Base : Select BaseReels_PIC1 ReelSet and land 5 random color SCAT Symbols",
+      "values": [
+        "SelectReelSet", 1, // BaseReels_PIC1 ReelSet from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 6, 7, 4, 7, 3, 1, 1, 1, 1, 1 // Land SCAT Symbol in Reel Window
+      ]
+    },
+    {
+      "name": "[BG] Base : Select BaseReels_PIC1 ReelSet and land WILD Symbols on Reel 2, 3 and 4",
+      "values": [
+        "SelectReelSet", 1, // BaseReels_PIC1 ReelSet from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 6, 32, 11, 28, 4 // Land SCAT Symbol in Reel Window
+      ]
+    },
+    {
+      "name": "[BG] Base : Select BaseReels_PIC5 ReelSet and land PIC5",
+      "values": [
+        "SelectReelSet", 134, // BaseReels_PIC5 ReelSet from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 16, 16, 16, 20, 48 // Land PIC5 in Reel Window
+      ]
+    },
+    {
+      "name": "[BG] Base : Select BaseReels_QUEEN ReelSet and land QUEEN",
+      "values": [
+        "SelectReelSet", 221, // Main from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 16, 16, 16, 20, 48 // Land QUEEN in Reel Window
+      ]
+    },
+    {
+      "name": "[BG] Base : Select BaseReels_ACE ReelSet and land 4 SCAT and ACE on Last Reel",
+      "values": [
+        "SelectReelSet", 158, // BaseReels_ACE ReelSet from BaseReelSets weight table
+        "GenerateSetOfRandomValues", 5, 4, 3, 6, 48 //Stops willd on all position from Base reelset
+      ]
+    },
+    {
+      "name": "[A06] Base: 2Spins : Trigger HnS, Blackout on first spin of HnS",
+      "values": [
+        "SelectReelSet", 14, 
+        "GenerateSetOfRandomValues", 65, 77, 75, 94, 29, // stop reel in base game with 14 COR position
+        "GenerateWindowWithStops", 1,1,1,1,1,1,1,1,1,1,1,1,1,1,11 // Stop COR on last position on first spin of HnS
+      ]
+    }
+  ],
+
+   "categories":  [
+    "SelectReelSet",
+    "GenerateSetOfRandomValues",
+    "GenerateWindowWithStops"
+  ]
+}

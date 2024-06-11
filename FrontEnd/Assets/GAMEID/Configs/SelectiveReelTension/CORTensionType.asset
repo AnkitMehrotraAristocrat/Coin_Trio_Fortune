@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197d37ea06b1c674486a3c7d077a56dd, type: 3}
+  m_Name: CORTensionType
+  m_EditorClassIdentifier: 
+  SymbolId: 10
+  Priority: 0
+  Prefab: {fileID: 5638953166200086465, guid: 45a2da3b600a92d4fa16e0af9c91524b, type: 3}
+  AnimProviderSO: {fileID: 11400000, guid: b48834464ecad9045b73929d274d1b50, type: 2}
+  SoundProviderSO: {fileID: 11400000, guid: ea3e9e2b708df334db22fae0b70ebf68, type: 2}
+  _symbolCountThreshold: 5

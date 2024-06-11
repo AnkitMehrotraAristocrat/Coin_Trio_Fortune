@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92aa8a5e208c4b6a9098d3b63ac69b29, type: 3}
+  m_Name: AudioEvents
+  m_EditorClassIdentifier: 
+  audioEvents:
+  - eventName: UnmuteAllAudio
+    audioNode: {fileID: 11400000, guid: 3652eaf9045d119498541d2e35cd07fb, type: 2}
+  - eventName: MuteAllAudio
+    audioNode: {fileID: 11400000, guid: 45fcfaaa2d0b0984485746ebe7e477e8, type: 2}
+  - eventName: MuteAllMusic
+    audioNode: {fileID: 11400000, guid: 4d7a9e78360531e4ba2b216839553b0b, type: 2}
+  - eventName: MuteAllSFX
+    audioNode: {fileID: 11400000, guid: 69ec4eda5674157438a93a981fe2a658, type: 2}
+  - eventName: Anticipation1Reel
+    audioNode: {fileID: 11400000, guid: 6e8cc556053ec4143a24420941357a46, type: 2}
+  - eventName: Anticipation2Reels
+    audioNode: {fileID: 11400000, guid: 3e487459528c41647af84fbb63b50ba4, type: 2}
+  - eventName: Anticipation3Reels
+    audioNode: {fileID: 11400000, guid: 682e3c8d3a971fb42a457ae451b5b9f0, type: 2}
+  - eventName: AnticipationQuickStop
+    audioNode: {fileID: 11400000, guid: 8c257f748aea14746a3a9dfa19b7c753, type: 2}
+  - eventName: AnticipationStop
+    audioNode: {fileID: 11400000, guid: 9885aa119752b154ba670652d52c895f, type: 2}
+  - eventName: BigWinMusicIntro
+    audioNode: {fileID: 11400000, guid: 90161bb762dc63b4681f8c4aa98b1229, type: 2}
+  - eventName: BigWinMusic1
+    audioNode: {fileID: 11400000, guid: 3d519074774be56428ee8e31fbc6d727, type: 2}
+  - eventName: BigWinMusic2
+    audioNode: {fileID: 11400000, guid: a21ed12c4063f9144aec5dc613beda95, type: 2}
+  - eventName: BigWinMusic3
+    audioNode: {fileID: 11400000, guid: d6ed96a26244b7444899f21a014dee80, type: 2}
+  - eventName: BigWinMusic4
+    audioNode: {fileID: 11400000, guid: 09c4b4ab282f714459bcc5932d5fb6a4, type: 2}
+  - eventName: BigWinMusic5
+    audioNode: {fileID: 11400000, guid: 902c5edb18674b5469edfb904d90fe95, type: 2}
+  - eventName: BigWinMusic6
+    audioNode: {fileID: 11400000, guid: 5a1b7ffb2ed5bab4387b550e89329f0e, type: 2}
+  - eventName: BigWinMusicStop
+    audioNode: {fileID: 11400000, guid: 6be3d7af0d5a4144fa72aff65692254b, type: 2}
+  - eventName: ClickConfirm
+    audioNode: {fileID: 11400000, guid: 940cc5155fe08614ab5dfa222b26b2c3, type: 2}
+  - eventName: CoinShower
+    audioNode: {fileID: 11400000, guid: 2502cd33b16d3464ea04a9827b18f187, type: 2}
+  - eventName: CoinShowerStop
+    audioNode: {fileID: 11400000, guid: 5c929cf1695cc894b975162f19f2b9ea, type: 2}
+  - eventName: Firework
+    audioNode: {fileID: 11400000, guid: d8e9d4150552c234cacce3d79a438bf9, type: 2}
+  - eventName: JPFireworksIntro
+    audioNode: {fileID: 11400000, guid: ecee444eb0395e54299ff3e10ffa0136, type: 2}
+  - eventName: JPMusic1
+    audioNode: {fileID: 11400000, guid: 2f79b6f98676dbf4d8c747b2f1832d8b, type: 2}
+  - eventName: JPMusic2
+    audioNode: {fileID: 11400000, guid: b1549ae1dc22255419a2635378b21d41, type: 2}
+  - eventName: JPMusic3
+    audioNode: {fileID: 11400000, guid: 4969766d7be0d794dbf030ead900b089, type: 2}
+  - eventName: JPMusic4
+    audioNode: {fileID: 11400000, guid: 4e58a107b794b17448be0bd381f93368, type: 2}
+  - eventName: JPMusic5
+    audioNode: {fileID: 11400000, guid: a24d91a65b9ce16449aafa76502a2198, type: 2}
+  - eventName: JPMusic6
+    audioNode: {fileID: 11400000, guid: 8fba2e70e185a90469b04f51e8e41f0b, type: 2}
+  - eventName: JPStop
+    audioNode: {fileID: 11400000, guid: c3f2d4914c87be346a51a4e41631cb16, type: 2}
+  - eventName: MixerDefault
+    audioNode: {fileID: 11400000, guid: d54463770e2071947910c96bb87e3167, type: 2}
+  - eventName: PopupAppear
+    audioNode: {fileID: 11400000, guid: 647e8f32348096349ab364634b36a185, type: 2}
+  - eventName: PopupGoAway
+    audioNode: {fileID: 11400000, guid: 21854399fd0d30c45ad290a73f445c72, type: 2}
+  - eventName: ReelStop
+    audioNode: {fileID: 11400000, guid: 443ba9f18dbd1cf498682f5ed30bd920, type: 2}
+  - eventName: ReelStopQuick
+    audioNode: {fileID: 11400000, guid: 0f51f0618e0d4e647bf08e05f2d0cc83, type: 2}
+  - eventName: SSIntroLogo
+    audioNode: {fileID: 11400000, guid: b2919f691ca69fb4c9a18958186e09de, type: 2}
+  - eventName: SSIntroLogoGoAway
+    audioNode: {fileID: 11400000, guid: 2fbb7df400fe2e0479c742826fe6a1c4, type: 2}
+  - eventName: SSIntroPopups
+    audioNode: {fileID: 11400000, guid: 9fb0dbf0688ff874b853cedf0d82503c, type: 2}
+  - eventName: SSIntroPopups2
+    audioNode: {fileID: 11400000, guid: 9fb0dbf0688ff874b853cedf0d82503c, type: 2}
+  - eventName: SSIntroPopups3
+    audioNode: {fileID: 11400000, guid: 9fb0dbf0688ff874b853cedf0d82503c, type: 2}
+  - eventName: SSIntroPopups4
+    audioNode: {fileID: 11400000, guid: 9fb0dbf0688ff874b853cedf0d82503c, type: 2}
+  - eventName: SSMusicIntro
+    audioNode: {fileID: 11400000, guid: 4204e3facaabd0b4eb7c91ca4a9a2465, type: 2}
+  - eventName: SSMusicOutro
+    audioNode: {fileID: 11400000, guid: fcf59a1739ad2ba4c9abd3fa77e8bb6c, type: 2}
+  - eventName: AmbienceDay
+    audioNode: {fileID: 11400000, guid: 94c94b96157ec53448acb01049910751, type: 2}
+  - eventName: AmbienceNight
+    audioNode: {fileID: 11400000, guid: 1865a093d7bcb10448b7f60d94c9ecf8, type: 2}
+  - eventName: BGMusic
+    audioNode: {fileID: 11400000, guid: 4cc981426f86d644181d0364e84a3f8f, type: 2}
+  - eventName: BonusInit
+    audioNode: {fileID: 11400000, guid: 7eb73d1715bd83648a3866bd775f1f28, type: 2}
+  - eventName: BonusInitMusic
+    audioNode: {fileID: 11400000, guid: e90e5fe14b1408448bec78ea117564d1, type: 2}
+  - eventName: CoinRain
+    audioNode: {fileID: 11400000, guid: 5f41d80cc4282f54a9d64f4ebd7df3fa, type: 2}
+  - eventName: CORAnticipation1Reel
+    audioNode: {fileID: 11400000, guid: 5a4e067efb8972b4d86dd12650b3c210, type: 2}
+  - eventName: CORAnticipation2Reels
+    audioNode: {fileID: 11400000, guid: dfe77f3ce5263834bbbd69ee45143e91, type: 2}
+  - eventName: CORAnticipation3Reels
+    audioNode: {fileID: 11400000, guid: d336b6637d7fa1542b09cce22c52e788, type: 2}
+  - eventName: CORAnticipation4Reels
+    audioNode: {fileID: 11400000, guid: 66e60e8a51561e34d92347622cf3d2fc, type: 2}
+  - eventName: CORJPLand
+    audioNode: {fileID: 11400000, guid: a67c45d1ad42800418db2fd785e495a5, type: 2}
+  - eventName: CORLand
+    audioNode: {fileID: 11400000, guid: 76c42abee89ce8d45a24d4639e79bfcc, type: 2}
+  - eventName: CORTrigger
+    audioNode: {fileID: 11400000, guid: f9b0f51b3a69ab04683c448e226a673f, type: 2}
+  - eventName: CORTransformToCredit
+    audioNode: {fileID: 11400000, guid: 6e7690020c6650e4bbd45a2ab3099daf, type: 2}
+  - eventName: CORTransformToJP
+    audioNode: {fileID: 11400000, guid: 52885a2ddd9f8984e94bf2e49a33f2f2, type: 2}
+  - eventName: CORZipzap
+    audioNode: {fileID: 11400000, guid: 430d178b93c86e7428214a971567ab42, type: 2}
+  - eventName: FGMusic
+    audioNode: {fileID: 11400000, guid: 989a9b4966ab90048831830c84c02863, type: 2}
+  - eventName: FGMusicResume
+    audioNode: {fileID: 11400000, guid: 98e0853645f377e49bc80a36900dc68c, type: 2}
+  - eventName: FGMusicTerm
+    audioNode: {fileID: 11400000, guid: f8e8f236f88c6544b8ee313cad7784fc, type: 2}
+  - eventName: FGRetriggerBanner
+    audioNode: {fileID: 11400000, guid: 4a4d7a1820234027b2d8ad0055a568b4, type: 2}
+  - eventName: GrowBoost
+    audioNode: {fileID: 11400000, guid: 76165afdee6cd6a41bd2664756a4f391, type: 2}
+  - eventName: GrowLand
+    audioNode: {fileID: 11400000, guid: fd95897e29ceebc4082a83350f1f637a, type: 2}
+  - eventName: HSMusic
+    audioNode: {fileID: 11400000, guid: e7cbca6e49f6dd149b94f938931ba12f, type: 2}
+  - eventName: HSMusicTerm
+    audioNode: {fileID: 11400000, guid: 05bd29d72177e1b459def3b80d11891c, type: 2}
+  - eventName: HSSpin
+    audioNode: {fileID: 11400000, guid: d9408599033371245b04c0c206781166, type: 2}
+  - eventName: HSTally
+    audioNode: {fileID: 11400000, guid: 94975890ff94dcb42ab880724dc2bfef, type: 2}
+  - eventName: HSTrans
+    audioNode: {fileID: 11400000, guid: 9645ceaeaa3920740b9a0985c0d5e8b3, type: 2}
+  - eventName: HSTrans2
+    audioNode: {fileID: 11400000, guid: 8b96a7f4bc37c8349b4224725508da48, type: 2}
+  - eventName: HSWinMeterAppear
+    audioNode: {fileID: 11400000, guid: 9db49feb00d37d94aa370de59ae03064, type: 2}
+  - eventName: ReelsGrow
+    audioNode: {fileID: 11400000, guid: d74c2305b2aceb5418e215ab26bdd0b2, type: 2}
+  - eventName: Rollup
+    audioNode: {fileID: 11400000, guid: 565e49391b33063438964884394a6679, type: 2}
+  - eventName: RollupStop
+    audioNode: {fileID: 11400000, guid: 1900c3b685333ec47a0150325d4b4deb, type: 2}
+  - eventName: ScatterLand1
+    audioNode: {fileID: 11400000, guid: 5c57f1888253a0c409889977a504e9b5, type: 2}
+  - eventName: ScatterLand2
+    audioNode: {fileID: 11400000, guid: cf613f809e7734948b82f8298918c1eb, type: 2}
+  - eventName: ScatterLand3
+    audioNode: {fileID: 11400000, guid: 9a8d348dd2ea6134da189999a454910f, type: 2}
+  - eventName: ScatterLand4
+    audioNode: {fileID: 11400000, guid: 1d21cc084d7710945b8ee279fc03ca65, type: 2}
+  - eventName: ScatterLand5
+    audioNode: {fileID: 11400000, guid: ebc29715b391ccd46aa3dd59c01f5713, type: 2}
+  - eventName: ScatterWin
+    audioNode: {fileID: 11400000, guid: 78c0f0f42ad92604a8eaa26e1229899a, type: 2}
+  - eventName: SpinCounterAppear
+    audioNode: {fileID: 11400000, guid: 1c8e4364f7380174b9de590ae655bc11, type: 2}
+  - eventName: SSMusic
+    audioNode: {fileID: 11400000, guid: 3a9e420ca9ebe494383010e8efabf3bc, type: 2}
+  - eventName: WildLand
+    audioNode: {fileID: 11400000, guid: c627aafa7e5b3db468368470b1c57f79, type: 2}

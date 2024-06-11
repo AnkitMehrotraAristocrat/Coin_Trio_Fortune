@@ -1,0 +1,678 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc67578e3b3284029b9cadfcbcace631, type: 3}
+  m_Name: AnimationAudioEvents
+  m_EditorClassIdentifier: 
+  animAudioEvents:
+  - triggerTag: PopupFeatureIntro_Growth.PopupAnimator
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: FGBanner
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: Reel4.ReelAnimator
+    audioClipEvents:
+    - clipName: SpinLoopStandardSingle
+      duration: 0.16666667
+      looping: 1
+      events:
+        array: []
+    - clipName: SpinStartStandard
+      duration: 0.38333333
+      looping: 0
+      events:
+        array: []
+    - clipName: SpinStopStandard
+      duration: 0.51666665
+      looping: 0
+      events:
+        array:
+        - eventName: AnticipationStop
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: SpinQuickstopStandard
+      duration: 0.033333335
+      looping: 0
+      events:
+        array:
+        - eventName: ReelStopQuick
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: SpinStopAnticipationStandard
+      duration: 1.9666667
+      looping: 0
+      events:
+        array: []
+  - triggerTag: CoinShower.CoinRain
+    audioClipEvents:
+    - clipName: coinRainStart
+      duration: 0
+      looping: 1
+      events:
+        array:
+        - eventName: CoinShower
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: coinRainStop
+      duration: 2
+      looping: 1
+      events:
+        array:
+        - eventName: CoinShowerStop
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: CoinRain.CoinRain
+    audioClipEvents:
+    - clipName: coinRainStart
+      duration: 0
+      looping: 1
+      events:
+        array: []
+    - clipName: coinRainStop
+      duration: 2
+      looping: 1
+      events:
+        array: []
+  - triggerTag: SpinCounter.SpinCounter
+    audioClipEvents:
+    - clipName: Default
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: Intro
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: Loop
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: Outro
+      duration: 0.8333333
+      looping: 0
+      events:
+        array: []
+    - clipName: Reset
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: Countdown
+      duration: 1
+      looping: 0
+      events:
+        array: []
+  - triggerTag: MultiplierTab_Red.ZoneMultiplierTags
+    audioClipEvents:
+    - clipName: 2x_Idle
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: 4x_Idle
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: 8x_Idle
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: 32x_Idle
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: 16x_Idle
+      duration: 1
+      looping: 1
+      events:
+        array: []
+    - clipName: 2x_Transition
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: 4x_Transition
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: 8x_Transition
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: 16x_Transition
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: Intro
+      duration: 1
+      looping: 0
+      events:
+        array:
+        - eventName: MultZonesAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: Disabled
+      duration: 0
+      looping: 0
+      events:
+        array: []
+  - triggerTag: PopupFeatureIntro.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: PopupFeatureRetrigger.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: FGRetriggerBanner
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: FGMusicResume
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: PopupStarSurgeIntro.PopupStarSurgeIntroAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupStarSurgeIntroIntro
+      duration: 2.4333334
+      looping: 0
+      events:
+        array:
+        - eventName: SSMusicIntro
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: SSIntroLogo
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: SSIntroPopups
+          offset: 0.5
+          loop: 0
+          fadeInDuration: 0
+        - eventName: SSIntroPopups2
+          offset: 0.75
+          loop: 0
+          fadeInDuration: 0
+        - eventName: SSIntroPopups3
+          offset: 1
+          loop: 0
+          fadeInDuration: 0
+        - eventName: None
+          offset: 1.25
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupStarSurgeIntroLoop
+      duration: 0
+      looping: 1
+      events:
+        array: []
+    - clipName: PopupStarSurgeIntroOutro
+      duration: 0.8666667
+      looping: 0
+      events:
+        array:
+        - eventName: SSIntroLogoGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupStarSurgeIntroIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: PopupStarSurgeResult.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: Anticipation_Reel2.ReelAnticipation
+    audioClipEvents:
+    - clipName: ReelAnticipation_Disabled
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: ReelAnticipation_Disable
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: ReelAnticipation_Enable
+      duration: 0
+      looping: 0
+      events:
+        array:
+        - eventName: Anticipation3Reels
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: Anticipation_Reel3.ReelAnticipation
+    audioClipEvents:
+    - clipName: ReelAnticipation_Disabled
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: ReelAnticipation_Disable
+      duration: 1
+      looping: 0
+      events:
+        array: []
+    - clipName: ReelAnticipation_Enable
+      duration: 0
+      looping: 0
+      events:
+        array:
+        - eventName: Anticipation2Reels
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: Anticipation_Reel4.ReelAnticipation
+    audioClipEvents:
+    - clipName: ReelAnticipation_Disabled
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: ReelAnticipation_Disable
+      duration: 1
+      looping: 0
+      events:
+        array:
+        - eventName: AnticipationQuickStop
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: ReelAnticipation_Enable
+      duration: 0
+      looping: 0
+      events:
+        array:
+        - eventName: Anticipation1Reel
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: FreeGamesIntro.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: FreeGamesRetrigger.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: FGRetriggerBanner
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+        - eventName: FGMusicResume
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: FreeGamesComplete.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+  - triggerTag: PopupFeatureOutro.PopupAnimator_Custom
+    audioClipEvents:
+    - clipName: PopupIntro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupAppear
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupLoop
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupOutro
+      duration: 0.5
+      looping: 0
+      events:
+        array:
+        - eventName: PopupGoAway
+          offset: 0
+          loop: 0
+          fadeInDuration: 0
+    - clipName: PopupIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonIdle
+      duration: 0
+      looping: 0
+      events:
+        array: []
+    - clipName: PopupButtonPress
+      duration: 0.41666666
+      looping: 0
+      events:
+        array:
+        - eventName: ClickConfirm
+          offset: 0
+          loop: 0
+          fadeInDuration: 0

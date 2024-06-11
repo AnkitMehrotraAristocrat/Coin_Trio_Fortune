@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: snapvm-schemas
+  m_EditorClassIdentifier: 
+  m_GroupName: snapvm-schemas
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 15a96146271d547ff823cd88b86f806c
+  m_SerializeEntries:
+  - m_GUID: f0cffc54ea8b241248a53604d0dc489f
+    m_Address: ViewModels/AnimationViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 39a4ba85050f84c44b81fef4b79fcc20
+    m_Address: ViewModels/ButtonViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 00ffbdd6358f443eea33303ebd6d20bf
+    m_Address: ViewModels/LabelViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: e3fcbc31313c447c8b8737dae4d286af
+    m_Address: ViewModels/ToggleViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: ece6b61ea9ad550438a7f379d3ec3d69
+    m_Address: Rewards/ViewModels/ExtraRewardsViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: f4128f1caa8d343c8a26e4530908dac7
+    m_Address: Rewards/ViewModels/RewardPanelViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 72c4e4b1e16d6482788b194dcefd6706
+    m_Address: Rewards/ViewModels/RewardsListViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 2f2bff8b0933744fca0d749215051cec
+    m_Address: Rewards/ViewModels/RewardViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 2c8695cd4c0e6421fb5f4ba57e21e6d9
+    m_Address: Seasons/ViewModels/SeasonInfoPanelViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 4a57bd67aa47840a08ee78acd8f133a2
+    m_Address: ViewModels/TopHudViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 9ebf0bf525e3fac48afb147655f914b6
+    m_Address: ViewModels/WalletViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: 2a0e96abf2c80c84988277bac82dbfaa
+    m_Address: ViewModels/SlotHudViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  - m_GUID: cad260aaf97644fb9b108ab4b979f219
+    m_Address: ViewModels/SlotSpinButtonViewModel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SnapVM/ViewModels
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1b89f8a255ae24968ba67ee98d446928, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 270aa4b3ec5ef430aae7c878f839eb29, type: 2}
+    - {fileID: 11400000, guid: ec344ab3b551a4f0a9624d09cc83016e, type: 2}

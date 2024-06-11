@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7385246411888823187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7385246411888823186}
+  - component: {fileID: 7385246411888823208}
+  - component: {fileID: 7385246411888823209}
+  - component: {fileID: 7385246411888823212}
+  - component: {fileID: 7385246411888823213}
+  - component: {fileID: 7385246411888823218}
+  - component: {fileID: 7385246411888823217}
+  m_Layer: 0
+  m_Name: ReelView_HoldAndSpin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7385246411888823186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7385246411888823208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5953518e3f52341ab8e5582dce28d614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7385246411888823209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9cd4bc3a2da4e29b01eb67e703ec34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7385246411888823212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60a90de97839ea4bbf63b06d90fa920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7385246411888823213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28607e291f1514252a9cc76e4f7831a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7385246411888823218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b17ce068712d0f46998a1e74504c2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _starts:
+    array:
+    - {fileID: 11400000, guid: 9a9f3615f12721f4e835364a0aae3f70, type: 2}
+  _stops:
+    array:
+    - {fileID: 11400000, guid: 5f85b2d8ebd95bd4eb4b831e4a2a2575, type: 2}
+    - {fileID: 11400000, guid: abe3cb3260f77d74489fba1406a50054, type: 2}
+  _quickStops:
+    array:
+    - {fileID: 11400000, guid: e797420fcd8878e45989b116f1fe51f6, type: 2}
+    - {fileID: 11400000, guid: 11e517be44c7dde43be41afbdc560059, type: 2}
+  _loopTime: 1
+  _idleStateTag: idle
+  _loopStateTag: spinLoop
+--- !u!114 &7385246411888823217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385246411888823187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afcd363a96356d48b52b50988dfa641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clientModelTag: HoldAndSpin

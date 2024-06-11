@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea0cf0fc807e8e4787540ad2671870d, type: 3}
+  m_Name: HoldAndSpinMechanicConfiguration
+  m_EditorClassIdentifier: 
+  _id: HoldAndSpin
+  _subGraphElements:
+  - FeatureSubgraph: {fileID: 11400000, guid: e9df9555edb71444695f49db81f79a37, type: 2}
+    ExitTransitions:
+    - ExitStatePort: HoldAndSpinToBaseGameTransitionState (Entered)
+      DestinationNode: DeactivateAutospinState
+      DestinationType: 0
+  - FeatureSubgraph: {fileID: 11400000, guid: 60727f73a0b433244b1d58dc66b93f00, type: 2}
+    ExitTransitions:
+    - ExitStatePort: HoldAndSpinAwardShowResultsState (Entered)
+      DestinationNode: DeactivateAutospinState
+      DestinationType: 0
+  _triggerElements:
+  - Trigger: {fileID: 11400000, guid: a65f9a29ee83a004b88045ce1cab27eb, type: 2}
+    StateNodes:
+    - TargetNode: AnimateScatterState
+      DestinationNode: HoldAndSpinSubgraph
+      DestinationType: 1
+    - TargetNode: BaseRollupState
+      DestinationNode: HoldAndSpinSubgraph
+      DestinationType: 1
+  - Trigger: {fileID: 11400000, guid: abf9b066aab30a54bb56257ee65dfcfa, type: 2}
+    StateNodes:
+    - TargetNode: CheckForBlackoutState
+      DestinationNode: HoldAndSpinAwardSubgraph
+      DestinationType: 1
+  _mechanicElements:
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 825658193843212070, guid: 73d3a81fde968e14f9d2b40421a21c21, type: 3}
+    ScenePath: SlotMachine/GameView/Jackpots
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6798447418833045662, guid: e461eac4aa8a3514ea8aedb3e0b7b963,
+      type: 3}
+    ScenePath: SlotMachine/GameView/Jackpots
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3101444984756395321, guid: 07bda025167db084dbe9d425ec975da6,
+      type: 3}
+    ScenePath: SlotMachine/GameView
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 2957895308345865900, guid: 110c81faf099e824d8f2d0effae678f0,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/DynamicSymbolClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 530184015535681514, guid: aa7cfe9fd8aeabe40b7b7407d58ece0d, type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 5976101667138199555, guid: 1e4963b62717be94b9c798c14a34311e,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/ReelsOutcomePresenters/
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 2542730183349778117, guid: e285be8c4ae390e489b8c77546028a1a,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/NextReelStripsClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 7901358486510388067, guid: f3ae632b4ba9d414bb11bfef389b4d7f,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3991733147447919258, guid: f776282811baa924292b1850784929cf,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/BonusGameActivatingStatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 5990004021092349509, guid: 1bb0409e945a8ea43b1022b130cef9bf,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/DeductBonusSpinPresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 9137843364342127310, guid: e2f339d1a28be0544ae575f7142adc27,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/GameStatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6845584448317578899, guid: 128b607e8a293ba4aa8950afe6997fe4,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 8707302723234559913, guid: b212f19148940cc4da0f8a97d46b8656,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/SetSpinTypePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 6188554321984887866, guid: 7d1abc6623389234da679bb743415b4d,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters/RecoveryPresenters/
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3615210361863000602, guid: 20f4545d686d7984c92750b168b89438,
+      type: 3}
+    ScenePath: SlotMachine/StatePresenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 3472194926551909442, guid: 3ba56745af56ba24a9ee6becd1188e38,
+      type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 457898344289216006, guid: 9b3829d503d0747479bca99854a2cbd6, type: 3}
+    ScenePath: SlotMachine/GameView/CameraTransform/CameraShakeTransform/MainCamera/Foreground/Popups
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component:PixelUnited.NMG.Slots.Milan.GAMEID.SymbolData.SymbolDataAssigner, AssemblyGAMEID, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    Tag: BaseSpin
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/GameView/BaseGame/ReelWindow/Reels
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component:PixelUnited.NMG.Slots.Milan.GAMEID.Blackout.BlackoutClientModelStatePresenter, AssemblyGAMEID,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: BaseSpin
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/BlackoutClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes:
+    - BaseSpinState
+  - Type: 0
+    Component:PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinClientModelStatePresenter,
+      AssemblyGAMEID, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: BaseSpin
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/StatePresenters/ClientModelStatePresenters/HoldAndSpinClientModelPresenters
+    ReplaceExisting: 0
+    StateNodes:
+    - BaseSpinState
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 250244545615466702, guid: ade6775ea61a64a4cadbfaf369bf20e8, type: 3}
+    ScenePath: SlotMachine/AudioContainer/StateDrivenAudio
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 1
+    Component: 
+    Tag: 
+    Prefab: {fileID: 8877678598727255431, guid: 6af6592319895584d842036489cf2e68,
+      type: 3}
+    ScenePath: SlotMachine/AudioContainer/StateDrivenAudio
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component:PixelUnited.NMG.Slots.Milan.GAMEID.ReelsOutcome.ReelsOutcomeClientModelPresenter, AssemblyGAMEID,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: 
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/Presenters
+    ReplaceExisting: 0
+    StateNodes: []
+  - Type: 0
+    Component:PixelUnited.NMG.Slots.Milan.GAMEID.HoldAndSpin.HoldAndSpinPrizePresenter, AssemblyGAMEID,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: BaseSpin
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/GameView/BaseGame/ReelWindow/Reels/
+    ReplaceExisting: 0
+    StateNodes:
+    - HoldAndSpinAwardCreditCorAwardState
+  - Type: 0
+    Component: Milan.FrontEnd.Feature.Utility.ActivationPresenter, Assembly_MilanCore_Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    Tag: DisableHSReels
+    Prefab: {fileID: 0}
+    ScenePath: SlotMachine/GameView/HoldAndSpinRoot/ReelWindow
+    ReplaceExisting: 0
+    StateNodes:
+    - IntroState
+    - FreeSpinRecovery

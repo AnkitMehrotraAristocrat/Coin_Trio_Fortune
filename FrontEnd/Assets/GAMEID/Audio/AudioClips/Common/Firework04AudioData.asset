@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d08b02190a4cd4db785c1e1999ad3d, type: 3}
+  m_Name: Firework04AudioData
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: 1e9323c53de9a1e4481f3a25ec500f3f, type: 3}
+  Metadata:
+    AudioClipGuid: 
+    LoopSampleStart: 0
+    LoopSampleEnd: 0
+    Events: []
+    UseSegmentLoop: 0
+    Looping: 0
+    BeatData:
+      Beats: 
+      BPM: 0
+    SampleRate: 48000

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef1808c2c234aa0a5a54bb80de805b9, type: 3}
+  m_Name: JPStop
+  m_EditorClassIdentifier: 
+  trackName: WinMusic
+  behaviors:
+    array:
+    - behaviorLink: {fileID: 11400000, guid: 0e974676ce37d32408061f5fd9e2afd3, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 039da5e8c4b41b042b1cd110d1507608, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 55323dcdf4c6f14439d61056e0d0116b, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: bb754c4a8b40ede46bf19e790cc7a698, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 31f0b0f7d7d368042bf5826be762f4c3, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: f2780945ce6f87b4990e993121bba9b6, type: 2}
+    - behaviorLink: {fileID: 11400000, guid: 8fe27833bb8433a488569c066ac489f8, type: 2}
+  clipSource: {fileID: 11400000, guid: 26bf408432da33f44a2376b73faff22e, type: 2}

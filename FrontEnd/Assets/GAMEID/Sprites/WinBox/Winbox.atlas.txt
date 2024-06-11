@@ -1,0 +1,13 @@
+
+Winbox.png
+size: 178,154
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+winbox
+  rotate: false
+  xy: 2, 2
+  size: 174, 150
+  orig: 175, 150
+  offset: 1, 0
+  index: -1

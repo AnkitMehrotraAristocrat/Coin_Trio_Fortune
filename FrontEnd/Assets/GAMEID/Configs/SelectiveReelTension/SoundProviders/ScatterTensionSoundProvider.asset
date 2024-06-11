@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2d432bfd64ae64aa3b290d1357e22a, type: 3}
+  m_Name: ScatterTensionSoundProvider
+  m_EditorClassIdentifier: 
+  _audioEventDefinitions:
+    array:
+    - PlayAudioEventName: Anticipation3Reels
+      QuickStopAudioEventName: AnticipationQuickStop
+      PendingReelCount: 3
+    - PlayAudioEventName: Anticipation2Reels
+      QuickStopAudioEventName: AnticipationQuickStop
+      PendingReelCount: 2
+    - PlayAudioEventName: Anticipation1Reel
+      QuickStopAudioEventName: AnticipationQuickStop
+      PendingReelCount: 1

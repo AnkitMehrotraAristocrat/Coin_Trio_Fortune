@@ -1,0 +1,34 @@
+name: Create Release - Merge develop back into master
+
+on:
+  workflow_dispatch:
+    inputs:
+      description:
+        description: Pull request description (Optional)
+        default: 'No specific description provided.'
+
+jobs:
+  createPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Pull Request
+        id: cpr
+        run: |
+          message=$(echo "$(gh pr create -B develop -H master --title 'Merge master back into develop after a release' --body '${{ github.event.inputs.description }} ![Alt Text](https://i.imgur.com/nXoliun.gif)' -a '${{github.actor}})" | tr '\n' ' ')
+          echo "text=$message" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Set the newly created PR to auto merge
+        run: gh pr merge "${{join(steps.cpr.outputs.*, '\n')}}" --auto --merge
+        env: 
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Add build summary
+        shell: sh
+        run: |
+          echo '| Attribute | Value |' >> $GITHUB_STEP_SUMMARY
+          echo '| ------ | ------ |' >> $GITHUB_STEP_SUMMARY
+          echo '| Pull Request | ${{join(steps.cpr.outputs.*, '\n')}} |' >> $GITHUB_STEP_SUMMARY

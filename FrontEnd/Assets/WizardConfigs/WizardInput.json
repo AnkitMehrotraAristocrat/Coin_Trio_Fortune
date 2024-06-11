@@ -1,0 +1,58 @@
+{
+    "StudioAcronym": "NMG",
+    "GameId": "N5021",
+    "Jackpots": [
+        { "Name": "Grand", "Id": "main", "Tier": 0, "ResetValue": 1000000, "EnabledBetIndex": 0 }
+    ],
+    "Symbols": [
+        { "Name": "P1", "Id": 1 }
+    ],
+    "ReelWindows": [
+        { "Name": "3x5", "ReelHeights": [ 3, 3, 3, 3, 3 ], "ColumnCount": 5, "RowCount": 3, "Layout": "LeftToRight" },
+		{ "Name": "4x5", "ReelHeights": [ 4, 4, 4, 4, 4 ], "ColumnCount": 5, "RowCount": 4, "Layout": "LeftToRight" },
+		{ "Name": "HoldAndSpin", "ReelHeights": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], "ColumnCount": 5, "RowCount": 3, "Layout": "LeftToRight" }
+    ],
+  "Features": [ "BaseSpinLines", "BaseSpinScatters", "FreeSpin", "FreeSpinLines", "FreeSpinScatters", "HoldAndSpin" ],
+    "Paylines": [
+        {
+            "Name": "5",
+            "Lines": [
+                [
+                    { "ColIndex": 0, "RowIndex": 0 },
+                    { "ColIndex": 1, "RowIndex": 0 },
+                    { "ColIndex": 2, "RowIndex": 0 },
+                    { "ColIndex": 3, "RowIndex": 0 },
+                    { "ColIndex": 4, "RowIndex": 0 }
+                ],
+				[
+                    { "ColIndex": 0, "RowIndex": 1 },
+                    { "ColIndex": 1, "RowIndex": 1 },
+                    { "ColIndex": 2, "RowIndex": 1 },
+                    { "ColIndex": 3, "RowIndex": 1 },
+                    { "ColIndex": 4, "RowIndex": 1 }
+                ],
+				[
+                    { "ColIndex": 0, "RowIndex": 2 },
+                    { "ColIndex": 1, "RowIndex": 2 },
+                    { "ColIndex": 2, "RowIndex": 2 },
+                    { "ColIndex": 3, "RowIndex": 2 },
+                    { "ColIndex": 4, "RowIndex": 2 }
+                ],
+				[
+                    { "ColIndex": 0, "RowIndex": 0 },
+                    { "ColIndex": 1, "RowIndex": 1 },
+                    { "ColIndex": 2, "RowIndex": 2 },
+                    { "ColIndex": 3, "RowIndex": 1 },
+                    { "ColIndex": 4, "RowIndex": 0 }
+                ],
+				[
+                    { "ColIndex": 0, "RowIndex": 2 },
+                    { "ColIndex": 1, "RowIndex": 1 },
+                    { "ColIndex": 2, "RowIndex": 0 },
+                    { "ColIndex": 3, "RowIndex": 1 },
+                    { "ColIndex": 4, "RowIndex": 2 }
+                ]
+            ]
+        }
+    ]
+}

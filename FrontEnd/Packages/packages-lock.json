@@ -1,0 +1,1339 @@
+{
+  "dependencies": {
+    "com.appsflyer.sdk": {
+      "version": "6.14.3-pre.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.169"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.bridge": {
+      "version": "1.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.aristocrat.milan.thirdparty": "2.0.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.common.slotengine": {
+      "version": "4.3.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.frontend-dtos": {
+      "version": "1.3.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.aristocrat.milan.common.slotengine": "4.3.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.iceberg": {
+      "version": "5.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.pixelunited.milan.core": "5.1.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.jackpot-dtos": {
+      "version": "1.4.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.aristocrat.milan.common.slotengine": "4.3.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.metaevents": {
+      "version": "1.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.aristocrat.milan.bridge": "1.1.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.multiversion": {
+      "version": "5.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.pixelunited.milan.core": "5.1.1",
+        "com.pixelunited.milan.slots": "5.1.1",
+        "com.pixelunited.milan.tutorials": "5.1.1",
+        "com.aristocrat.milan.iceberg": "5.1.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.aristocrat.milan.thirdparty": {
+      "version": "2.0.1-pre.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.coffee.softmask-for-ugui": {
+      "version": "1.0.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.cysharp.unitask": {
+      "version": "2.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.cysharp.zlogger": {
+      "version": "1.6.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.cysharp.zstring": {
+      "version": "2.4.4",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.frederickloranger.factories": {
+      "version": "0.0.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.frederickloranger.object-pool": {
+      "version": "0.0.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.frederickloranger.factories": "0.0.2",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.frederickloranger.snap-vm": {
+      "version": "0.0.12",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils.serialization": "0.0.3",
+        "com.frederickloranger.object-pool": "0.0.3",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "io.github.moq": "4.18.3-pre.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.frederickloranger.snap-vm.addressables": {
+      "version": "0.0.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.frederickloranger.snap-vm": "0.0.7",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.unity.addressables": "1.19.19",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.frederickloranger.snap-vm.transforms": {
+      "version": "0.0.14",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.frederickloranger.factories": "0.0.2",
+        "com.frederickloranger.object-pool": "0.0.3",
+        "com.frederickloranger.snap-vm": "0.0.8",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils.serialization": "0.0.3"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.frederickloranger.snap-vm.ui": {
+      "version": "0.0.24",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.frederickloranger.object-pool": "0.0.3",
+        "com.frederickloranger.snap-vm": "0.0.8",
+        "com.frederickloranger.snap-vm.transforms": "0.0.14",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils.serialization": "0.0.3",
+        "com.productmadness.wildcat.ui.animation": "0.0.3",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.google.external-dependency-manager": {
+      "version": "1.2.177",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.microsoft.system-runtime-compilerservices": {
+      "version": "0.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.microsoft.system-runtime-compilerservices-unsafe": {
+      "version": "6.0.0-pre.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.pixelunited.milan.core": {
+      "version": "5.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.6",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.aristocrat.milan.frontend-dtos": "1.2.0",
+        "com.aristocrat.milan.jackpot-dtos": "1.2.1",
+        "com.aristocrat.milan.thirdparty": "2.0.0",
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.pixelunited.milan.slots": {
+      "version": "5.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.textmeshpro": "3.0.6",
+        "com.pixelunited.milan.core": "5.1.1",
+        "com.aristocrat.milan.frontend-dtos": "1.3.0",
+        "com.aristocrat.milan.jackpot-dtos": "1.4.0",
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.pixelunited.milan.tutorials": {
+      "version": "5.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.pixelunited.milan.core": "5.1.1",
+        "com.pixelunited.milan.slots": "5.1.1",
+        "com.aristocrat.milan.jackpot-dtos": "1.2.1",
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.coretech.coretech-unity-editor-scripts": {
+      "version": "2.4.0-PHOEN-955-SNAPSHOT.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.gta.networking": {
+      "version": "1.4.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.productmadness.gta.utilities": "0.10.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.gta.utilities": {
+      "version": "0.10.0",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.madkit.types": "3.2.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.madkit.types": {
+      "version": "3.5.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.asset-service": {
+      "version": "0.0.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.phx-asset-service-api": "0.0.4",
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.productmadness.phoenix.file-management": "0.0.5",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.phoenix.json": "0.0.3"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.configurations": {
+      "version": "0.0.11",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.phx-configuration-service-api": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.productmadness.phoenix.asset-service": "0.0.6",
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.productmadness.gta.networking": "1.3.1",
+        "com.cysharp.unitask": "2.3.1",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "io.github.moq": "4.18.3-pre.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.events": {
+      "version": "0.0.5",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.file-management": {
+      "version": "0.0.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.169",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.http": {
+      "version": "0.0.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.productmadness.gta.networking": "1.3.1",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.productmadness.phoenix.utils.observable": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.json": {
+      "version": "0.0.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.json.newtonsoft-json": {
+      "version": "0.0.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.json": "0.0.2",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.loading-funnels": {
+      "version": "0.0.8",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.events": "0.0.5",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "io.github.moq": "4.18.3-pre.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.frederickloranger.object-pool": "0.0.3"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.logs": {
+      "version": "0.0.8",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.zlogger": "1.6.1",
+        "com.cysharp.zstring": "2.4.4",
+        "com.microsoft.system-runtime-compilerservices-unsafe": "6.0.0-pre.2",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.package-importer": {
+      "version": "0.0.11",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.phx-asset-service-api": {
+      "version": "0.0.4",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.phx-configuration-service-api": {
+      "version": "0.0.4",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.gta.networking": "1.3.1",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.productmadness.madkit.types": "3.2.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.simple-di": {
+      "version": "0.0.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.socket-cluster-api": {
+      "version": "0.0.4",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.users.apple": {
+      "version": "0.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.coretech.coretech-unity-editor-scripts": "2.4.0-PHOEN-955-SNAPSHOT.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.utils": {
+      "version": "0.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.utils.async": {
+      "version": "0.0.5",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.utils.observable": {
+      "version": "0.0.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.json": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.utils.promises": {
+      "version": "0.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.madkit.types": "3.2.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.utils.serialization": {
+      "version": "0.0.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.websocket": {
+      "version": "0.0.5",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.phoenix.websocket-service": {
+      "version": "0.0.9",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.7",
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.json": "0.0.2",
+        "com.productmadness.phoenix.json.newtonsoft-json": "0.0.2",
+        "com.productmadness.phoenix.utils.async": "0.0.5",
+        "com.productmadness.phoenix.websocket": "0.0.5",
+        "com.productmadness.phoenix.socket-cluster-api": "0.0.4",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.cysharp.unitask": "2.3.1",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.addressables": {
+      "version": "0.0.13",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.addressables": "1.19.19",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.productmadness.phoenix.utils.serialization": "0.0.2",
+        "com.productmadness.phoenix.configurations": "0.0.11",
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.phoenix.file-management": "0.0.5",
+        "com.productmadness.phoenix.utils": "0.0.4"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.bet-levels": {
+      "version": "0.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.wild-bet-level-service-api": "0.0.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.utils.async": "0.0.5",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.productmadness.phoenix.websocket-service": "0.0.9"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.lobby-asset": {
+      "version": "0.0.11",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.addressables": "0.0.11",
+        "com.productmadness.wildcat.skins": "0.0.8"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.shared-assets": {
+      "version": "0.0.23",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.coffee.softmask-for-ugui": "1.0.2",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.frederickloranger.snap-vm.ui": "0.0.24",
+        "com.productmadness.wildcat.utils.ui": "0.0.7",
+        "com.productmadness.wildcat.snap-vm.transforms": "0.0.7",
+        "com.productmadness.wildcat.shared-shaders": "0.0.7"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.shared-shaders": {
+      "version": "0.0.7",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.skins": {
+      "version": "0.0.8",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.wildcat.addressables": "0.0.11",
+        "com.unity.addressables": "1.19.19",
+        "com.frederickloranger.snap-vm": "0.0.12"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slot-asset": {
+      "version": "0.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.addressables": "0.0.11",
+        "com.productmadness.wildcat.skins": "0.0.8"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots": {
+      "version": "0.0.23",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.configurations": "0.0.6",
+        "com.productmadness.wildcat.slots-info": "0.0.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.aristocrat.milan.thirdparty": "2.0.1-pre.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots-info": {
+      "version": "0.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.wild-slots-service-api": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.cysharp.unitask": "2.3.1",
+        "io.github.moq": "4.18.3-pre.2",
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.productmadness.phoenix.json": "0.0.3",
+        "com.productmadness.phoenix.json.newtonsoft-json": "0.0.3"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.gameid": {
+      "version": "file:com.productmadness.wildcat.slots.gameid",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0",
+        "com.pixelunited.milan.core": "5.1.1",
+        "com.pixelunited.milan.slots": "5.1.1",
+        "com.aristocrat.milan.iceberg": "5.1.1",
+        "com.aristocrat.milan.jackpot-dtos": "1.4.0",
+        "com.aristocrat.milan.common.slotengine": "4.3.0",
+        "com.aristocrat.milan.frontend-dtos": "1.3.0",
+        "com.aristocrat.milan.thirdparty": "2.0.1-pre.2"
+      }
+    },
+    "com.productmadness.wildcat.slots.hud": {
+      "version": "0.0.25",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.shared-assets": "0.0.23",
+        "com.productmadness.wildcat.slots": "0.0.17",
+        "com.productmadness.wildcat.utils.ui": "0.0.7",
+        "com.frederickloranger.snap-vm.ui": "0.0.24",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.cysharp.unitask": "2.3.1",
+        "com.frederickloranger.snap-vm.transforms": "0.0.14"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.milan": {
+      "version": "0.0.41",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.wildcat.slots": "0.0.23",
+        "com.productmadness.wildcat.slots-info": "0.0.2",
+        "com.productmadness.wildcat.slots.wild-milan-adapter-service-api": "0.0.6",
+        "com.productmadness.phoenix.utils.observable": "0.0.2",
+        "com.productmadness.phoenix.loading-funnels": "0.0.8",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.json.newtonsoft-json": "0.0.3",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.productmadness.phoenix.http": "0.0.6",
+        "com.productmadness.phoenix.simple-di": "0.0.4",
+        "com.productmadness.gta.networking": "1.3.1",
+        "com.productmadness.madkit.types": "3.2.0",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.unity.addressables": "1.19.19",
+        "com.productmadness.wildcat.addressables": "0.0.9",
+        "com.frederickloranger.snap-vm": "0.0.11",
+        "com.frederickloranger.object-pool": "0.0.3",
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0",
+        "com.productmadness.wildcat.bet-levels": "0.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.milan.facade.v511": {
+      "version": "0.0.8",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.aristocrat.milan.iceberg": "5.1.1",
+        "com.aristocrat.milan.metaevents": "1.1.0",
+        "com.aristocrat.milan.thirdparty": "2.0.1-pre.2",
+        "com.cysharp.unitask": "2.3.1",
+        "com.pixelunited.milan.core": "5.1.1",
+        "com.pixelunited.milan.slots": "5.1.1",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.wildcat.slots": "0.0.20",
+        "com.productmadness.wildcat.slots.milan": "0.0.33",
+        "com.productmadness.wildcat.slots.wild-milan-adapter-service-api": "0.0.6",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.milan.test-components": {
+      "version": "0.0.60",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.appsflyer.sdk": "6.14.3-pre.1",
+        "com.aristocrat.milan.bridge": "1.1.1",
+        "com.cysharp.unitask": "2.3.1",
+        "com.frederickloranger.snap-vm": "0.0.12",
+        "com.frederickloranger.snap-vm.addressables": "0.0.5",
+        "com.frederickloranger.snap-vm.transforms": "0.0.7",
+        "com.frederickloranger.snap-vm.ui": "0.0.23",
+        "com.google.external-dependency-manager": "1.2.177",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.productmadness.phoenix.configurations": "0.0.9",
+        "com.productmadness.phoenix.file-management": "0.0.9",
+        "com.productmadness.phoenix.http": "0.0.6",
+        "com.productmadness.phoenix.loading-funnels": "0.0.8",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.package-importer": "0.0.11",
+        "com.productmadness.phoenix.simple-di": "0.0.5",
+        "com.productmadness.phoenix.users.apple": "0.0.3",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.utils.promises": "0.0.2",
+        "com.productmadness.wildcat.addressables": "0.0.13",
+        "com.productmadness.wildcat.bet-levels": "0.0.2",
+        "com.productmadness.wildcat.shared-assets": "0.0.23",
+        "com.productmadness.wildcat.lobby-asset": "0.0.11",
+        "com.productmadness.wildcat.slot-asset": "0.0.3",
+        "com.productmadness.wildcat.slots.hud": "0.0.25",
+        "com.productmadness.wildcat.slots-info": "0.0.2",
+        "com.productmadness.wildcat.slots.milan": "0.0.41",
+        "com.productmadness.wildcat.slots.milan.facade.v511": "0.0.8",
+        "com.productmadness.wildcat.slots.wild-milan-host-service-api": "0.1.0",
+        "com.productmadness.wildcat.snap-vm.transforms": "0.0.3",
+        "com.productmadness.wildcat.views": "0.0.4",
+        "com.stompyrobot.srdebugger": "1.12.1-patch.2",
+        "com.unity.addressables": "1.19.19",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.visualeffectgraph": "12.1.8"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.wild-milan-adapter-service-api": {
+      "version": "0.0.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.gta.networking": "1.3.1",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.productmadness.madkit.types": "3.2.0"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.slots.wild-milan-host-service-api": {
+      "version": "0.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.gta.networking": "1.4.0",
+        "com.productmadness.madkit.types": "3.5.0",
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.aristocrat.milan.jackpot-dtos": "1.2.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.snap-vm.transforms": {
+      "version": "0.0.7",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.frederickloranger.snap-vm.transforms": "0.0.13",
+        "com.frederickloranger.snap-vm": "0.0.9",
+        "com.cysharp.unitask": "2.3.1",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.ui.animation": {
+      "version": "0.0.3",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.utils": "0.0.4"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.utils.ui": {
+      "version": "0.0.7",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.views": {
+      "version": "0.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.cysharp.unitask": "2.3.1",
+        "com.microsoft.system-runtime-compilerservices": "0.0.2",
+        "com.frederickloranger.factories": "0.0.2",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.utils.async": "0.0.5",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "com.productmadness.phoenix.simple-di": "0.0.4"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.wild-bet-level-service-api": {
+      "version": "0.0.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "io.github.manuc66.jsonsubtypes": "2.0.1",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.productmadness.wildcat.wild-slots-service-api": {
+      "version": "0.0.4",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.productmadness.phoenix.http": "0.0.4",
+        "com.productmadness.phoenix.utils": "0.0.4",
+        "com.productmadness.phoenix.logs": "0.0.8",
+        "io.github.manuc66.jsonsubtypes": "2.0.1",
+        "com.cysharp.unitask": "2.3.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.stompyrobot.srdebugger": {
+      "version": "1.12.1-patch.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.addressables": {
+      "version": "1.19.19",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.scriptablebuildpipeline": "1.19.6",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.burst": {
+      "version": "1.8.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.collab-proxy": {
+      "version": "2.0.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ext.nunit": {
+      "version": "1.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.rider": {
+      "version": "3.0.24",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.visualstudio": {
+      "version": "2.0.18",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ide.vscode": {
+      "version": "1.2.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.6.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.mathematics": {
+      "version": "1.2.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "12.1.8",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.render-pipelines.universal": {
+      "version": "12.1.8",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.burst": "1.8.2",
+        "com.unity.render-pipelines.core": "12.1.8",
+        "com.unity.shadergraph": "12.1.8"
+      }
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.20.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.searcher": {
+      "version": "4.9.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.shadergraph": {
+      "version": "12.1.8",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "12.1.8",
+        "com.unity.searcher": "4.9.1"
+      }
+    },
+    "com.unity.test-framework": {
+      "version": "1.1.33",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ext.nunit": "1.0.6",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.textmeshpro": {
+      "version": "3.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.timeline": {
+      "version": "1.6.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.director": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ugui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "12.1.8",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.8",
+        "com.unity.render-pipelines.core": "12.1.8"
+      }
+    },
+    "io.github.manuc66.jsonsubtypes": {
+      "version": "2.0.1",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "io.github.moq": {
+      "version": "4.18.3-pre.2",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "org.castleproject.core": "4.0.0-pre.1"
+      },
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "org.castleproject.core": {
+      "version": "4.0.0-pre.1",
+      "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://jfrog.madness.games/artifactory/api/npm/upm"
+    },
+    "com.unity.modules.ai": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.androidjni": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.animation": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.assetbundle": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.audio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.cloth": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      }
+    },
+    "com.unity.modules.director": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
+      }
+    },
+    "com.unity.modules.imageconversion": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.imgui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.jsonserialize": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.particlesystem": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics2d": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.screencapture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.subsystems": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.terrain": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.terrainphysics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0"
+      }
+    },
+    "com.unity.modules.tilemap": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics2d": "1.0.0"
+      }
+    },
+    "com.unity.modules.ui": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.uielements": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.umbra": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.unityanalytics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequest": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.unitywebrequestassetbundle": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequestaudio": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.audio": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequesttexture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.unitywebrequestwww": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
+        "com.unity.modules.unitywebrequestaudio": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
+      }
+    },
+    "com.unity.modules.vehicles": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0"
+      }
+    },
+    "com.unity.modules.video": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      }
+    },
+    "com.unity.modules.vr": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.xr": "1.0.0"
+      }
+    },
+    "com.unity.modules.wind": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.xr": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.subsystems": "1.0.0"
+      }
+    }
+  }
+}

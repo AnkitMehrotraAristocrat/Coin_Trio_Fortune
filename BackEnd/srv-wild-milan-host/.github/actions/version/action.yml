@@ -1,0 +1,84 @@
+on: Update and retrieve version action
+
+inputs:
+  skip_new_version_check:
+    description: If true, skip validation to make sure that the version was incremented.
+    default: true
+  vault_role_id:
+    description: Vault AppRole ID
+    required: true
+  vault_secret_id:
+    description: Vault AppRole Secret ID
+    required: true
+  image_sha_suffix:
+    description: Add commit SHA suffix to image_tag
+    default: false
+
+outputs:
+  image_tag:
+    value: ${{ steps.version.outputs.image_tag }}
+
+runs:
+  using: composite
+  steps:
+      - name: Import Vault secrets
+        id: vault
+        uses: hashicorp/vault-action@v2.4.2
+        with:
+          url: https://vault.madness.games
+          method: approle
+          roleId: ${{ inputs.vault_role_id }}
+          secretId: ${{ inputs.vault_secret_id }}
+          secrets: |
+            common/data/gcp/pm-gcp google_credentials ;
+            jenkins/jfrog/service-accounts/coretech username | JFROG_USERNAME ;
+            jenkins/jfrog/service-accounts/coretech password | JFROG_PASSWORD ;
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+          
+      - uses: sdkman/sdkman-action@master
+        id: sdkman
+        with:
+          candidate: gradle
+          version: 7.7
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      
+      - name: Set Gradle properties
+        run: |
+          cat <<-EOF >> $GITHUB_ENV
+          ORG_GRADLE_PROJECT_artifactory_context_url=https://jfrog.madness.games/artifactory
+          ORG_GRADLE_PROJECT_artifactory_libs_repo_key=libs-release
+          ORG_GRADLE_PROJECT_artifactory_plugins_repo_key=plugins-release
+          ORG_GRADLE_PROJECT_artifactory_user=${{ env.JFROG_USERNAME }}
+          ORG_GRADLE_PROJECT_artifactory_password=${{ env.JFROG_PASSWORD }}
+          EOF
+        shell: sh
+
+      - name: Retrieve current version
+        id: current_version
+        shell: sh
+        run: |
+          echo "$(gradle printVersion -q)"
+          echo "version=$(gradle printVersion -q | grep -Po '^([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$' )${{ inputs.image_sha_suffix == 'true' && '-$(git rev-parse --short=8 HEAD)' || '' }}" >> $GITHUB_OUTPUT
+
+      - name: Update version via Gradle Versioning Plugin PullVersion
+        shell: sh
+        run: gradle pullVersion
+
+      - name: Retrieve new version
+        id: version
+        run: |
+          echo "image_tag=$(gradle printVersion -q)${{ inputs.image_sha_suffix == 'true' && '-$(git rev-parse --short=8 HEAD)' || '' }}" >> $GITHUB_OUTPUT
+        shell: sh
+
+      - name: Check that version was upgraded
+        if: ${{ inputs.skip_new_version_check == 'false' && steps.version.outputs.image_tag == steps.current_version.outputs.version }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('Version was not incremented. Was there any commits with a keyword?')

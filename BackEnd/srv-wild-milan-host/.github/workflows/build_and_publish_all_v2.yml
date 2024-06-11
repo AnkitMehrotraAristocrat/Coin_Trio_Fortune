@@ -1,0 +1,52 @@
+name: Build and Publish V2
+
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build:
+    name: Build and Publish
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update and retrieve version
+        id: version
+        uses: ./.github/actions/version
+        with:
+          skip_new_version_check: ${{ github.ref_name == 'master' && 'false' || 'true' }}
+          vault_role_id: '${{ secrets.GTA_VAULT_ROLEID }}'
+          vault_secret_id: '${{ secrets.GTA_VAULT_SECRETID }}'
+          image_sha_suffix: ${{ github.ref_name == 'master' && 'false' || 'true' }}
+
+      - name: Build and push service
+        id: build
+        uses: ./.github/actions/build_v2
+        with:
+          image_name: eu.gcr.io/pm-gcp/wild-milan-host-service
+          image_tag: '${{ github.event.inputs.image_tag }}'
+          gcr_project: pm-gcp
+          gradle_module: ''
+          image_sha_suffix: ${{ github.ref_name == 'master' && 'false' || 'true' }}
+          build_started_by: ${{ github.actor }}
+          vault_role_id: '${{ secrets.GTA_VAULT_ROLEID }}'
+          vault_secret_id: '${{ secrets.GTA_VAULT_SECRETID }}'
+          version: ${{ steps.version.outputs.image_tag }}
+          push_image: false
+
+      - name: Create GitHub release
+        if: |
+          github.ref == 'refs/heads/master' ||
+          github.event.inputs.create_release == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          token: '${{ github.token }}'
+          name: 'Release v${{ steps.version.outputs.image_tag }}'
+          tag_name: 'v${{ steps.version.outputs.image_tag }}'
+          body: |
+            Changes in this Release:
+            ${{ github.event.head_commit.message }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="AssemblyGAMEID">
+    <type fullname="Slotsburg*" preserve="all" />
+  </assembly>
+    <assembly fullname="UnityEngine">
+        <type fullname="UnityEngine.MeshCollider" preserve="all" />
+        <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+    </assembly>
+</linker>

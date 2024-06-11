@@ -1,0 +1,105 @@
+// Android Resolver Repos Start
+([rootProject] + (rootProject.subprojects as List)).each { project ->
+    project.repositories {
+        def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
+        maven {
+            url "https://maven.google.com"
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+// Android Resolver Repos End
+apply plugin: 'com.android.library'
+
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:multidex:1.0.3'
+// Android Resolver Dependencies Start
+    implementation 'com.android.installreferrer:installreferrer:2.1' // Packages/com.appsflyer.sdk/Editor/AppsFlyerDependencies.xml:10
+    implementation 'com.android.support:appcompat-v7:25.3.1' // Packages/com.productmadness.phoenix.file-management/Editor/FileManagementDependencies.xml:6
+    implementation 'com.appsflyer:af-android-sdk:6.8.2' // Packages/com.appsflyer.sdk/Editor/AppsFlyerDependencies.xml:6
+    implementation 'com.appsflyer:unity-wrapper:6.8.2' // Packages/com.appsflyer.sdk/Editor/AppsFlyerDependencies.xml:8
+// Android Resolver Dependencies End
+    **DEPS**
+}
+
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    compileSdkVersion **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+    defaultConfig {
+        consumerProguardFiles 'proguard-unity.txt'
+        **USER_PROGUARD**
+        minSdkVersion **MINSDKVERSION**
+        targetSdkVersion **TARGETSDKVERSION**
+        versionName '**VERSIONNAME**'
+        versionCode **VERSIONCODE**
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    **SIGN**
+    
+    buildTypes
+    {
+        debug {
+            minifyEnabled **MINIFY_DEBUG**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            shrinkResources false
+            jniDebuggable true
+
+            **SIGNCONFIG**
+        }
+
+        release {
+
+            minifyEnabled **MINIFY_RELEASE**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            shrinkResources false
+
+            **SIGNCONFIG**
+        }
+    }
+
+    aaptOptions {
+        noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    **PACKAGING_OPTIONS**
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+**REPOSITORIES**
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**

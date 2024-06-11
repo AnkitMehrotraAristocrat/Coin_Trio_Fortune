@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb11bc525f2286449866df124122df3f, type: 3}
+  m_Name: WizardRemovalData
+  m_EditorClassIdentifier: 
+  _mechanicConfigurations:
+  - {fileID: 11400000, guid: 89386da94d62ba0458bf65750f1641dc, type: 2}
+  - {fileID: 11400000, guid: b5cfa2aeb49476e4794d3f4cf1d5a4ba, type: 2}
+  - {fileID: 11400000, guid: a65b0c99df4951742828e90e70ddd84c, type: 2}
+  - {fileID: 11400000, guid: e29ed9e37fcdea14884b772319c0dae7, type: 2}
+  - {fileID: 11400000, guid: 0ddc838d4fbc94246b9a68fec61cba91, type: 2}
+  - {fileID: 11400000, guid: 2fc1fd1d36a7bd2409657f8b0a0238c1, type: 2}

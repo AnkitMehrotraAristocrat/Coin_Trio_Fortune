@@ -1,0 +1,27 @@
+
+cor_reel_tension.png
+size: 416,416
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+star_gold
+  rotate: false
+  xy: 260, 241
+  size: 84, 173
+  orig: 95, 183
+  offset: 5, 5
+  index: -1
+tension
+  rotate: false
+  xy: 194, 22
+  size: 64, 392
+  orig: 70, 392
+  offset: 3, 0
+  index: -1
+tension_glow
+  rotate: false
+  xy: 2, 2
+  size: 190, 412
+  orig: 214, 418
+  offset: 12, 3
+  index: -1

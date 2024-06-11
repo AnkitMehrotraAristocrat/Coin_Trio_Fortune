@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - NPC
+  - Props
+  - Background
+  - Decoration
+  - ApplicationCamera
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Effects
+  - Terrain
+  - Foreground
+  - WinningSymbols
+  - UnderwaterDepth
+  - Characters
+  - 1
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background 1
+    uniqueID: 1852316083
+    locked: 0
+  - name: Background 2
+    uniqueID: 706021387
+    locked: 0
+  - name: Background 3
+    uniqueID: 1274870141
+    locked: 0
+  - name: Background 4
+    uniqueID: 449551487
+    locked: 0
+  - name: Body 1
+    uniqueID: 4098703845
+    locked: 0
+  - name: Body 2
+    uniqueID: 2511228039
+    locked: 0
+  - name: Body 3
+    uniqueID: 3317617247
+    locked: 0
+  - name: Body 4
+    uniqueID: 3888822277
+    locked: 0
+  - name: Symbols 1
+    uniqueID: 3447521867
+    locked: 0
+  - name: Symbols 2
+    uniqueID: 445441767
+    locked: 0
+  - name: Symbols 3
+    uniqueID: 3716199457
+    locked: 0
+  - name: Symbols 4
+    uniqueID: 1554930381
+    locked: 0
+  - name: Symbols 5
+    uniqueID: 432751775
+    locked: 0
+  - name: Symbols 6
+    uniqueID: 3970744357
+    locked: 0
+  - name: Body Foreground 1
+    uniqueID: 295629657
+    locked: 0
+  - name: Body Foreground 2
+    uniqueID: 1220681551
+    locked: 0
+  - name: Body Foreground 3
+    uniqueID: 3123969275
+    locked: 0
+  - name: Body Foreground 4
+    uniqueID: 2248671151
+    locked: 0
+  - name: Midground 1
+    uniqueID: 3900030047
+    locked: 0
+  - name: Midground 2
+    uniqueID: 595332671
+    locked: 0
+  - name: Midground 3
+    uniqueID: 292850777
+    locked: 0
+  - name: Midground 4
+    uniqueID: 2415032423
+    locked: 0
+  - name: Foreground 1
+    uniqueID: 169370409
+    locked: 0
+  - name: Foreground 2
+    uniqueID: 3204762143
+    locked: 0
+  - name: Foreground 3
+    uniqueID: 4113167893
+    locked: 0
+  - name: Foreground 4
+    uniqueID: 3235996375
+    locked: 0

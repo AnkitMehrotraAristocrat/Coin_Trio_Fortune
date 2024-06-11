@@ -1,0 +1,17 @@
+{
+  "SubstitutionDefinitions": [
+    {
+      "substitution": "Wild",
+      "targetSymbols": [
+        "PIC1",
+        "PIC2",
+        "PIC3",
+        "PIC4",
+        "ACE",
+        "KING",
+        "QUEEN",
+        "JACK"
+      ]
+    }
+  ]
+}

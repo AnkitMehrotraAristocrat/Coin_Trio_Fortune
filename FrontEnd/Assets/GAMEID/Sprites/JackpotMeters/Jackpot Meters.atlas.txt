@@ -1,0 +1,160 @@
+
+Jackpot Meters.png
+size: 3840,281
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+grandTab
+  rotate: false
+  xy: 3402, 196
+  size: 436, 83
+  orig: 438, 85
+  offset: 1, 1
+  index: -1
+grandText
+  rotate: true
+  xy: 2847, 93
+  size: 186, 62
+  orig: 188, 64
+  offset: 1, 1
+  index: -1
+grandTextGlow
+  rotate: true
+  xy: 3321, 9
+  size: 134, 56
+  orig: 149, 68
+  offset: 8, 4
+  index: -1
+highlightGrand
+  rotate: true
+  xy: 2403, 17
+  size: 262, 89
+  orig: 270, 95
+  offset: 4, 3
+  index: -1
+highlightMajor
+  rotate: true
+  xy: 2311, 8
+  size: 271, 90
+  orig: 279, 97
+  offset: 5, 3
+  index: -1
+highlightMini
+  rotate: true
+  xy: 2494, 70
+  size: 209, 82
+  orig: 217, 89
+  offset: 4, 3
+  index: -1
+highlightMinor
+  rotate: true
+  xy: 2578, 71
+  size: 208, 81
+  orig: 217, 89
+  offset: 5, 4
+  index: -1
+majorTab
+  rotate: false
+  xy: 2681, 4
+  size: 455, 85
+  orig: 457, 87
+  offset: 1, 1
+  index: -1
+majorText
+  rotate: false
+  xy: 2494, 5
+  size: 185, 63
+  orig: 187, 65
+  offset: 1, 1
+  index: -1
+majorTextGlow
+  rotate: true
+  xy: 3284, 145
+  size: 134, 57
+  orig: 149, 70
+  offset: 8, 5
+  index: -1
+meterBase
+  rotate: false
+  xy: 2, 2
+  size: 1153, 277
+  orig: 1156, 280
+  offset: 2, 2
+  index: -1
+meterBaseNight
+  rotate: false
+  xy: 1157, 2
+  size: 1152, 277
+  orig: 1154, 278
+  offset: 1, 1
+  index: -1
+miniTab
+  rotate: false
+  xy: 3427, 44
+  size: 334, 73
+  orig: 336, 75
+  offset: 1, 1
+  index: -1
+miniText
+  rotate: true
+  xy: 3343, 156
+  size: 123, 57
+  orig: 125, 59
+  offset: 1, 1
+  index: -1
+miniTextGlow
+  rotate: true
+  xy: 3138, 11
+  size: 96, 45
+  orig: 113, 52
+  offset: 9, 4
+  index: -1
+minorTab
+  rotate: false
+  xy: 3427, 119
+  size: 336, 75
+  orig: 338, 77
+  offset: 1, 1
+  index: -1
+minorText
+  rotate: true
+  xy: 3084, 109
+  size: 170, 57
+  orig: 172, 59
+  offset: 1, 1
+  index: -1
+minorTextGlow
+  rotate: true
+  xy: 3379, 35
+  size: 119, 46
+  orig: 135, 54
+  offset: 8, 4
+  index: -1
+sunMoon
+  rotate: false
+  xy: 2911, 106
+  size: 171, 173
+  orig: 173, 176
+  offset: 1, 2
+  index: -1
+sunMoonGlow
+  rotate: false
+  xy: 3143, 137
+  size: 139, 142
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+sunMoonNight
+  rotate: false
+  xy: 2661, 91
+  size: 184, 188
+  orig: 185, 189
+  offset: 1, 1
+  index: -1
+sunMoonNightGlow
+  rotate: true
+  xy: 3185, 3
+  size: 132, 134
+  orig: 150, 150
+  offset: 9, 8
+  index: -1

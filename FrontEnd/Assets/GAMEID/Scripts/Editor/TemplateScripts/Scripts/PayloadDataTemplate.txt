@@ -1,0 +1,9 @@
+namespace Slotsburg.##GAMEID##
+{
+    /// <summary>
+    /// Data structure that matches a payload sent from the backend.
+    /// </summary>
+    public class ##NAME## : IPayloadData
+    {
+    }
+}

@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8631a23d60d6d41c5868d5a24e232002, type: 3}
+  m_Name: normal30x1-spin
+  m_EditorClassIdentifier: 
+  order:
+    array:
+    - name: Reel0
+      index: 0
+      waitTime: 0
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel1
+      index: 1
+      waitTime: 0.15
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel2
+      index: 2
+      waitTime: 0.3
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel3
+      index: 3
+      waitTime: 0.45
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel4
+      index: 4
+      waitTime: 0.6
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel5
+      index: 5
+      waitTime: 0.025
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel6
+      index: 6
+      waitTime: 0.175
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel7
+      index: 7
+      waitTime: 0.325
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel8
+      index: 8
+      waitTime: 0.475
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel9
+      index: 9
+      waitTime: 0.625
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel10
+      index: 10
+      waitTime: 0.05
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel11
+      index: 11
+      waitTime: 0.2
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel12
+      index: 12
+      waitTime: 0.35
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel13
+      index: 13
+      waitTime: 0.5
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel14
+      index: 14
+      waitTime: 0.65
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel15
+      index: 15
+      waitTime: 0.075
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel16
+      index: 16
+      waitTime: 0.225
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel17
+      index: 17
+      waitTime: 0.375
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel18
+      index: 18
+      waitTime: 0.525
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel19
+      index: 19
+      waitTime: 0.675
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel20
+      index: 20
+      waitTime: 0.1
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel21
+      index: 21
+      waitTime: 0.25
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel22
+      index: 22
+      waitTime: 0.4
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel23
+      index: 23
+      waitTime: 0.55
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel24
+      index: 24
+      waitTime: 0.7
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel25
+      index: 25
+      waitTime: 0.125
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel26
+      index: 26
+      waitTime: 0.275
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel27
+      index: 27
+      waitTime: 0.425
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel28
+      index: 28
+      waitTime: 0.575
+      waitForPrevious: 0
+      reelMode: normal30x1
+    - name: Reel29
+      index: 29
+      waitTime: 0.725
+      waitForPrevious: 0
+      reelMode: normal30x1

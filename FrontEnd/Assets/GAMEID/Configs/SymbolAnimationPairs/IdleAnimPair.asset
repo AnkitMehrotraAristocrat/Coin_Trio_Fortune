@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209670490ea13694c8cd4d2a6112ce93, type: 3}
+  m_Name: IdleAnimPair
+  m_EditorClassIdentifier: 
+  _symbolAnimPairs:
+    array:
+    - symbolId: 1
+      animTrigger: Idle
+    - symbolId: 2
+      animTrigger: Idle
+    - symbolId: 3
+      animTrigger: Idle
+    - symbolId: 4
+      animTrigger: Idle
+    - symbolId: 5
+      animTrigger: Idle
+    - symbolId: 6
+      animTrigger: Idle
+    - symbolId: 7
+      animTrigger: Idle
+    - symbolId: 8
+      animTrigger: Idle
+    - symbolId: 9
+      animTrigger: Idle
+    - symbolId: 10
+      animTrigger: Idle
+    - symbolId: 11
+      animTrigger: Idle
+    - symbolId: 12
+      animTrigger: Idle
+    - symbolId: 13
+      animTrigger: Idle

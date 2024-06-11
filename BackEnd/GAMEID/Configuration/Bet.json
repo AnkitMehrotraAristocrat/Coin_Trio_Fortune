@@ -1,0 +1,61 @@
+﻿{
+  "CurrencyTypes": [ "credit" ],
+  "DefaultCurrency": "credit",
+  "NoBetStates": [
+    "HoldAndSpin"
+  ],
+  "CurrencyBets": [
+    {
+      "CurrencyType": "credit",
+      "BetLines": [
+        {
+          "Ante": 1,
+          "TotalCost": 100,
+          "EnabledLinesCount": 30
+        }
+      ],
+
+      // Scale Factor is mentioned in https://docs.google.com/spreadsheets/d/1Xkj79xg0HEJ1mpWG8RxLSumXd64rlRHFvmJpxKNLr5w/edit#gid=1344179197
+
+      // For Denom 1 , the Bet Multiplier Options are : 1,2,3,6,10
+
+      "Multipliers": [
+
+        100,
+        200,
+        300,
+        600,
+        1000,
+
+        1200,
+        2400,
+        3600,
+        7200,
+        12000,
+
+        15000,
+        30000,
+        45000,
+        90000,
+        150000,
+
+        180000,
+        360000,
+        540000,
+        1080000,
+        1800000,
+
+        2100000,
+        4200000,
+        6300000,
+        12600000,
+        21000000
+
+      ],
+      "MinMultiplierIndex": 0,
+      "MaxMultiplierIndex": 24,
+      "CurrentBetLineIndex": 0,
+      "CurrentMultiplierIndex": 0
+    }
+  ]
+}

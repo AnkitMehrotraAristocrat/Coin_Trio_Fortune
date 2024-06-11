@@ -1,0 +1,170 @@
+{
+  "export_env": "4ac130592ba9",
+  "app_version": "v7.0.0-beta",
+  "records": [
+    {
+      "attributes": {
+        "name": "GAMEID - Template Game",
+        "type": "Templates::GameTrigger",
+        "scalable_jackpot": false
+      },
+      "associations": {
+        "brackets": [
+          {
+            "id": 8,
+            "class_name": "Bracket"
+          }
+        ]
+      },
+      "dependencies": {
+        "application": {
+          "id": 1,
+          "class_name": "Application"
+        }
+      },
+      "record_class": "Templates::GameTrigger"
+    }
+  ],
+  "nested_records": {
+    "Bracket": {
+      "8": {
+        "attributes": {
+          "position": 0,
+          "from": 0
+        },
+        "associations": {
+          "brackets_tiers": [
+            {
+              "id": 32,
+              "class_name": "BracketTier"
+            },
+            {
+              "id": 33,
+              "class_name": "BracketTier"
+            },
+            {
+              "id": 34,
+              "class_name": "BracketTier"
+            },
+            {
+              "id": 35,
+              "class_name": "BracketTier"
+            }
+          ]
+        }
+      }
+    },
+    "BracketTier": {
+      "32": {
+        "attributes": {
+          "position": 0
+        },
+        "dependencies": {
+          "tier": {
+            "id": 32,
+            "class_name": "Tiers::GameTrigger::Wap"
+          }
+        }
+      },
+      "33": {
+        "attributes": {
+          "position": 1
+        },
+        "dependencies": {
+          "tier": {
+            "id": 33,
+            "class_name": "Tiers::GameTrigger::Wap"
+          }
+        }
+      },
+      "34": {
+        "attributes": {
+          "position": 2
+        },
+        "dependencies": {
+          "tier": {
+            "id": 34,
+            "class_name": "Tiers::GameTrigger::Fixed"
+          }
+        }
+      },
+      "35": {
+        "attributes": {
+          "position": 3
+        },
+        "dependencies": {
+          "tier": {
+            "id": 35,
+            "class_name": "Tiers::GameTrigger::Fixed"
+          }
+        }
+      }
+    },
+    "Tiers::GameTrigger::Wap": {
+      "32": {
+        "attributes": {
+          "type": "Tiers::GameTrigger::Wap",
+          "uuid": "new_1701718184753",
+          "qualifying_bet": 10000,
+          "contribution_value": "24",
+          "starting_fund": 160000000,
+          "contribution_type": "fixed_value",
+          "max_jackpot_amount": 999999999999,
+          "scalable_formula": "wager / 10000",
+          "scalability_effect": "whole_jackpot",
+          "win_topup_formula": ""
+        }
+      },
+      "33": {
+        "attributes": {
+          "type": "Tiers::GameTrigger::Wap",
+          "uuid": "new_1701718185598",
+          "qualifying_bet": 10000,
+          "contribution_value": "90",
+          "starting_fund": 12000000,
+          "contribution_type": "fixed_value",
+          "max_jackpot_amount": 999999999999,
+          "scalable_formula": "wager / 10000",
+          "scalability_effect": "whole_jackpot",
+          "win_topup_formula": ""
+        }
+      }
+    },
+    "Tiers::GameTrigger::Fixed": {
+      "34": {
+        "attributes": {
+          "type": "Tiers::GameTrigger::Fixed",
+          "uuid": "new_1701718207577",
+          "qualifying_bet": 10000,
+          "contribution_value": 0,
+          "starting_fund": 800000,
+          "contribution_type": "percentage",
+          "max_jackpot_amount": 800000,
+          "scalable_formula": "wager / 10000",
+          "scalability_effect": "whole_jackpot"
+        }
+      },
+      "35": {
+        "attributes": {
+          "type": "Tiers::GameTrigger::Fixed",
+          "uuid": "new_1701718208278",
+          "qualifying_bet": 10000,
+          "contribution_value": 0,
+          "starting_fund": 160000,
+          "contribution_type": "percentage",
+          "max_jackpot_amount": 160000,
+          "scalable_formula": "wager / 10000",
+          "scalability_effect": "whole_jackpot"
+        }
+      }
+    },
+    "Application": {
+      "1": {
+        "attributes": {
+          "name": "Wildcat",
+          "application_id": 1
+        }
+      }
+    }
+  }
+}

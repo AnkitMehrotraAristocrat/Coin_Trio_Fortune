@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8631a23d60d6d41c5868d5a24e232002, type: 3}
+  m_Name: normal-stop
+  m_EditorClassIdentifier: 
+  order:
+    array:
+    - name: Reel0
+      index: 0
+      waitTime: 0
+      waitForPrevious: 0
+      reelMode: normal
+    - name: Reel1
+      index: 1
+      waitTime: 0.3
+      waitForPrevious: 0
+      reelMode: normal
+    - name: Reel2
+      index: 2
+      waitTime: 0.6
+      waitForPrevious: 0
+      reelMode: normal
+    - name: Reel3
+      index: 3
+      waitTime: 0.9
+      waitForPrevious: 0
+      reelMode: normal
+    - name: Reel4
+      index: 4
+      waitTime: 1.2
+      waitForPrevious: 0
+      reelMode: normal

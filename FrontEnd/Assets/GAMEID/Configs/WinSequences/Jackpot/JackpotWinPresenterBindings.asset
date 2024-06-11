@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987923029d1bf4398862c3941a96ef33, type: 3}
+  m_Name: JackpotWinPresenterBindings
+  m_EditorClassIdentifier: 
+  presenterRequirements:
+    array:
+    - requirementIdent: 38CA38
+      requirementName: JPMusic1
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: AudioWinPresenter
+      type:
+        script: {fileID: 11500000, guid: 6dcae5a7ad404ed6999e8730a128b5d6, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: JPMusic1
+      typeMissing: 0
+    - requirementIdent: E58454
+      requirementName: JPMusic2
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: AudioWinPresenter
+      type:
+        script: {fileID: 11500000, guid: 6dcae5a7ad404ed6999e8730a128b5d6, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: JPMusic2
+      typeMissing: 0
+    - requirementIdent: B35110
+      requirementName: JPMusic5
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: AudioWinPresenter
+      type:
+        script: {fileID: 11500000, guid: 6dcae5a7ad404ed6999e8730a128b5d6, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: JPMusic5
+      typeMissing: 0
+    - requirementIdent: E899CA
+      requirementName: JPMusic6
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: AudioWinPresenter
+      type:
+        script: {fileID: 11500000, guid: 6dcae5a7ad404ed6999e8730a128b5d6, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: JPMusic6
+      typeMissing: 0
+    - requirementIdent: BC577B
+      requirementName: FireworksIntro
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: AudioWinPresenter
+      type:
+        script: {fileID: 11500000, guid: 6dcae5a7ad404ed6999e8730a128b5d6, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.AudioWinPresenter, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: JPFireworksIntroSFX
+      typeMissing: 0
+    - requirementIdent: 04ED50
+      requirementName: RollupValue
+      assemblyQualifiedName: Milan.FrontEnd.Slots.v5_1_1.WinCore.RollupWinPresenterMonospace,
+        Assembly_MilanSlots_Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      typeName: RollupWinPresenterMonospace
+      type:
+        script: {fileID: 11500000, guid: fb0dcfe32ee23a348881a94a8cc0c8c4, type: 3}
+        value: Milan.FrontEnd.Slots.v5_1_1.WinCore.RollupWinPresenterMonospace, Assembly_MilanSlots_Runtime,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      tagName: 
+      typeMissing: 0

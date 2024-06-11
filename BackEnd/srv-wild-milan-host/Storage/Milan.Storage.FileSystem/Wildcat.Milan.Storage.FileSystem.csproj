@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Composition.AttributedModel" Version="7.0.0" />
+    <PackageReference Include="ProductMadness.Wildcat.Milan.Shared.Dtos" Version="6.0.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+#region Using
+
+using Milan.FrontEnd.Core;
+using Milan.FrontEnd.Core.Data;
+
+#endregion
+
+namespace Slotsburg.##GAMEID##
+{
+    /// <summary>
+    /// Model to hold server data.
+    /// </summary>
+    public class ##NAME## : IModel
+    {
+        /// <summary>
+        /// Payload data.
+        /// </summary>
+        public IPayloadData Data;
+
+        /// <summary>
+        /// Service located constructor.
+        /// </summary>
+        /// <param name="serviceLocator"></param>
+        public ##NAME##(ServiceLocator serviceLocator)
+        {
+            // NEW UP YOUR DATA!!!
+            //Data = new PayloadData();
+        }
+    }
+}

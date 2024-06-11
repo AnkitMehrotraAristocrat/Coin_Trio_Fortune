@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf264bd98021360458429f8683db58e0, type: 3}
+  m_Name: SlotConfig
+  m_EditorClassIdentifier: 
+  _symbols:
+  - name: PIC1
+    id:
+      value: 1
+    prefab: {fileID: 8432301967274135412, guid: 32f47e206e480454a8e307191e451d22,
+      type: 3}
+    initialPoolSize: 40
+  - name: PIC2
+    id:
+      value: 2
+    prefab: {fileID: 8432301967274135412, guid: 9b2fbc93a519e6d449c63a7226e4ae41,
+      type: 3}
+    initialPoolSize: 40
+  - name: PIC3
+    id:
+      value: 3
+    prefab: {fileID: 8432301967274135412, guid: 49d3869c3bec40846802d998aad69a10,
+      type: 3}
+    initialPoolSize: 40
+  - name: PIC4
+    id:
+      value: 4
+    prefab: {fileID: 8432301967274135412, guid: 0783b3e89febfb7479f79e15121d14d8,
+      type: 3}
+    initialPoolSize: 40
+  - name: ACE
+    id:
+      value: 5
+    prefab: {fileID: 8432301967274135412, guid: aaa5f283dd513024bb220123bb851c55,
+      type: 3}
+    initialPoolSize: 40
+  - name: KING
+    id:
+      value: 6
+    prefab: {fileID: 8432301967274135412, guid: 4e763aaf3acc66246884201b3be019be,
+      type: 3}
+    initialPoolSize: 40
+  - name: QUEEN
+    id:
+      value: 7
+    prefab: {fileID: 8432301967274135412, guid: b25c8fc8bb6942648bb628456d8783c9,
+      type: 3}
+    initialPoolSize: 40
+  - name: JACK
+    id:
+      value: 8
+    prefab: {fileID: 8432301967274135412, guid: aaa68575e8e0be14b96465e1f2cc78e0,
+      type: 3}
+    initialPoolSize: 40
+  - name: Wild
+    id:
+      value: 9
+    prefab: {fileID: 8432301967274135412, guid: 359742209163b8b44ba42f1d5d8ffdee,
+      type: 3}
+    initialPoolSize: 40
+  - name: Cor
+    id:
+      value: 10
+    prefab: {fileID: 8432301967274135412, guid: ca9c886e5cf2a40468cac53c912ffc55,
+      type: 3}
+    initialPoolSize: 40
+  - name: Blank
+    id:
+      value: 11
+    prefab: {fileID: 8432301967274135412, guid: 1c91701be420bc24db02b839ae59f2df,
+      type: 3}
+    initialPoolSize: 40
+  - name: AN
+    id:
+      value: 12
+    prefab: {fileID: 8432301967274135412, guid: fa8ddb4360142fb4f9494729fc32b0d9,
+      type: 3}
+    initialPoolSize: 40
+  - name: BN
+    id:
+      value: 13
+    prefab: {fileID: 8432301967274135412, guid: 2d5736b23c2d911419fb91e94699c335,
+      type: 3}
+    initialPoolSize: 40

@@ -1,0 +1,725 @@
+{
+  "PersistentData": {
+    "$type": "GameBackend.Data.GamePersistentData, GAMEID",
+    "FeaturePersistentData": {
+      "GameBackend.Features.ReelSets.Data.ReelSetsPersistentData": {
+        "$type": "GameBackend.Features.ReelSets.Data.ReelSetsPersistentData, GAMEID",
+        "ReelStripsPerBetIndex": {
+          "WindowData": {
+            "BaseSpin": {
+              "Main": {
+                "Id": "Main",
+                "PerBetIndexEnabled": false,
+                "NextReelStripsData": { "0": [ "Base_Reel 1", "Base_Reel 2", "Base_Reel 3", "Base_Reel 4", "Base_Reel 5" ] }
+              }
+            },
+            "FreeSpin": {
+              "FreeSpin": {
+                "Id": "FreeSpin",
+                "PerBetIndexEnabled": false,
+                "NextReelStripsData": { "0": [ "FreeSpinAN_Reel 1", "FreeSpinAN_Reel 2", "FreeSpinAN_Reel 3", "FreeSpinAN_Reel 4", "FreeSpinAN_Reel 5" ] }
+              }
+            },
+            "HoldAndSpin": {
+              "HoldAndSpin": {
+                "Id": "HoldAndSpin",
+                "PerBetIndexEnabled": false,
+                "NextReelStripsData": { "0": [ "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_7", "HoldAndSpinReelCell_8", "HoldAndSpinReelCell_9", "HoldAndSpinReelCell_10", "HoldAndSpinReelCell_11", "HoldAndSpinReelCell_12", "HoldAndSpinReelCell_13", "HoldAndSpinReelCell_14", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6" ] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "FreeSpinsCount": {
+      "FreeSpin": 0,
+      "BaseSpin": 0
+    },
+    "LinesComboRecovery": [
+      {
+        "Id": "BaseSpin",
+        "Lines": [
+          {
+            "Name": "3 ACEs",
+            "Stops": [
+              {
+                "Position": {
+                  "Y": 2,
+                  "X": 0
+                },
+                "SymbolId": 5
+              },
+              {
+                "Position": {
+                  "Y": 0,
+                  "X": 1
+                },
+                "SymbolId": 5
+              },
+              {
+                "Position": {
+                  "Y": 2,
+                  "X": 2
+                },
+                "SymbolId": 5
+              }
+            ],
+            "Pattern": {
+              "Id": 19,
+              "Stops": [
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 0
+                    },
+                    "X": 0,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 1
+                    },
+                    "X": 1,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 2
+                    },
+                    "X": 2,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 5,
+                    "IsScatter": false,
+                    "Name": "ACE"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 3
+                    },
+                    "X": 3,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 10,
+                    "IsScatter": true,
+                    "Name": "Cor"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 4
+                    },
+                    "X": 4,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                }
+              ],
+              "Type": 0,
+              "PayLineNumber": 19
+            },
+            "Reward": {
+              "RewardItems": [
+                {
+                  "CurrencyType": "credit",
+                  "Quantity": 5,
+                  "TotalWon": 8500,
+                  "MultiplyWin": false,
+                  "ExcludeFromReelSets": null
+                }
+              ]
+            },
+            "PaylineIndex": 19
+          },
+          {
+            "Name": "3 QUEENs",
+            "Stops": [
+              {
+                "Position": {
+                  "Y": 2,
+                  "X": 0
+                },
+                "SymbolId": 7
+              },
+              {
+                "Position": {
+                  "Y": 0,
+                  "X": 1
+                },
+                "SymbolId": 7
+              },
+              {
+                "Position": {
+                  "Y": 0,
+                  "X": 2
+                },
+                "SymbolId": 7
+              }
+            ],
+            "Pattern": {
+              "Id": 25,
+              "Stops": [
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 0
+                    },
+                    "X": 0,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 1
+                    },
+                    "X": 1,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 2
+                    },
+                    "X": 2,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 7,
+                    "IsScatter": false,
+                    "Name": "QUEEN"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 3
+                    },
+                    "X": 3,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 10,
+                    "IsScatter": true,
+                    "Name": "Cor"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 4
+                    },
+                    "X": 4,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                }
+              ],
+              "Type": 0,
+              "PayLineNumber": 25
+            },
+            "Reward": {
+              "RewardItems": [
+                {
+                  "CurrencyType": "credit",
+                  "Quantity": 5,
+                  "TotalWon": 8500,
+                  "MultiplyWin": false,
+                  "ExcludeFromReelSets": null
+                }
+              ]
+            },
+            "PaylineIndex": 25
+          },
+          {
+            "Name": "3 PIC3s",
+            "Stops": [
+              {
+                "Position": {
+                  "Y": 2,
+                  "X": 0
+                },
+                "SymbolId": 3
+              },
+              {
+                "Position": {
+                  "Y": 0,
+                  "X": 1
+                },
+                "SymbolId": 3
+              },
+              {
+                "Position": {
+                  "Y": 1,
+                  "X": 2
+                },
+                "SymbolId": 3
+              }
+            ],
+            "Pattern": {
+              "Id": 27,
+              "Stops": [
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 0
+                    },
+                    "X": 0,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 1
+                    },
+                    "X": 1,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 1,
+                      "X": 2
+                    },
+                    "X": 2,
+                    "Y": 1
+                  },
+                  "Symbol": {
+                    "Id": 3,
+                    "IsScatter": false,
+                    "Name": "PIC3"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 0,
+                      "X": 3
+                    },
+                    "X": 3,
+                    "Y": 0
+                  },
+                  "Symbol": {
+                    "Id": 10,
+                    "IsScatter": true,
+                    "Name": "Cor"
+                  }
+                },
+                {
+                  "Coordinate": {
+                    "Position": {
+                      "Y": 2,
+                      "X": 4
+                    },
+                    "X": 4,
+                    "Y": 2
+                  },
+                  "Symbol": {
+                    "Id": 9,
+                    "IsScatter": false,
+                    "Name": "Wild"
+                  }
+                }
+              ],
+              "Type": 0,
+              "PayLineNumber": 27
+            },
+            "Reward": {
+              "RewardItems": [
+                {
+                  "CurrencyType": "credit",
+                  "Quantity": 15,
+                  "TotalWon": 25500,
+                  "MultiplyWin": false,
+                  "ExcludeFromReelSets": null
+                }
+              ]
+            },
+            "PaylineIndex": 27
+          }
+        ]
+      }
+    ],
+    "WaysComboRecovery": [],
+    "ScatterComboRecovery": [
+      {
+        "Id": "BaseSpin",
+        "Combinations": []
+      }
+    ],
+    "GaffeQueues": { "CategoryQueues": null },
+    "TriggeredStates": {
+      "Queue": {
+        "Queue": [
+          {
+            "Key": 99999,
+            "Value": { "State": "BaseSpin" }
+          }
+        ]
+      }
+    },
+    "ReelOutcomeData": {
+      "BaseSpin": {
+        "Id": "BaseSpin",
+        "ReelWindowId": "Main",
+        "IndexedReelStrips": [ "BaseHS_Reel 1", "BaseHS_Reel 2", "BaseHS_Reel 3", "BaseHS_Reel 4", "BaseHS_Reel 5" ],
+        "IndexedOffsets": [ 100, 95, 100, 49, 70 ]
+      },
+      "FreeSpin": {
+        "Id": "FreeSpin",
+        "ReelWindowId": "FreeSpin",
+        "IndexedReelStrips": [ "FreeSpinAN_Reel 1", "FreeSpinAN_Reel 2", "FreeSpinAN_Reel 3", "FreeSpinAN_Reel 4", "FreeSpinAN_Reel 5" ],
+        "IndexedOffsets": [ 0, 0, 0, 0, 0 ]
+      },
+      "HoldAndSpin": {
+        "Id": "HoldAndSpin",
+        "ReelWindowId": "HoldAndSpin",
+        "IndexedReelStrips": [ "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_7", "HoldAndSpinReelCell_8", "HoldAndSpinReelCell_9", "HoldAndSpinReelCell_10", "HoldAndSpinReelCell_11", "HoldAndSpinReelCell_12", "HoldAndSpinReelCell_13", "HoldAndSpinReelCell_14", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6", "HoldAndSpinReelCell_6" ],
+        "IndexedOffsets": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+      }
+    },
+    "LinesModelPayload": {
+      "Id": null,
+      "Lines": null
+    },
+    "RtpFeatureName": "BaseSpin",
+    "BaseBetIndex": 7,
+    "PreviousState": "BaseSpin",
+    "CurrentState": "BaseSpin",
+    "RandomNumberQueue": [],
+    "CategoryQueues": null,
+    "GaffeData": {
+      "Name": null,
+      "CategoryIndex": null,
+      "CategoryName": null
+    },
+    "Variation": "",
+    "TriggeredStateInfo": null
+  },
+  "RoundData": {
+    "$type": "GameBackend.Data.GameRoundData, GAMEID",
+    "FeatureRoundData": {
+      "GameBackend.Features.Cors.Data.CorsRoundData": {
+        "$type": "GameBackend.Features.Cors.Data.CorsRoundData, GAMEID",
+        "PrizesCollected": {
+          "Prizes": [
+            {
+              "Stop": {
+                "WorldIndex": 3,
+                "StopSymbol": {
+                  "Id": 10,
+                  "IsScatter": true,
+                  "Name": "Cor"
+                }
+              },
+              "Type": "Multiplier",
+              "Value": 170000.0,
+              "Name": "",
+              "Tier": -1,
+              "JackpotBaseMultiplier": 1,
+              "Awarded": false
+            },
+            {
+              "Stop": {
+                "WorldIndex": 6,
+                "StopSymbol": {
+                  "Id": 10,
+                  "IsScatter": true,
+                  "Name": "Cor"
+                }
+              },
+              "Type": "Multiplier",
+              "Value": 170000.0,
+              "Name": "",
+              "Tier": -1,
+              "JackpotBaseMultiplier": 1,
+              "Awarded": false
+            },
+            {
+              "Stop": {
+                "WorldIndex": 8,
+                "StopSymbol": {
+                  "Id": 10,
+                  "IsScatter": true,
+                  "Name": "Cor"
+                }
+              },
+              "Type": "Multiplier",
+              "Value": 255000.0,
+              "Name": "",
+              "Tier": -1,
+              "JackpotBaseMultiplier": 1,
+              "Awarded": false
+            },
+            {
+              "Stop": {
+                "WorldIndex": 11,
+                "StopSymbol": {
+                  "Id": 10,
+                  "IsScatter": true,
+                  "Name": "Cor"
+                }
+              },
+              "Type": "Multiplier",
+              "Value": 170000.0,
+              "Name": "",
+              "Tier": -1,
+              "JackpotBaseMultiplier": 1,
+              "Awarded": false
+            }
+          ]
+        }
+      },
+      "Wildcat.Milan.Shared.Dtos.Backend.Round.RoundModelRoundData": {
+        "$type": "Wildcat.Milan.Shared.Dtos.Backend.Round.RoundModelRoundData, ProductMadness.Wildcat.Milan.Shared.Dtos",
+        "Wins": [
+          {
+            "Amount": {
+              "Type": "credit",
+              "Value": 42500.0
+            },
+            "Ids": [ "BaseSpin", "BaseSpin0" ],
+            "slot_event_id": "69be87fa-c727-48b0-ba8d-c7356c10aed4"
+          }
+        ]
+      },
+      "GameBackend.Features.DynamicSymbols.Data.DynamicSymbolsRoundData": {
+        "$type": "GameBackend.Features.DynamicSymbols.Data.DynamicSymbolsRoundData, GAMEID",
+        "LastSpinPayload": {
+          "Id": "BaseSpin",
+          "DynamicSymbolPairs": [
+            {
+              "ReelIndex": 0,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 1,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 2,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 3,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 4,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            }
+          ]
+        },
+        "LastBaseSpinPayload": {
+          "Id": "BaseSpin",
+          "DynamicSymbolPairs": [
+            {
+              "ReelIndex": 0,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 1,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 2,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 3,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            },
+            {
+              "ReelIndex": 4,
+              "SwapSymbolFrom": "AN",
+              "SwapSymbolTo": "ACE"
+            }
+          ]
+        }
+      },
+      "GameBackend.Features.FreeSpins.Data.FreeSpinsRoundData": {
+        "$type": "GameBackend.Features.FreeSpins.Data.FreeSpinsRoundData, GAMEID",
+        "LastFeaturePayload": {
+          "freeSpinsRemaining": 0,
+          "freeSpinsWon": 0,
+          "activated": false
+        }
+      },
+      "GameBackend.Features.HoldAndSpin.Data.HoldAndSpinRoundData": {
+        "$type": "GameBackend.Features.HoldAndSpin.Data.HoldAndSpinRoundData, GAMEID",
+        "LastFeaturePayload": null
+      },
+      "GameBackend.Features.Blackout.Data.BlackoutRoundData": {
+        "$type": "GameBackend.Features.Blackout.Data.BlackoutRoundData, GAMEID",
+        "LastFeaturePayload": [
+          {
+            "Id": "HoldAndSpin",
+            "Blackout": false,
+            "Prizes": []
+          }
+        ]
+      },
+      "GameBackend.Features.LockingReels.Data.LockingReelsRoundData": {
+        "$type": "GameBackend.Features.LockingReels.Data.LockingReelsRoundData, GAMEID",
+        "LastFeaturePayload": [
+          {
+            "Id": "HoldAndSpin",
+            "Reels": []
+          }
+        ]
+      },
+      "GameBackend.Features.SymbolSkins.Data.SymbolSkinsRoundData": {
+        "$type": "GameBackend.Features.SymbolSkins.Data.SymbolSkinsRoundData, GAMEID",
+        "LastFeaturePayloads": [
+          {
+            "Id": "BaseSpin",
+            "SymbolOutcomeData": [
+              {
+                "CanAward": false,
+                "Tier": -1,
+                "SymbolData": {
+                  "SymbolId": 10,
+                  "Skin": "Multiplier",
+                  "TextValue": "170000",
+                  "ShouldMultiply": false
+                },
+                "PositionData": {
+                  "Y": 0,
+                  "X": 3
+                }
+              },
+              {
+                "CanAward": false,
+                "Tier": -1,
+                "SymbolData": {
+                  "SymbolId": 10,
+                  "Skin": "Multiplier",
+                  "TextValue": "170000",
+                  "ShouldMultiply": false
+                },
+                "PositionData": {
+                  "Y": 1,
+                  "X": 1
+                }
+              },
+              {
+                "CanAward": false,
+                "Tier": -1,
+                "SymbolData": {
+                  "SymbolId": 10,
+                  "Skin": "Multiplier",
+                  "TextValue": "255000",
+                  "ShouldMultiply": false
+                },
+                "PositionData": {
+                  "Y": 1,
+                  "X": 3
+                }
+              },
+              {
+                "CanAward": false,
+                "Tier": -1,
+                "SymbolData": {
+                  "SymbolId": 10,
+                  "Skin": "Multiplier",
+                  "TextValue": "170000",
+                  "ShouldMultiply": false
+                },
+                "PositionData": {
+                  "Y": 2,
+                  "X": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "TotalWin": 0,
+    "BetIndex": 7,
+    "LineIndex": 0,
+    "RemainingFreeSpins": 0,
+    "RoundComplete": true,
+    "RandomNumberQueue": null,
+    "TotalRewardsWon": [
+      {
+        "CurrencyType": "credit",
+        "Quantity": 25,
+        "TotalWon": 42500,
+        "MultiplyWin": false,
+        "ExcludeFromReelSets": null
+      }
+    ]
+  }
+}

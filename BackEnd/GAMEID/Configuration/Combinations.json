@@ -1,0 +1,660 @@
+{
+  "CombinationConfigurations": [
+    {
+      "name": "5 PIC1s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 50,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC1",
+        "PIC1",
+        "PIC1",
+        "PIC1",
+        "PIC1"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 PIC1s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 38,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC1",
+        "PIC1",
+        "PIC1",
+        "PIC1"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 PIC1s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 35,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC1",
+        "PIC1",
+        "PIC1"
+      ],
+      "type": 0
+    },
+    {
+      "name": "2 PIC1s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 12,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC1",
+        "PIC1"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 PIC2s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 22,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC2",
+        "PIC2",
+        "PIC2",
+        "PIC2",
+        "PIC2"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 PIC2s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 20,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC2",
+        "PIC2",
+        "PIC2",
+        "PIC2"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 PIC2s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 18,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC2",
+        "PIC2",
+        "PIC2"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 PIC3s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 22,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC3",
+        "PIC3",
+        "PIC3",
+        "PIC3",
+        "PIC3"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 PIC3s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 20,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC3",
+        "PIC3",
+        "PIC3",
+        "PIC3"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 PIC3s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 18,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC3",
+        "PIC3",
+        "PIC3"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 PIC4s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 16,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC4",
+        "PIC4",
+        "PIC4",
+        "PIC4",
+        "PIC4"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 PIC4s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 14,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC4",
+        "PIC4",
+        "PIC4",
+        "PIC4"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 PIC4s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 12,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC4",
+        "PIC4",
+        "PIC4"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 PIC5s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 16,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC5",
+        "PIC5",
+        "PIC5",
+        "PIC5",
+        "PIC5"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 PIC5s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 14,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC5",
+        "PIC5",
+        "PIC5",
+        "PIC5"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 PIC5s",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 12,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "PIC5",
+        "PIC5",
+        "PIC5"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 ACE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 10,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "ACE",
+        "ACE",
+        "ACE",
+        "ACE",
+        "ACE"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 ACE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 8,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "ACE",
+        "ACE",
+        "ACE",
+        "ACE"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 ACE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 7,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "ACE",
+        "ACE",
+        "ACE"
+      ],
+      "type": 0
+    },
+
+
+    {
+      "name": "5 KING",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 8,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "KING",
+        "KING",
+        "KING",
+        "KING",
+        "KING"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 KING",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 7,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "KING",
+        "KING",
+        "KING",
+        "KING"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 KING",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 6,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "KING",
+        "KING",
+        "KING"
+      ],
+      "type": 0
+    },
+
+
+    {
+      "name": "5 QUEEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 50,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "QUEEN",
+        "QUEEN",
+        "QUEEN",
+        "QUEEN",
+        "QUEEN"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 QUEEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 10,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "QUEEN",
+        "QUEEN",
+        "QUEEN",
+        "QUEEN"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 QUEEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 5,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "QUEEN",
+        "QUEEN",
+        "QUEEN"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 JACK",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 8,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "JACK",
+        "JACK",
+        "JACK",
+        "JACK",
+        "JACK"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 JACK",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 7,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "JACK",
+        "JACK",
+        "JACK",
+        "JACK"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 JACK",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 6,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "JACK",
+        "JACK",
+        "JACK"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 TEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 8,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "TEN",
+        "TEN",
+        "TEN",
+        "TEN",
+        "TEN"
+      ],
+      "type": 0
+    },
+    {
+      "name": "4 TEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 7,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "TEN",
+        "TEN",
+        "TEN",
+        "TEN"
+      ],
+      "type": 0
+    },
+    {
+      "name": "3 TEN",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 6,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "TEN",
+        "TEN",
+        "TEN"
+      ],
+      "type": 0
+    },
+
+    {
+      "name": "5 NINE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 8,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "NINE",
+        "NINE",
+        "NINE",
+        "NINE",
+        "NINE"
+      ],
+      "type": 3
+    },
+    {
+      "name": "4 NINE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 7,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "NINE",
+        "NINE",
+        "NINE",
+        "NINE"
+      ],
+      "type": 3
+    },
+    {
+      "name": "3 NINE",
+      "reward": {
+        "rewardItems": [
+          {
+            "currencyType": "credit",
+            "quantity": 6,
+            "multiplyWin": false
+          }
+        ]
+      },
+      "symbols": [
+        "NINE",
+        "NINE",
+        "NINE"
+      ],
+      "type": 3
+    }
+  ]
+}

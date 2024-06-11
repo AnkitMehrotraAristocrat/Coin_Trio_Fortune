@@ -1,0 +1,82 @@
+﻿{
+  "SymbolsDefinitions": [
+    {
+      "Id": 1,
+      "Name": "PIC1",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 2,
+      "Name": "PIC2",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 3,
+      "Name": "PIC3",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 4,
+      "Name": "PIC4",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 5,
+      "Name": "PIC5",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 6,
+      "Name": "ACE",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 7,
+      "Name": "KING",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 8,
+      "Name": "QUEEN",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 9,
+      "Name": "JACK",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 10,
+      "Name": "TEN",
+      "Anticipation": false,
+      "Scatter": false
+    },
+    {
+      "Id": 11,
+      "Name": "NINE",
+      "Anticipation": false,
+      "Scatter": true
+    },
+    {
+      "Id": 12,
+      "Name": "SCAT",
+      "Anticipation": false,
+      "Scatter": true
+    },
+    {
+      "Id": 13,
+      "Name": "WILD",
+      "Anticipation": false,
+      "Scatter": true
+    }
+  ]
+}

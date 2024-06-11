@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: slot
+  m_EditorClassIdentifier: 
+  m_GroupName: slot
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bb1d49e342dbe4f51a4cef5cd64db270
+  m_SerializeEntries:
+  - m_GUID: 19a5255da543f7144817eb5a84c431a0
+    m_Address: GAMEID/GAMEID
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 1b89f8a255ae24968ba67ee98d446928, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 028aa3d1dc7d2443aa08ab95a1cae814, type: 2}
+    - {fileID: 11400000, guid: 4a08dbf38656a48aa8f5d94fc93fee88, type: 2}

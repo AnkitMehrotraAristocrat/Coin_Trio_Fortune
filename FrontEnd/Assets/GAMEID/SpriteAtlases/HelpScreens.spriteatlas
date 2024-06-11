@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HelpScreens
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3808a9e8cdde03e4ba75de44d9904509, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: db185491d3a4baa479e34a338c53cff3, type: 3}
+  - {fileID: 21300000, guid: 575c8ba26a2d7684b84d27911a225f61, type: 3}
+  - {fileID: 21300000, guid: 297f9ab2553782c42ba8593465a18e99, type: 3}
+  - {fileID: 21300000, guid: b8fbab53570424744b9278c2a93c48c2, type: 3}
+  - {fileID: 21300000, guid: 28c99e871b63e6a44bbc1cfb64d71be8, type: 3}
+  - {fileID: 21300000, guid: 592daba898c11cd4fbb6d1eacf7b0c16, type: 3}
+  - {fileID: 21300000, guid: 0eb4fdd8f1532094cadd0ea2e8b4176a, type: 3}
+  - {fileID: 21300000, guid: c791d03a036e29d4f80b6e2bcae4cbc3, type: 3}
+  - {fileID: 21300000, guid: a09842cb10fddb447a83eed3ac9034a6, type: 3}
+  - {fileID: 21300000, guid: aa79f10cbf4f485418a7139423ad133c, type: 3}
+  - {fileID: 21300000, guid: 0870fd2d8377b7843b4a24d787fce740, type: 3}
+  - {fileID: 21300000, guid: 75a1b21ec5ece374a94826ce28a73b87, type: 3}
+  - {fileID: 21300000, guid: 3b49fcde77c10ad479ec77ae968e92cc, type: 3}
+  - {fileID: 21300000, guid: e054829fe08019a48960138829ab3a44, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Divider_Vertical
+  - FeatureBox
+  - Segment1
+  - Segment1
+  - Segment1
+  - Header_Text
+  - Header_Text
+  - Divider_Horizontal
+  - Header_Text
+  - HelpInfoGameArt
+  - Segment1
+  - Header_Background
+  - Header_Text
+  - BackgroundGradient
+  m_RenderDataMap: {}
+  m_Tag: HelpScreens
+  m_IsVariant: 0

@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+		<Private>false</Private>
+		<ExcludeAssets>runtime</ExcludeAssets>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<DefineConstants>JACKPOTS_ON,LOGGING_ON,LINES_GAME</DefineConstants>
+		<!-- WAYS_GAME / LINES_GAME -->
+		<!-- 
+		Update Bet.json 
+		===========================
+		WAYS_GAME keys (remove for lines)
+		
+			"DefaultReelIndexEnabled": 4,
+			"ReelStripsCost": [
+				{
+					"reelStripIndex": 4,
+					"totalCost": 100
+				}
+			],
+		===========================
+		LINES_GAME keys (remove for ways)
+		
+			"CurrentBetLineIndex": 0,
+			"BetLines": [
+				{
+					"Ante": 1,
+					"TotalCost": 100,
+					"EnabledLinesCount": 30
+				}
+			],
+		-->
+		<Configurations>Debug;Release;RTP;RTP_DEBUG</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'RTP|AnyCPU' ">
+		<DefineConstants>JACKPOTS_OFF,LOGGING_OFF,LINES_GAME</DefineConstants>
+		<NoWarn>1701;1702;8632</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>1701;1702;8632</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NoWarn>1701;1702;8632</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RTP_DEBUG|AnyCPU'">
+		<DefineConstants>JACKPOTS_OFF,LOGGING_OFF,LINES_GAME</DefineConstants>
+		<NoWarn>1701;1702;8632</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Configuration\FeatureTriggerTable.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NewRelic.Agent.Api" Version="10.16.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+		<PackageReference Include="System.Composition.AttributedModel" Version="7.0.0" />
+		<PackageReference Include="ProductMadness.Wildcat.Milan.Game.Core" Version="6.0.5" />
+		<PackageReference Include="Milan.XSlotEngine" Version="4.3.1" />
+		<PackageReference Include="Milan.Common" Version="4.3.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Refit" Version="7.0.0" />
+		<PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+		<PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <None Update="*Configuration\*.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+	<ItemGroup>
+		<None Update="appsettings.game.Milan.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="appsettings.game.Development.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="appsettings.game.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Update="Configuration\variation_78\Gaffes.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Configuration\variation_78\WeightTables.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Configuration\variation_83\Gaffes.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Configuration\variation_83\WeightTables.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

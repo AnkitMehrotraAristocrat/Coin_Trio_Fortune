@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F86710E7-57FB-4610-8A0C-1EF546E126E2}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+		parent.props = parent.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildcat.Milan.Storage.MongoDb", "Storage\Milan.Storage.MongoDb\Wildcat.Milan.Storage.MongoDb.csproj", "{384881CC-10B3-49B7-8F43-99592AA404CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildcat.Milan.Storage.FileSystem", "Storage\Milan.Storage.FileSystem\Wildcat.Milan.Storage.FileSystem.csproj", "{4F78BCC4-3DD4-4025-8846-F7FFA9952FC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildcat.Milan.Host.Core", "Milan.Host.Core\Wildcat.Milan.Host.Core.csproj", "{EAF537FE-CC83-4FAF-9E7C-6088960734DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildcat.Milan.Host.Core.Tests", "Milan.Host.Core.Tests\Wildcat.Milan.Host.Core.Tests.csproj", "{C1BD91F9-24FC-45AD-B935-A541CFAB9268}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildcat.Milan.Host", "Milan.Host\Wildcat.Milan.Host.csproj", "{659AD3A1-4393-4B42-B836-C01D0F34A9B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{384881CC-10B3-49B7-8F43-99592AA404CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384881CC-10B3-49B7-8F43-99592AA404CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384881CC-10B3-49B7-8F43-99592AA404CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384881CC-10B3-49B7-8F43-99592AA404CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F78BCC4-3DD4-4025-8846-F7FFA9952FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F78BCC4-3DD4-4025-8846-F7FFA9952FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F78BCC4-3DD4-4025-8846-F7FFA9952FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F78BCC4-3DD4-4025-8846-F7FFA9952FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF537FE-CC83-4FAF-9E7C-6088960734DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF537FE-CC83-4FAF-9E7C-6088960734DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF537FE-CC83-4FAF-9E7C-6088960734DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF537FE-CC83-4FAF-9E7C-6088960734DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1BD91F9-24FC-45AD-B935-A541CFAB9268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BD91F9-24FC-45AD-B935-A541CFAB9268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BD91F9-24FC-45AD-B935-A541CFAB9268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BD91F9-24FC-45AD-B935-A541CFAB9268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{659AD3A1-4393-4B42-B836-C01D0F34A9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{659AD3A1-4393-4B42-B836-C01D0F34A9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{659AD3A1-4393-4B42-B836-C01D0F34A9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{659AD3A1-4393-4B42-B836-C01D0F34A9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F737D9A7-D4CE-49C8-968B-83463378D0F5}
+	EndGlobalSection
+EndGlobal
